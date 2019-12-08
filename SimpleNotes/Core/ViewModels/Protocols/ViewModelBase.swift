@@ -9,6 +9,7 @@
 import Foundation
 
 public class ViewModelBase : ViewModelProtocol {
+    
     private let _navigationService: NavigationServiceProtocol = Container.resolve()
     
     public var navigationService: NavigationServiceProtocol {
@@ -43,4 +44,14 @@ public class ViewModelBase : ViewModelProtocol {
     public func disappearing(){
         print("disappearing")
     }
+    
+    public func prepare(dataObject: Any) {}
+}
+
+public class ViewModelBaseWithArguments<TObject> : ViewModelBase {
+    public override func prepare(dataObject: Any) {
+        prepare(data: dataObject as! TObject)
+    }
+    
+    public func prepare(data: TObject) {}
 }

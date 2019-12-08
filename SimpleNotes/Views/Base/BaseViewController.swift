@@ -10,6 +10,8 @@ import UIKit
 import Foundation
 
 public class BaseViewController<TViewModel> : UIViewController where TViewModel : ViewModelProtocol {
+    public var parameterData: Any?
+    
     private var _viewModel: TViewModel!
     public var viewModel: TViewModel {
         get {
@@ -32,6 +34,9 @@ public class BaseViewController<TViewModel> : UIViewController where TViewModel 
     
     private func _resolveViewModel(){
         let viewModel : TViewModel = Container.resolve()
+        if(parameterData != nil){
+            viewModel.prepare(dataObject: parameterData!)
+        }
         viewModel.initialize()
         _viewModel = viewModel
     }

@@ -7,8 +7,8 @@
 //
 
 public protocol NavigationServiceProtocol {
-    func navigate<TViewModel : ViewModelProtocol>(animated: Bool) -> TViewModel?
-    func navigateModal<TViewModel : ViewModelProtocol>() -> TViewModel?
+    func navigate<TViewModel : ViewModelProtocol>(arguments: Any?, animated: Bool) -> TViewModel?
+    func navigateModal<TViewModel : ViewModelProtocol>(arguments: Any?) -> TViewModel?
     func navigateAndSetAsContainer<TViewModel : ViewModelProtocol>() -> TViewModel?
     
     func close(animated: Bool);

@@ -7,6 +7,7 @@
 //
 
 public protocol ViewModelProtocol {
+    func prepare(dataObject: Any);
     func initialize()
     func appearing()
     func appeared()

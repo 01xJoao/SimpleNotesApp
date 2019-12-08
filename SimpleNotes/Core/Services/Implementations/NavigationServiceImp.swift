@@ -12,20 +12,21 @@ import Foundation
 public class NavigationServiceImp : NavigationServiceProtocol {
     public var containerViewController : ContainerViewController?
     
-    public func navigate<TViewModel>(animated: Bool) -> TViewModel? where TViewModel : ViewModelProtocol {
+    public func navigate<TViewModel>(arguments: Any?, animated: Bool) -> TViewModel? where TViewModel : ViewModelProtocol {
         DispatchQueue.global(qos: .utility).async {
             DispatchQueue.main.async {
-                let viewController: UIViewController = self._getViewController(type: TViewModel.self)
+                let viewController: UIViewController = self._getViewController(type: TViewModel.self, args: arguments)
                 self.containerViewController?.navigationController?.pushViewController(viewController, animated: animated)
             }
         }
         return nil
     }
     
-    public func navigateModal<TViewModel>() -> TViewModel? where TViewModel : ViewModelProtocol {
+    
+    public func navigateModal<TViewModel>(arguments: Any?) -> TViewModel? where TViewModel : ViewModelProtocol {
         DispatchQueue.global(qos: .utility).async {
             DispatchQueue.main.async {
-                let viewController: UIViewController = self._getViewController(type: TViewModel.self)
+                let viewController: UIViewController = self._getViewController(type: TViewModel.self, args: arguments)
                 self.containerViewController?.navigationController?.present(viewController, animated: true, completion: nil)
             }
         }
@@ -35,16 +36,23 @@ public class NavigationServiceImp : NavigationServiceProtocol {
     public func navigateAndSetAsContainer<TViewModel>() -> TViewModel? where TViewModel : ViewModelProtocol {
         DispatchQueue.global(qos: .utility).async {
             DispatchQueue.main.async {
-                let viewController: UIViewController = self._getViewController(type: TViewModel.self)
+                let viewController: UIViewController = self._getViewController(type: TViewModel.self, args: nil)
                 self._setContainerViewController(viewController: viewController)
             }
         }
         return nil
     }
     
-    private func _getViewController<T>(type: T.Type = T.self) -> UIViewController {
-        let viewModelName = String(describing: T.self)
+    private func _getViewController<TViewModel : ViewModelProtocol>(type: TViewModel.Type = TViewModel.self, args: Any?) -> UIViewController {
+        let viewModelName = String(describing: TViewModel.self)
         let viewController: UIViewController = Container.resolveViewController(name: viewModelName)
+       
+        let vc = viewController as! BaseViewController<TViewModel>; do {
+            if(args != nil){
+                vc.parameterData = args
+            }
+        }
+    
         return viewController
     }
     
