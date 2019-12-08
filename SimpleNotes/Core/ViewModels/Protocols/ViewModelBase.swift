@@ -9,7 +9,7 @@
 import Foundation
 
 public class ViewModelBase : ViewModelProtocol {
-    
+
     private let _navigationService: NavigationServiceProtocol = Container.resolve()
     
     public var navigationService: NavigationServiceProtocol {
@@ -29,6 +29,8 @@ public class ViewModelBase : ViewModelProtocol {
         }
     }
     
+    public func prepare(dataObject: Any) {}
+    
     public func initialize(){
         print("initialized")
     }
@@ -45,7 +47,9 @@ public class ViewModelBase : ViewModelProtocol {
         print("disappearing")
     }
     
-    public func prepare(dataObject: Any) {}
+    public func dismissChildViewNotify(dataObject: Any?) {
+        print("dismissNotify \(String(describing: dataObject))")
+    }
 }
 
 public class ViewModelBaseWithArguments<TObject> : ViewModelBase {

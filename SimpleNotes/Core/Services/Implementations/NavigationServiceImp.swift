@@ -63,19 +63,20 @@ public class NavigationServiceImp : NavigationServiceProtocol {
         containerViewController?.changeViewController(viewController: viewController)
     }
     
-    public func close(animated: Bool) {
+    public func close(arguments: Any?, animated: Bool) {
         containerViewController?.navigationController?.popViewController(animated: animated)
+        _dismissViewNotify(args: arguments)
     }
     
-    public func closeModal() {
-        containerViewController?.navigationController?.dismiss(animated: true, completion:  {
-            self._modalDismissNotify()
-        })
+    public func closeModal(arguments: Any?) {
+        containerViewController?.navigationController?.dismiss(animated: true, completion: nil)
+        _dismissViewNotify(args: arguments)
     }
     
-    private func _modalDismissNotify(){
-        let parentViewcontrollerName: String = containerViewController!.getCurrentViewControllerName()
+    private func _dismissViewNotify(args: Any?) {
+        let params: [String: Any] = ["arguments": args as Any]
+        let parentViewcontrollerName: String = containerViewController!.getVisibleViewControllerName()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: parentViewcontrollerName), object: nil, userInfo: params)
         print(parentViewcontrollerName)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: parentViewcontrollerName), object: nil)
     }
 }

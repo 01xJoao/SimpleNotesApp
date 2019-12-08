@@ -21,15 +21,16 @@ public class BaseViewController<TViewModel> : UIViewController where TViewModel 
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        _createDismissModalNotification()
+        _createChildrenDismissNotification()
         _resolveViewModel()
     }
     
-    private func _createDismissModalNotification(){
+    private func _createChildrenDismissNotification(){
         NotificationCenter.default.addObserver(self,
-           selector: #selector(self._handleModalDismissed),
+           selector: #selector(self._handleViewDismiss(_:)),
            name: NSNotification.Name(rawValue: String(describing: self)),
            object: nil)
+        print(String(describing: self))
     }
     
     private func _resolveViewModel(){
@@ -46,6 +47,7 @@ public class BaseViewController<TViewModel> : UIViewController where TViewModel 
         viewModel.appearing()
     }
     
+    
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewModel.appeared()
@@ -57,11 +59,14 @@ public class BaseViewController<TViewModel> : UIViewController where TViewModel 
     }
     
     public override func viewDidDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self)
+        if(isMovingFromParent){
+            NotificationCenter.default.removeObserver(self)
+        }
     }
     
-    @objc func _handleModalDismissed() {
-        viewModel.appearing()
-        viewModel.appeared()
+    @objc func _handleViewDismiss(_ notification: NSNotification) {
+        if let params = notification.userInfo as NSDictionary? {
+            viewModel.dismissChildViewNotify(dataObject: params["arguments"]!)
+        }
     }
 }

@@ -13,12 +13,12 @@ public class LoginViewModel: ViewModelBaseWithArguments<Bool> {
     override public func prepare(data: Bool) {
         print("Entered: \(data)")
     }
-
-    public func navigateBackCommand(){
-        navigationService.close(animated: true)
-    }
     
     public func navigateToCreateAccountCommand(){
-        let _: CreateAccountViewModel? = navigationService.navigateModal(arguments: nil)
+        let _: CreateAccountViewModel? = navigationService.navigate(arguments: nil, animated: true)
+    }
+    
+    public func navigateBackCommand(){
+        navigationService.close(arguments: true, animated: true)
     }
 }

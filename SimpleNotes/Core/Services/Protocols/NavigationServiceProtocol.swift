@@ -11,6 +11,6 @@ public protocol NavigationServiceProtocol {
     func navigateModal<TViewModel : ViewModelProtocol>(arguments: Any?) -> TViewModel?
     func navigateAndSetAsContainer<TViewModel : ViewModelProtocol>() -> TViewModel?
     
-    func close(animated: Bool);
-    func closeModal();
+    func close(arguments: Any?, animated: Bool);
+    func closeModal(arguments: Any?);
 }

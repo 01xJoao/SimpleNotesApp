@@ -16,8 +16,16 @@ public class ContainerViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false);
     }
     
-    public func getCurrentViewControllerName() -> String {
-        return String(describing: currentViewController!.navigationController!.topViewController!)
+    public func getVisibleViewControllerName() -> String {
+        var currentViewmodelName: String
+        
+        if(currentViewController!.navigationController!.children.count > 1) {
+            currentViewmodelName = String(describing: currentViewController!.navigationController!.topViewController!)
+        } else {
+            currentViewmodelName = String(describing: currentViewController!)
+        }
+        
+        return currentViewmodelName
     }
     
     public func changeViewController(viewController: UIViewController){
@@ -25,7 +33,7 @@ public class ContainerViewController: UIViewController {
             return
         }
         _removeCurrentViewController()
-        _addNewViewController(viewController: viewController)
+        _addNewViewControllerToContainer(viewController: viewController)
     }
     
     func _checkIfCurrentViewControllerIsEqualsToNew(viewController: UIViewController) -> Bool {
@@ -34,16 +42,15 @@ public class ContainerViewController: UIViewController {
     
     func _removeCurrentViewController(){
         if(currentViewController != nil){
-           currentViewController?.removeFromParent()
-           currentViewController?.view.removeFromSuperview()
-           currentViewController = nil
+            currentViewController?.removeFromParent()
+            currentViewController?.view.removeFromSuperview()
+            currentViewController = nil
         }
     }
-    
-    private func _addNewViewController(viewController: UIViewController) {
+
+    private func _addNewViewControllerToContainer(viewController: UIViewController) {
         viewController.view.frame = self.view.frame
         self.view.addSubview(viewController.view)
-        
         self.addChild(viewController)
         viewController.didMove(toParent: self)
         currentViewController = viewController

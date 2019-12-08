@@ -11,7 +11,7 @@ import Foundation
 public class LoadingViewModel : ViewModelBase {
     
     public func navigateToLoginCommand(){
-        let _: LoginViewModel? = navigationService.navigate(arguments: true, animated: true)
+        let _: LoginViewModel? = navigationService.navigate(arguments: false, animated: true)
     }
     
 }

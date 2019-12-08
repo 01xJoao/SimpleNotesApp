@@ -10,6 +10,6 @@ import Foundation
 
 public class CreateAccountViewModel : ViewModelBase {
     public func navigateBackCommand(){
-        navigationService.closeModal()
+        let _:LoginViewModel? = navigationService.navigateAndSetAsContainer()
     }
 }

@@ -12,4 +12,5 @@ public protocol ViewModelProtocol {
     func appearing()
     func appeared()
     func disappearing()
+    func dismissChildViewNotify(dataObject: Any?);
 }
