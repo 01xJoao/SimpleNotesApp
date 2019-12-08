@@ -1,5 +1,5 @@
 //
-//  Container.swift
+//  DiContainer.swift
 //  SimpleNotes
 //
 //  Created by João Palma on 08/12/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Container {
+class DiContainer {
     fileprivate static var registrations = [AnyHashable : () -> Any]()
     fileprivate static var viewControllerRegistrations = [AnyHashable : () -> Any]()
     fileprivate static var lock = NSRecursiveLock()

@@ -14,23 +14,23 @@ public class Core {
     }
     
     private static func _registerServices(){
-        Container.registerAsSingleton(NavigationServiceProtocol.self) { NavigationServiceImp() }
+        DiContainer.registerAsSingleton(NavigationServiceProtocol.self) { NavigationServiceImp() }
     }
     
     private static func _registerViewModels(){
-        Container.register(LoadingViewModel.self) { LoadingViewModel() }
-        Container.register(LoginViewModel.self) { LoginViewModel() }
-        Container.register(CreateAccountViewModel.self) { CreateAccountViewModel() }
+        DiContainer.register(LoadingViewModel.self) { LoadingViewModel() }
+        DiContainer.register(LoginViewModel.self) { LoginViewModel() }
+        DiContainer.register(CreateAccountViewModel.self) { CreateAccountViewModel() }
     }
     
     private static func _registerViewControllers(){
-        Container.registerViewController(LoadingViewModel.self) { LoadingViewController() }
-        Container.registerViewController(LoginViewModel.self) { LoginViewController() }
-        Container.registerViewController(CreateAccountViewModel.self) { CreateAccountViewController() }
+        DiContainer.registerViewController(LoadingViewModel.self) { LoadingViewController() }
+        DiContainer.registerViewController(LoginViewModel.self) { LoginViewController() }
+        DiContainer.registerViewController(CreateAccountViewModel.self) { CreateAccountViewController() }
     }
     
     public static func startApp(){
-        let navigationService : NavigationServiceProtocol = Container.resolve()
+        let navigationService : NavigationServiceProtocol = DiContainer.resolve()
         let _: LoadingViewModel? = navigationService.navigateAndSetAsContainer()
     }
 }

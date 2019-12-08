@@ -10,7 +10,7 @@ import Foundation
 
 public class ViewModelBase : ViewModelProtocol {
 
-    private let _navigationService: NavigationServiceProtocol = Container.resolve()
+    private let _navigationService: NavigationServiceProtocol = DiContainer.resolve()
     
     public var navigationService: NavigationServiceProtocol {
         get {

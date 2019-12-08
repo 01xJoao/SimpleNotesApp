@@ -45,7 +45,7 @@ public class NavigationServiceImp : NavigationServiceProtocol {
     
     private func _getViewController<TViewModel : ViewModelProtocol>(type: TViewModel.Type = TViewModel.self, args: Any?) -> UIViewController {
         let viewModelName = String(describing: TViewModel.self)
-        let viewController: UIViewController = Container.resolveViewController(name: viewModelName)
+        let viewController: UIViewController = DiContainer.resolveViewController(name: viewModelName)
        
         let vc = viewController as! BaseViewController<TViewModel>; do {
             if(args != nil){
