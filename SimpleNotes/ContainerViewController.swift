@@ -6,4 +6,46 @@
 //  Copyright © 2019 João Palma. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+public class ContainerViewController: UIViewController {
+    private var currentViewController : UIViewController?
+
+    override public func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(true, animated: false);
+    }
+    
+    public func getCurrentViewControllerName() -> String {
+        return String(describing: currentViewController!.navigationController!.topViewController!)
+    }
+    
+    public func changeViewController(viewController: UIViewController){
+        if(_checkIfCurrentViewControllerIsEqualsToNew(viewController: viewController)){
+            return
+        }
+        _removeCurrentViewController()
+        _addNewViewController(viewController: viewController)
+    }
+    
+    func _checkIfCurrentViewControllerIsEqualsToNew(viewController: UIViewController) -> Bool {
+        return currentViewController == viewController.self
+    }
+    
+    func _removeCurrentViewController(){
+        if(currentViewController != nil){
+           currentViewController?.removeFromParent()
+           currentViewController?.view.removeFromSuperview()
+           currentViewController = nil
+        }
+    }
+    
+    private func _addNewViewController(viewController: UIViewController) {
+        viewController.view.frame = self.view.frame
+        self.view.addSubview(viewController.view)
+        
+        self.addChild(viewController)
+        viewController.didMove(toParent: self)
+        currentViewController = viewController
+    }
+}

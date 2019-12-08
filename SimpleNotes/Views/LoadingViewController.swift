@@ -8,13 +8,22 @@
 
 import UIKit
 
-class LoadingViewController: UIViewController {
+class LoadingViewController: BaseViewController<LoadingViewModel> {
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = AppColors.mainBlue
+        
+        let button = UIButton(frame: CGRect(x: 0, y: 50, width: 200, height: 50))
+        button.backgroundColor = AppColors.red
+        button.setTitle("Navigate", for: UIControl.State.normal)
+        button.addTarget(self, action: #selector(_navigate), for: UIControl.Event.touchUpInside)
+        
+        self.view.addSubview(button)
     }
-
-
+    
+    @objc func _navigate(sender: UIButton){
+        viewModel.navigateToLoginCommand()
+    }
 }
 
