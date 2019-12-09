@@ -16,10 +16,10 @@ public class AppSetup {
     }
     
     private static func _setViewAppearance(){
-        UINavigationBar.appearance().barTintColor = AppColors.mainBlue
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: AppColors.white]
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: AppColors.white], for: UIControl.State.normal)
-        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: AppColors.white,
+        UINavigationBar.appearance().barTintColor = UIColor.Theme.mainBlue
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Theme.white]
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.Theme.white], for: UIControl.State.normal)
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Theme.white,
                                                                  NSAttributedString.Key.shadow: CustomUIExtensions.textShadow()]
     }
 }

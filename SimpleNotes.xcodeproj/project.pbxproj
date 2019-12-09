@@ -15,7 +15,6 @@
 		9D089099239C674C002F84E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D089098239C674C002F84E6 /* Assets.xcassets */; };
 		9D08909C239C674C002F84E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D08909A239C674C002F84E6 /* LaunchScreen.storyboard */; };
 		9D0890A7239C674C002F84E6 /* SimpleNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0890A6239C674C002F84E6 /* SimpleNotesTests.swift */; };
-		9D0890B6239C6843002F84E6 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0890B4239C6843002F84E6 /* AppColors.swift */; };
 		9D0890B7239C6843002F84E6 /* CustomUIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0890B5239C6843002F84E6 /* CustomUIExtensions.swift */; };
 		9D0890BC239C68DC002F84E6 /* AppSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0890BB239C68DC002F84E6 /* AppSetup.swift */; };
 		9D0890BE239C68F0002F84E6 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0890BD239C68F0002F84E6 /* Core.swift */; };
@@ -29,6 +28,11 @@
 		9DCA6C35239D5F3900DB4FF3 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C34239D5F3900DB4FF3 /* CreateAccountViewController.swift */; };
 		9DCA6C3B239D961400DB4FF3 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C3A239D961400DB4FF3 /* Command.swift */; };
 		9DCA6C3E239DB19E00DB4FF3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C3D239DB19E00DB4FF3 /* Extensions.swift */; };
+		9DCA6C40239EF56B00DB4FF3 /* DialogServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C3F239EF56B00DB4FF3 /* DialogServiceProtocol.swift */; };
+		9DCA6C43239EF61F00DB4FF3 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C42239EF61F00DB4FF3 /* Enums.swift */; };
+		9DCA6C45239EFB9200DB4FF3 /* DialogServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C44239EFB9200DB4FF3 /* DialogServiceImp.swift */; };
+		9DCA6C49239EFCD900DB4FF3 /* AlertDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C48239EFCD900DB4FF3 /* AlertDialogView.swift */; };
+		9DCA6C4B239F094400DB4FF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C4A239F094400DB4FF3 /* Constants.swift */; };
 		9DE0AE87239C8CF8001A32A6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE86239C8CF8001A32A6 /* BaseViewController.swift */; };
 		9DE0AE89239C8E3F001A32A6 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE88239C8E3F001A32A6 /* ViewModelProtocol.swift */; };
 		9DE0AE8C239C8F7C001A32A6 /* ViewModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE8B239C8F7C001A32A6 /* ViewModelBase.swift */; };
@@ -61,7 +65,6 @@
 		9D0890A2239C674C002F84E6 /* SimpleNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0890A6239C674C002F84E6 /* SimpleNotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNotesTests.swift; sourceTree = "<group>"; };
 		9D0890A8239C674C002F84E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D0890B4239C6843002F84E6 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		9D0890B5239C6843002F84E6 /* CustomUIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIExtensions.swift; sourceTree = "<group>"; };
 		9D0890BB239C68DC002F84E6 /* AppSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetup.swift; sourceTree = "<group>"; };
 		9D0890BD239C68F0002F84E6 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
@@ -75,6 +78,11 @@
 		9DCA6C34239D5F3900DB4FF3 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		9DCA6C3A239D961400DB4FF3 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		9DCA6C3D239DB19E00DB4FF3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9DCA6C3F239EF56B00DB4FF3 /* DialogServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogServiceProtocol.swift; sourceTree = "<group>"; };
+		9DCA6C42239EF61F00DB4FF3 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		9DCA6C44239EFB9200DB4FF3 /* DialogServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogServiceImp.swift; sourceTree = "<group>"; };
+		9DCA6C48239EFCD900DB4FF3 /* AlertDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDialogView.swift; sourceTree = "<group>"; };
+		9DCA6C4A239F094400DB4FF3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9DE0AE86239C8CF8001A32A6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9DE0AE88239C8E3F001A32A6 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		9DE0AE8B239C8F7C001A32A6 /* ViewModelBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBase.swift; sourceTree = "<group>"; };
@@ -136,6 +144,7 @@
 		9D08908B239C674B002F84E6 /* SimpleNotes */ = {
 			isa = PBXGroup;
 			children = (
+				9DCA6C46239EFCBC00DB4FF3 /* CustomViews */,
 				9D0890B3239C67FA002F84E6 /* Helpers */,
 				9D0890B2239C67EF002F84E6 /* Core */,
 				9D0890B1239C67E0002F84E6 /* Views */,
@@ -186,8 +195,8 @@
 		9D0890B3239C67FA002F84E6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				9D0890B4239C6843002F84E6 /* AppColors.swift */,
 				9D0890B5239C6843002F84E6 /* CustomUIExtensions.swift */,
+				9DCA6C4A239F094400DB4FF3 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -229,6 +238,7 @@
 		9DCA6C36239D952700DB4FF3 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				9DCA6C41239EF5FD00DB4FF3 /* Enums */,
 				9DCA6C3C239DB19200DB4FF3 /* Extensions */,
 				9DCA6C37239D954900DB4FF3 /* Commands */,
 				9DCA6C31239D2F8300DB4FF3 /* DiContainer */,
@@ -252,6 +262,30 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		9DCA6C41239EF5FD00DB4FF3 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				9DCA6C42239EF61F00DB4FF3 /* Enums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		9DCA6C46239EFCBC00DB4FF3 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				9DCA6C47239EFCC500DB4FF3 /* Dialogs */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		9DCA6C47239EFCC500DB4FF3 /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				9DCA6C48239EFCD900DB4FF3 /* AlertDialogView.swift */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
 		9DE0AE84239C8CB2001A32A6 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				9DCA6C27239D129C00DB4FF3 /* NavigationServiceProtocol.swift */,
+				9DCA6C3F239EF56B00DB4FF3 /* DialogServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -272,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				9DCA6C29239D14AE00DB4FF3 /* NavigationServiceImp.swift */,
+				9DCA6C44239EFB9200DB4FF3 /* DialogServiceImp.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -480,20 +516,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DCA6C45239EFB9200DB4FF3 /* DialogServiceImp.swift in Sources */,
 				9DCA6C3B239D961400DB4FF3 /* Command.swift in Sources */,
 				9DCA6C35239D5F3900DB4FF3 /* CreateAccountViewController.swift in Sources */,
 				9DCA6C30239D2BED00DB4FF3 /* LoginViewController.swift in Sources */,
 				9D0890BC239C68DC002F84E6 /* AppSetup.swift in Sources */,
 				9D089091239C674B002F84E6 /* LoadingViewController.swift in Sources */,
 				9DE0AE8E239C9160001A32A6 /* LoadingViewModel.swift in Sources */,
+				9DCA6C4B239F094400DB4FF3 /* Constants.swift in Sources */,
 				9D08908D239C674B002F84E6 /* AppDelegate.swift in Sources */,
 				9D08908F239C674B002F84E6 /* SceneDelegate.swift in Sources */,
-				9D0890B6239C6843002F84E6 /* AppColors.swift in Sources */,
 				9DCA6C3E239DB19E00DB4FF3 /* Extensions.swift in Sources */,
 				9DCA6C28239D129C00DB4FF3 /* NavigationServiceProtocol.swift in Sources */,
+				9DCA6C40239EF56B00DB4FF3 /* DialogServiceProtocol.swift in Sources */,
 				9DE0AE8C239C8F7C001A32A6 /* ViewModelBase.swift in Sources */,
 				9DE0AE87239C8CF8001A32A6 /* BaseViewController.swift in Sources */,
 				9D0890B7239C6843002F84E6 /* CustomUIExtensions.swift in Sources */,
+				9DCA6C49239EFCD900DB4FF3 /* AlertDialogView.swift in Sources */,
 				9DCA6C2E239D2AD800DB4FF3 /* LoginViewModel.swift in Sources */,
 				9DE0AE89239C8E3F001A32A6 /* ViewModelProtocol.swift in Sources */,
 				9D0890BE239C68F0002F84E6 /* Core.swift in Sources */,
@@ -501,6 +540,7 @@
 				9DCA6C2A239D14AE00DB4FF3 /* NavigationServiceImp.swift in Sources */,
 				9DCA6C26239C996400DB4FF3 /* DiContainer.swift in Sources */,
 				9D0890C0239C69CE002F84E6 /* ContainerViewController.swift in Sources */,
+				9DCA6C43239EF61F00DB4FF3 /* Enums.swift in Sources */,
 				9D089097239C674B002F84E6 /* SimpleNotes.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

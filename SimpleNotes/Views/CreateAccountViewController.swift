@@ -12,10 +12,10 @@ import Foundation
 public class CreateAccountViewController : BaseViewController<CreateAccountViewModel> {
     public override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = AppColors.green
+        self.view.backgroundColor = UIColor.Theme.green
         
         let button = UIButton(frame: CGRect(x: 0, y: 50, width: 200, height: 50))
-        button.backgroundColor = AppColors.mainBlue
+        button.backgroundColor = UIColor.Theme.mainBlue
         button.setTitle("Navigate Back", for: UIControl.State.normal)
         button.addTarget(self, action: #selector(_navigateBack), for: UIControl.Event.touchUpInside)
        

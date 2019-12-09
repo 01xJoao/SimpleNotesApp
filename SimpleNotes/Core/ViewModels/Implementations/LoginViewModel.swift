@@ -9,9 +9,15 @@
 import Foundation
 
 public class LoginViewModel: ViewModelBaseWithArguments<Bool> {
+    let _dialogService: DialogServiceProtocol
+    
     private var _createAccountCommand: Command?
     public var createAccountCommand: Command {
         get { _createAccountCommand ??= Command(_createAccount, canExecute: _canExecute); return _createAccountCommand!}
+    }
+    
+    init(dialogService: DialogServiceProtocol) {
+        self._dialogService = dialogService
     }
     
     override public func prepare(data: Bool) {
@@ -22,6 +28,7 @@ public class LoginViewModel: ViewModelBaseWithArguments<Bool> {
     }
     
     public func navigateBackCommand(){
+        _dialogService.showAlert("Teste", alertType: AlertDialogType.good)
         navigationService.close(arguments: true, animated: true)
     }
     

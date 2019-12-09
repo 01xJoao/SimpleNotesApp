@@ -15,11 +15,12 @@ public class Core {
     
     private static func _registerServices(){
         DiContainer.registerAsSingleton(NavigationServiceProtocol.self) { NavigationServiceImp() }
+        DiContainer.registerAsSingleton(DialogServiceProtocol.self) { DialogServiceImp() }
     }
     
     private static func _registerViewModels(){
         DiContainer.register(LoadingViewModel.self) { LoadingViewModel() }
-        DiContainer.register(LoginViewModel.self) { LoginViewModel() }
+        DiContainer.register(LoginViewModel.self) { LoginViewModel(dialogService: DiContainer.resolve()) }
         DiContainer.register(CreateAccountViewModel.self) { CreateAccountViewModel() }
     }
     
