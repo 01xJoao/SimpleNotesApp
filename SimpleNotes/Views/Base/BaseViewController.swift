@@ -30,7 +30,6 @@ public class BaseViewController<TViewModel> : UIViewController where TViewModel 
            selector: #selector(self._handleViewDismiss(_:)),
            name: NSNotification.Name(rawValue: String(describing: self)),
            object: nil)
-        print(String(describing: self))
     }
     
     private func _resolveViewModel(){

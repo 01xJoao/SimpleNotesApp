@@ -34,6 +34,8 @@ public class LoginViewController : BaseViewController<LoginViewModel> {
     }
     
     @objc func _navigateAccount(sender: UIButton){
-        viewModel.navigateToCreateAccountCommand()
+        if(viewModel.createAccountCommand.canExecute()){
+            viewModel.createAccountCommand.execute()
+        }
     }
 }

@@ -28,15 +28,15 @@ public class ContainerViewController: UIViewController {
         return currentViewmodelName
     }
     
-    public func changeViewController(viewController: UIViewController){
-        if(_checkIfCurrentViewControllerIsEqualsToNew(viewController: viewController)){
+    public func changeViewController(_ viewController: UIViewController){
+        if(_checkIfCurrentViewControllerIsEqualsToNew(viewController)){
             return
         }
         _removeCurrentViewController()
-        _addNewViewControllerToContainer(viewController: viewController)
+        _addNewViewControllerToContainer(viewController)
     }
     
-    func _checkIfCurrentViewControllerIsEqualsToNew(viewController: UIViewController) -> Bool {
+    func _checkIfCurrentViewControllerIsEqualsToNew(_ viewController: UIViewController) -> Bool {
         return currentViewController == viewController.self
     }
     
@@ -48,7 +48,7 @@ public class ContainerViewController: UIViewController {
         }
     }
 
-    private func _addNewViewControllerToContainer(viewController: UIViewController) {
+    private func _addNewViewControllerToContainer(_ viewController: UIViewController) {
         viewController.view.frame = self.view.frame
         self.view.addSubview(viewController.view)
         self.addChild(viewController)

@@ -37,7 +37,7 @@ public class NavigationServiceImp : NavigationServiceProtocol {
         DispatchQueue.global(qos: .utility).async {
             DispatchQueue.main.async {
                 let viewController: UIViewController = self._getViewController(type: TViewModel.self, args: nil)
-                self._setContainerViewController(viewController: viewController)
+                self._setContainerViewController(viewController)
             }
         }
         return nil
@@ -57,10 +57,10 @@ public class NavigationServiceImp : NavigationServiceProtocol {
     }
     
     
-    private func _setContainerViewController(viewController : UIViewController) {
+    private func _setContainerViewController(_ viewController : UIViewController) {
         let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
         containerViewController = sceneDelegate.containerViewController
-        containerViewController?.changeViewController(viewController: viewController)
+        containerViewController?.changeViewController(viewController)
     }
     
     public func close(arguments: Any?, animated: Bool) {
@@ -77,6 +77,5 @@ public class NavigationServiceImp : NavigationServiceProtocol {
         let params: [String: Any] = ["arguments": args as Any]
         let parentViewcontrollerName: String = containerViewController!.getVisibleViewControllerName()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: parentViewcontrollerName), object: nil, userInfo: params)
-        print(parentViewcontrollerName)
     }
 }

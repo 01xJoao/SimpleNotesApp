@@ -32,23 +32,18 @@ public class ViewModelBase : ViewModelProtocol {
     public func prepare(dataObject: Any) {}
     
     public func initialize(){
-        print("initialized")
     }
     
     public func appearing(){
-        print("appearing")
     }
     
     public func appeared(){
-        print("appeared")
     }
     
     public func disappearing(){
-        print("disappearing")
     }
     
     public func dismissChildViewNotify(dataObject: Any?) {
-        print("dismissNotify \(String(describing: dataObject))")
     }
 }
 

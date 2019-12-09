@@ -9,16 +9,23 @@
 import Foundation
 
 public class LoginViewModel: ViewModelBaseWithArguments<Bool> {
-    
-    override public func prepare(data: Bool) {
-        print("Entered: \(data)")
+    private var _createAccountCommand: Command?
+    public var createAccountCommand: Command {
+        get { _createAccountCommand ??= Command(_createAccount, canExecute: _canExecute); return _createAccountCommand!}
     }
     
-    public func navigateToCreateAccountCommand(){
+    override public func prepare(data: Bool) {
+    }
+    
+    private func _createAccount(){
         let _: CreateAccountViewModel? = navigationService.navigate(arguments: nil, animated: true)
     }
     
     public func navigateBackCommand(){
         navigationService.close(arguments: true, animated: true)
+    }
+    
+    public func _canExecute() -> Bool {
+        return true
     }
 }

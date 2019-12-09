@@ -27,6 +27,8 @@
 		9DCA6C30239D2BED00DB4FF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C2F239D2BED00DB4FF3 /* LoginViewController.swift */; };
 		9DCA6C33239D5F2200DB4FF3 /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C32239D5F2200DB4FF3 /* CreateAccountViewModel.swift */; };
 		9DCA6C35239D5F3900DB4FF3 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C34239D5F3900DB4FF3 /* CreateAccountViewController.swift */; };
+		9DCA6C3B239D961400DB4FF3 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C3A239D961400DB4FF3 /* Command.swift */; };
+		9DCA6C3E239DB19E00DB4FF3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C3D239DB19E00DB4FF3 /* Extensions.swift */; };
 		9DE0AE87239C8CF8001A32A6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE86239C8CF8001A32A6 /* BaseViewController.swift */; };
 		9DE0AE89239C8E3F001A32A6 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE88239C8E3F001A32A6 /* ViewModelProtocol.swift */; };
 		9DE0AE8C239C8F7C001A32A6 /* ViewModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE8B239C8F7C001A32A6 /* ViewModelBase.swift */; };
@@ -71,6 +73,8 @@
 		9DCA6C2F239D2BED00DB4FF3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9DCA6C32239D5F2200DB4FF3 /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
 		9DCA6C34239D5F3900DB4FF3 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		9DCA6C3A239D961400DB4FF3 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		9DCA6C3D239DB19E00DB4FF3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9DE0AE86239C8CF8001A32A6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9DE0AE88239C8E3F001A32A6 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		9DE0AE8B239C8F7C001A32A6 /* ViewModelBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBase.swift; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 		9DCA6C36239D952700DB4FF3 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				9DCA6C3C239DB19200DB4FF3 /* Extensions */,
 				9DCA6C37239D954900DB4FF3 /* Commands */,
 				9DCA6C31239D2F8300DB4FF3 /* DiContainer */,
 			);
@@ -234,8 +239,17 @@
 		9DCA6C37239D954900DB4FF3 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
+				9DCA6C3A239D961400DB4FF3 /* Command.swift */,
 			);
 			path = Commands;
+			sourceTree = "<group>";
+		};
+		9DCA6C3C239DB19200DB4FF3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9DCA6C3D239DB19E00DB4FF3 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9DE0AE84239C8CB2001A32A6 /* Base */ = {
@@ -466,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DCA6C3B239D961400DB4FF3 /* Command.swift in Sources */,
 				9DCA6C35239D5F3900DB4FF3 /* CreateAccountViewController.swift in Sources */,
 				9DCA6C30239D2BED00DB4FF3 /* LoginViewController.swift in Sources */,
 				9D0890BC239C68DC002F84E6 /* AppSetup.swift in Sources */,
@@ -474,6 +489,7 @@
 				9D08908D239C674B002F84E6 /* AppDelegate.swift in Sources */,
 				9D08908F239C674B002F84E6 /* SceneDelegate.swift in Sources */,
 				9D0890B6239C6843002F84E6 /* AppColors.swift in Sources */,
+				9DCA6C3E239DB19E00DB4FF3 /* Extensions.swift in Sources */,
 				9DCA6C28239D129C00DB4FF3 /* NavigationServiceProtocol.swift in Sources */,
 				9DE0AE8C239C8F7C001A32A6 /* ViewModelBase.swift in Sources */,
 				9DE0AE87239C8CF8001A32A6 /* BaseViewController.swift in Sources */,
