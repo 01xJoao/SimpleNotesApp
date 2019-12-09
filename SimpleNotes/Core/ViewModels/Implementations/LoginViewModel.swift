@@ -26,6 +26,6 @@ public class LoginViewModel: ViewModelBaseWithArguments<Bool> {
     }
     
     public func _canExecute() -> Bool {
-        return true
+        return !isBusy
     }
 }
