@@ -10,6 +10,7 @@ target 'SimpleNotes' do
     # Pods for testing
   end
 
-  pod 'XCoordinator', '~> 2.0' 
+  pod 'XCoordinator', '~> 2.0'
+  pod 'LBTATools'
 
 end

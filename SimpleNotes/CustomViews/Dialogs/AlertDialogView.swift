@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import LBTATools
 
 public class AlertDialogView: UIView {
     
@@ -28,6 +29,9 @@ public class AlertDialogView: UIView {
         self.clipsToBounds = true
         self.backgroundColor = alertType.rawValue
         self.tag = 0
+        
+        let textLabel: UILabel = UILabel.init(text: text, textColor: UIColor.Theme.white)
+        hstack(textLabel).padLeft(10).padRight(10)
     }
     
     private func _show() {
