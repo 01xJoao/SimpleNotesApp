@@ -22,7 +22,6 @@ public class NavigationServiceImp : NavigationServiceProtocol {
         return nil
     }
     
-    
     public func navigateModal<TViewModel>(arguments: Any?) -> TViewModel? where TViewModel : ViewModelProtocol {
         DispatchQueue.global(qos: .utility).async {
             DispatchQueue.main.async {
