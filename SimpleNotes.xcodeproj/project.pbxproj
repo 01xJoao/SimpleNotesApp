@@ -37,6 +37,7 @@
 		9DE0AE89239C8E3F001A32A6 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE88239C8E3F001A32A6 /* ViewModelProtocol.swift */; };
 		9DE0AE8C239C8F7C001A32A6 /* ViewModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE8B239C8F7C001A32A6 /* ViewModelBase.swift */; };
 		9DE0AE8E239C9160001A32A6 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE8D239C9160001A32A6 /* LoadingViewModel.swift */; };
+		9DFA50D123A0544A00EA6E7F /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA50D023A0544A00EA6E7F /* Animations.swift */; };
 		C7A48992219C6449D868B998 /* Pods_SimpleNotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0218B178212B8B7FEF12A660 /* Pods_SimpleNotesTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		9DE0AE88239C8E3F001A32A6 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		9DE0AE8B239C8F7C001A32A6 /* ViewModelBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBase.swift; sourceTree = "<group>"; };
 		9DE0AE8D239C9160001A32A6 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
+		9DFA50D023A0544A00EA6E7F /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		A26D7BABBA608BC3D4288C5C /* Pods-SimpleNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleNotes.release.xcconfig"; path = "Target Support Files/Pods-SimpleNotes/Pods-SimpleNotes.release.xcconfig"; sourceTree = "<group>"; };
 		F5BFA45C45B79A95501A4802 /* Pods-SimpleNotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleNotesTests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleNotesTests/Pods-SimpleNotesTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +199,7 @@
 			children = (
 				9D0890B5239C6843002F84E6 /* CustomUIExtensions.swift */,
 				9DCA6C4A239F094400DB4FF3 /* Constants.swift */,
+				9DFA50D023A0544A00EA6E7F /* Animations.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				9DCA6C28239D129C00DB4FF3 /* NavigationServiceProtocol.swift in Sources */,
 				9DCA6C40239EF56B00DB4FF3 /* DialogServiceProtocol.swift in Sources */,
 				9DE0AE8C239C8F7C001A32A6 /* ViewModelBase.swift in Sources */,
+				9DFA50D123A0544A00EA6E7F /* Animations.swift in Sources */,
 				9DE0AE87239C8CF8001A32A6 /* BaseViewController.swift in Sources */,
 				9D0890B7239C6843002F84E6 /* CustomUIExtensions.swift in Sources */,
 				9DCA6C49239EFCD900DB4FF3 /* AlertDialogView.swift in Sources */,
