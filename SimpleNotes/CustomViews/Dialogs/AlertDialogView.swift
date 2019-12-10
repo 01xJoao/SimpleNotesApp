@@ -12,10 +12,6 @@ import LBTATools
 
 public class AlertDialogView: UIView {
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     public override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -43,5 +39,9 @@ public class AlertDialogView: UIView {
     
     private func _removeView(){
         self.viewWithTag(0)?.removeFromSuperview()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

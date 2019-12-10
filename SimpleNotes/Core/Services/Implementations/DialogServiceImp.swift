@@ -11,7 +11,7 @@ import Foundation
 
 public class DialogServiceImp: DialogServiceProtocol {
     func showAlert(_ description: String, alertType: AlertDialogType) {
-        let alertView = AlertDialogView(frame: CGRect())
+        let alertView = AlertDialogView()
         alertView.showAlert(text: description, alertType: alertType)
     }
 }
