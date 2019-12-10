@@ -1,22 +1,16 @@
 PODS:
   - LBTATools (1.0.12)
-  - XCoordinator (2.0.5):
-    - XCoordinator/Core (= 2.0.5)
-  - XCoordinator/Core (2.0.5)
 
 DEPENDENCIES:
   - LBTATools
-  - XCoordinator (~> 2.0)
 
 SPEC REPOS:
   trunk:
     - LBTATools
-    - XCoordinator
 
 SPEC CHECKSUMS:
   LBTATools: 389a901a01b9a56bea5682c40cd6e23530f40015
-  XCoordinator: 0a0591f1756245d5861fe20660ca680bfac9d027
 
-PODFILE CHECKSUM: eb49f7644f6762553834aa67f0443531f3f8a4bd
+PODFILE CHECKSUM: 56626646cca76e477e5d4836975f3120f99f354e
 
 COCOAPODS: 1.8.4
