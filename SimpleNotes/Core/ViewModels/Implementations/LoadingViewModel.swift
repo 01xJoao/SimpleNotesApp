@@ -12,6 +12,7 @@ public class LoadingViewModel : ViewModelBase {
     
     public func navigateToLoginCommand(){
         let _: LoginViewModel? = navigationService.navigate(arguments: false, animated: true)
+        print(l10nService.getCurrentLanguage())
     }
     
 }

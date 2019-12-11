@@ -6,7 +6,11 @@
 //  Copyright © 2019 João Palma. All rights reserved.
 //
 
+import UIKit
+
 public protocol NavigationServiceProtocol {
+    func visibleViewController() -> UIViewController
+    
     func navigate<TViewModel : ViewModelProtocol>(arguments: Any?, animated: Bool) -> TViewModel?
     func navigateModal<TViewModel : ViewModelProtocol>(arguments: Any?) -> TViewModel?
     func navigateAndSetAsContainer<TViewModel : ViewModelProtocol>() -> TViewModel?

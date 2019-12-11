@@ -28,8 +28,11 @@ public class LoginViewModel: ViewModelBaseWithArguments<Bool> {
     }
     
     public func navigateBackCommand(){
-        _dialogService.showInfo("Test", informationType: InfoDialogType.good)
         navigationService.close(arguments: true, animated: true)
+    }
+    
+    private func _dialogCallback(option: Bool){
+        print(option)
     }
     
     public func _canExecute() -> Bool {

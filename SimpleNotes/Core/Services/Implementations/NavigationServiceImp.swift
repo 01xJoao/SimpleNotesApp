@@ -10,7 +10,11 @@ import UIKit
 import Foundation
 
 public class NavigationServiceImp : NavigationServiceProtocol {
-    public var containerViewController : ContainerViewController?
+    private var containerViewController : ContainerViewController?
+    
+    public func visibleViewController() -> UIViewController {
+        return containerViewController!
+    }
     
     public func navigate<TViewModel>(arguments: Any?, animated: Bool) -> TViewModel? where TViewModel : ViewModelProtocol {
         DispatchQueue.global(qos: .utility).async {

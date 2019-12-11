@@ -11,10 +11,17 @@ import Foundation
 public class ViewModelBase : ViewModelProtocol {
 
     private let _navigationService: NavigationServiceProtocol = DiContainer.resolve()
+    private let _l10nService: L10NServiceProtocol = DiContainer.resolve()
     
     public var navigationService: NavigationServiceProtocol {
         get {
             return _navigationService
+        }
+    }
+    
+    public var l10nService: L10NServiceProtocol {
+        get {
+            return _l10nService
         }
     }
     
