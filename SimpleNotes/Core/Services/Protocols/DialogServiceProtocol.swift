@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DialogServiceProtocol {
-    func showAlert(_ description: String, alertType: AlertDialogType)
+    func showInfo(_ description: String, informationType: InfoDialogType)
 }

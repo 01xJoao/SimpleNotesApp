@@ -31,7 +31,7 @@
 		9DCA6C40239EF56B00DB4FF3 /* DialogServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C3F239EF56B00DB4FF3 /* DialogServiceProtocol.swift */; };
 		9DCA6C43239EF61F00DB4FF3 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C42239EF61F00DB4FF3 /* Enums.swift */; };
 		9DCA6C45239EFB9200DB4FF3 /* DialogServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C44239EFB9200DB4FF3 /* DialogServiceImp.swift */; };
-		9DCA6C49239EFCD900DB4FF3 /* AlertDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C48239EFCD900DB4FF3 /* AlertDialogView.swift */; };
+		9DCA6C49239EFCD900DB4FF3 /* InfoDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C48239EFCD900DB4FF3 /* InfoDialogView.swift */; };
 		9DCA6C4B239F094400DB4FF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C4A239F094400DB4FF3 /* Constants.swift */; };
 		9DE0AE87239C8CF8001A32A6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE86239C8CF8001A32A6 /* BaseViewController.swift */; };
 		9DE0AE89239C8E3F001A32A6 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE88239C8E3F001A32A6 /* ViewModelProtocol.swift */; };
@@ -83,7 +83,7 @@
 		9DCA6C3F239EF56B00DB4FF3 /* DialogServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogServiceProtocol.swift; sourceTree = "<group>"; };
 		9DCA6C42239EF61F00DB4FF3 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		9DCA6C44239EFB9200DB4FF3 /* DialogServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogServiceImp.swift; sourceTree = "<group>"; };
-		9DCA6C48239EFCD900DB4FF3 /* AlertDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDialogView.swift; sourceTree = "<group>"; };
+		9DCA6C48239EFCD900DB4FF3 /* InfoDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDialogView.swift; sourceTree = "<group>"; };
 		9DCA6C4A239F094400DB4FF3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9DE0AE86239C8CF8001A32A6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9DE0AE88239C8E3F001A32A6 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -224,8 +224,8 @@
 		9D0890BA239C6899002F84E6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				9DFFCE13239C81CB00B21033 /* Implementations */,
 				9DFFCE12239C81C000B21033 /* Protocols */,
+				9DFFCE13239C81CB00B21033 /* Implementations */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -284,7 +284,7 @@
 		9DCA6C47239EFCC500DB4FF3 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
-				9DCA6C48239EFCD900DB4FF3 /* AlertDialogView.swift */,
+				9DCA6C48239EFCD900DB4FF3 /* InfoDialogView.swift */,
 			);
 			path = Dialogs;
 			sourceTree = "<group>";
@@ -536,7 +536,7 @@
 				9DFA50D123A0544A00EA6E7F /* Animations.swift in Sources */,
 				9DE0AE87239C8CF8001A32A6 /* BaseViewController.swift in Sources */,
 				9D0890B7239C6843002F84E6 /* CustomUIExtensions.swift in Sources */,
-				9DCA6C49239EFCD900DB4FF3 /* AlertDialogView.swift in Sources */,
+				9DCA6C49239EFCD900DB4FF3 /* InfoDialogView.swift in Sources */,
 				9DCA6C2E239D2AD800DB4FF3 /* LoginViewModel.swift in Sources */,
 				9DE0AE89239C8E3F001A32A6 /* ViewModelProtocol.swift in Sources */,
 				9D0890BE239C68F0002F84E6 /* Core.swift in Sources */,

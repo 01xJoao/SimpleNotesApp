@@ -13,13 +13,13 @@ import Foundation
 //    case good, bad, info
 //}
 
-public enum AlertDialogType {
+public enum InfoDialogType {
     case good
     case bad
     case info
 }
 
-extension AlertDialogType: RawRepresentable {
+extension InfoDialogType: RawRepresentable {
     public typealias RawValue = UIColor
 
     public init?(rawValue: RawValue) {

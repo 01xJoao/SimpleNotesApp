@@ -28,7 +28,7 @@ public class LoginViewModel: ViewModelBaseWithArguments<Bool> {
     }
     
     public func navigateBackCommand(){
-        _dialogService.showAlert("Teste", alertType: AlertDialogType.good)
+        _dialogService.showInfo("Test", informationType: InfoDialogType.good)
         navigationService.close(arguments: true, animated: true)
     }
     

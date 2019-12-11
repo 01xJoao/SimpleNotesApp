@@ -1,5 +1,5 @@
 //
-//  AlertDialogView.swift
+//  InfoDialogView.swift
 //  SimpleNotes
 //
 //  Created by João Palma on 09/12/2019.
@@ -10,24 +10,24 @@ import UIKit
 import Foundation
 import LBTATools
 
-public class AlertDialogView: UIView {
+public class InfoDialogView: UIView {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
-    public func showAlert(text: String, alertType: AlertDialogType){
-        _createView(text, alertType)
+    public func showInfo(text: String, infoType: InfoDialogType){
+        _createView(text, infoType)
         _show()
     }
     
-    private func _createView(_ text: String, _ alertType: AlertDialogType) {
+    private func _createView(_ text: String, _ infoType: InfoDialogType) {
         self.clipsToBounds = true
-        self.backgroundColor = alertType.rawValue
+        self.backgroundColor = infoType.rawValue
         self.tag = 0
         
-        let textLabel: UILabel = UILabel.init(text: text, textColor: UIColor.Theme.white)
-        hstack(textLabel).padLeft(10).padRight(10)
+        let textLabel: UILabel = UILabel.init(text: text, font: .boldSystemFont(ofSize: 14), textColor: UIColor.Theme.white, numberOfLines: 2)
+        stack(textLabel, alignment: .center).padBottom(12).padLeft(8).padRight(8).anchor(top: self.topAnchor, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor)
     }
     
     private func _show() {
@@ -39,7 +39,7 @@ public class AlertDialogView: UIView {
     }
     
     private func _hide() {
-        Animations.slideVerticaly(self, showAnimation: false, delay: 2.5, completion: { success in self._removeView() })
+        Animations.slideVerticaly(self, showAnimation: false, delay: 2.75, completion: { success in self._removeView() })
     }
     
     private func _removeView(){

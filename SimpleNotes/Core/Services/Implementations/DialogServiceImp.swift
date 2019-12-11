@@ -10,8 +10,8 @@ import UIKit
 import Foundation
 
 public class DialogServiceImp: DialogServiceProtocol {
-    func showAlert(_ description: String, alertType: AlertDialogType) {
-        let alertView = AlertDialogView()
-        alertView.showAlert(text: description, alertType: alertType)
+    func showInfo(_ description: String, informationType: InfoDialogType) {
+        let infoView = InfoDialogView()
+        infoView.showInfo(text: description, infoType: informationType)
     }
 }
