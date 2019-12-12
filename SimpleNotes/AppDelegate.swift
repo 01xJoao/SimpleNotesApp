@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Sentry
 
-let _sentryDNS: String = "https://17fc5da01c414945af356999aca3aecc@sentry.io/1855619"
+private let _sentryDNS: String = "https://17fc5da01c414945af356999aca3aecc@sentry.io/1855619"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

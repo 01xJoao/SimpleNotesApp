@@ -9,7 +9,7 @@
 import UIKit
 
 class LoadingViewController: BaseViewController<LoadingViewModel> {
-
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.Theme.mainBlue

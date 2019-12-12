@@ -21,6 +21,8 @@
 		9D0890C0239C69CE002F84E6 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0890BF239C69CE002F84E6 /* ContainerViewController.swift */; };
 		9D96187F23A2F0F7009ECA8B /* ReportServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96187E23A2F0F7009ECA8B /* ReportServiceProtocol.swift */; };
 		9D96188123A2F209009ECA8B /* ReportServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96188023A2F209009ECA8B /* ReportServiceImp.swift */; };
+		9D96188323A2FC2A009ECA8B /* AppSettingsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96188223A2FC2A009ECA8B /* AppSettingsServiceProtocol.swift */; };
+		9D96188523A2FC5A009ECA8B /* AppSettingsServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96188423A2FC5A009ECA8B /* AppSettingsServiceImp.swift */; };
 		9DCA6C26239C996400DB4FF3 /* DiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C25239C996400DB4FF3 /* DiContainer.swift */; };
 		9DCA6C28239D129C00DB4FF3 /* NavigationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C27239D129C00DB4FF3 /* NavigationServiceProtocol.swift */; };
 		9DCA6C2A239D14AE00DB4FF3 /* NavigationServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C29239D14AE00DB4FF3 /* NavigationServiceImp.swift */; };
@@ -80,6 +82,8 @@
 		9D0890BF239C69CE002F84E6 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		9D96187E23A2F0F7009ECA8B /* ReportServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportServiceProtocol.swift; sourceTree = "<group>"; };
 		9D96188023A2F209009ECA8B /* ReportServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportServiceImp.swift; sourceTree = "<group>"; };
+		9D96188223A2FC2A009ECA8B /* AppSettingsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsServiceProtocol.swift; sourceTree = "<group>"; };
+		9D96188423A2FC5A009ECA8B /* AppSettingsServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsServiceImp.swift; sourceTree = "<group>"; };
 		9DCA6C25239C996400DB4FF3 /* DiContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiContainer.swift; sourceTree = "<group>"; };
 		9DCA6C27239D129C00DB4FF3 /* NavigationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationServiceProtocol.swift; sourceTree = "<group>"; };
 		9DCA6C29239D14AE00DB4FF3 /* NavigationServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationServiceImp.swift; sourceTree = "<group>"; };
@@ -346,6 +350,7 @@
 				9DCA6C3F239EF56B00DB4FF3 /* DialogServiceProtocol.swift */,
 				9DFA50D223A17BFC00EA6E7F /* L10NServiceProtocol.swift */,
 				9D96187E23A2F0F7009ECA8B /* ReportServiceProtocol.swift */,
+				9D96188223A2FC2A009ECA8B /* AppSettingsServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				9DCA6C44239EFB9200DB4FF3 /* DialogServiceImp.swift */,
 				9DFA50D423A17D7F00EA6E7F /* L10NServiceImp.swift */,
 				9D96188023A2F209009ECA8B /* ReportServiceImp.swift */,
+				9D96188423A2FC5A009ECA8B /* AppSettingsServiceImp.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -571,6 +577,7 @@
 				9DCA6C45239EFB9200DB4FF3 /* DialogServiceImp.swift in Sources */,
 				9DCA6C3B239D961400DB4FF3 /* Command.swift in Sources */,
 				9DCA6C35239D5F3900DB4FF3 /* CreateAccountViewController.swift in Sources */,
+				9D96188523A2FC5A009ECA8B /* AppSettingsServiceImp.swift in Sources */,
 				9DCA6C30239D2BED00DB4FF3 /* LoginViewController.swift in Sources */,
 				9D96188123A2F209009ECA8B /* ReportServiceImp.swift in Sources */,
 				9D0890BC239C68DC002F84E6 /* AppSetup.swift in Sources */,
@@ -581,6 +588,7 @@
 				9D08908D239C674B002F84E6 /* AppDelegate.swift in Sources */,
 				9D08908F239C674B002F84E6 /* SceneDelegate.swift in Sources */,
 				9DCA6C3E239DB19E00DB4FF3 /* Extensions.swift in Sources */,
+				9D96188323A2FC2A009ECA8B /* AppSettingsServiceProtocol.swift in Sources */,
 				9DCA6C28239D129C00DB4FF3 /* NavigationServiceProtocol.swift in Sources */,
 				9DCA6C40239EF56B00DB4FF3 /* DialogServiceProtocol.swift in Sources */,
 				9DE0AE8C239C8F7C001A32A6 /* ViewModelBase.swift in Sources */,

@@ -10,7 +10,11 @@ import Foundation
 
 class L10NServiceImp : L10NServiceProtocol {
     
-    let reportServie: ReportServiceProtocol = DiContainer.resolve()
+    private let _reportService: ReportServiceProtocol
+    
+    init(reportService: ReportServiceProtocol) {
+        self._reportService = reportService
+    }
     
     private var _currentLanguage: String?
     private let _supportedLanguages: [String] = ["en", "pt"]
@@ -45,7 +49,7 @@ class L10NServiceImp : L10NServiceProtocol {
                     _resourceManager.append(Literal(key: key as! String, translated: value as! String))
                 }
           } catch let error {
-                reportServie.sendError(error: error, message: "Error loading json")
+                _reportService.sendError(error: error, message: "Error loading json")
             }
         }
     }
