@@ -10,18 +10,12 @@ import Foundation
 
 class L10NServiceImp : L10NServiceProtocol {
     
+    let reportServie: ReportServiceProtocol = DiContainer.resolve()
+    
     private var _currentLanguage: String?
     private let _supportedLanguages: [String] = ["en", "pt"]
     private let _defaultLanguage: String = "en"
     private var _resourceManager: [Literal] = []
-    
-    func getCurrentLanguage() -> String {
-        if(_currentLanguage == nil) {
-            _setLanguage()
-        }
-        
-        return _currentLanguage!
-    }
     
     func localize(key: String) -> String {
         let value = _getResourceManager().first(where: { $0.key == key })
@@ -50,7 +44,17 @@ class L10NServiceImp : L10NServiceProtocol {
                 for (key, value) in jsonResult {
                     _resourceManager.append(Literal(key: key as! String, translated: value as! String))
                 }
-          } catch  {}
+          } catch let error {
+                reportServie.sendError(error: error, message: "Error loading json")
+            }
         }
+    }
+    
+    func getCurrentLanguage() -> String {
+        if(_currentLanguage == nil) {
+            _setLanguage()
+        }
+        
+        return _currentLanguage!
     }
 }

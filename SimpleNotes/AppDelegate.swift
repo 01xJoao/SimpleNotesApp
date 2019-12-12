@@ -8,13 +8,25 @@
 
 import UIKit
 import CoreData
+import Sentry
+
+let _sentryDNS: String = "https://17fc5da01c414945af356999aca3aecc@sentry.io/1855619"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        _instantiateSentryService()
         return true
+    }
+    
+    func _instantiateSentryService() {
+        do {
+            Client.shared = try Client(dsn: _sentryDNS)
+            try Client.shared?.startCrashHandler()
+        } catch let error {
+            print("\(error)")
+        }
     }
 
     // MARK: UISceneSession Lifecycle

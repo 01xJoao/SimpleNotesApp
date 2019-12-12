@@ -17,6 +17,7 @@ public class Core {
         DiContainer.registerAsSingleton(NavigationServiceProtocol.self) { NavigationServiceImp() }
         DiContainer.registerAsSingleton(DialogServiceProtocol.self) { DialogServiceImp(navigationService: DiContainer.resolve()) }
         DiContainer.registerAsSingleton(L10NServiceProtocol.self) { L10NServiceImp() }
+        DiContainer.registerAsSingleton(ReportServiceProtocol.self) { ReportServiceImp() }
     }
     
     private static func _registerViewModels(){

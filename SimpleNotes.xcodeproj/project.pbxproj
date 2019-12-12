@@ -19,6 +19,8 @@
 		9D0890BC239C68DC002F84E6 /* AppSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0890BB239C68DC002F84E6 /* AppSetup.swift */; };
 		9D0890BE239C68F0002F84E6 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0890BD239C68F0002F84E6 /* Core.swift */; };
 		9D0890C0239C69CE002F84E6 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0890BF239C69CE002F84E6 /* ContainerViewController.swift */; };
+		9D96187F23A2F0F7009ECA8B /* ReportServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96187E23A2F0F7009ECA8B /* ReportServiceProtocol.swift */; };
+		9D96188123A2F209009ECA8B /* ReportServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96188023A2F209009ECA8B /* ReportServiceImp.swift */; };
 		9DCA6C26239C996400DB4FF3 /* DiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C25239C996400DB4FF3 /* DiContainer.swift */; };
 		9DCA6C28239D129C00DB4FF3 /* NavigationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C27239D129C00DB4FF3 /* NavigationServiceProtocol.swift */; };
 		9DCA6C2A239D14AE00DB4FF3 /* NavigationServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C29239D14AE00DB4FF3 /* NavigationServiceImp.swift */; };
@@ -76,6 +78,8 @@
 		9D0890BB239C68DC002F84E6 /* AppSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetup.swift; sourceTree = "<group>"; };
 		9D0890BD239C68F0002F84E6 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		9D0890BF239C69CE002F84E6 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		9D96187E23A2F0F7009ECA8B /* ReportServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportServiceProtocol.swift; sourceTree = "<group>"; };
+		9D96188023A2F209009ECA8B /* ReportServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportServiceImp.swift; sourceTree = "<group>"; };
 		9DCA6C25239C996400DB4FF3 /* DiContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiContainer.swift; sourceTree = "<group>"; };
 		9DCA6C27239D129C00DB4FF3 /* NavigationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationServiceProtocol.swift; sourceTree = "<group>"; };
 		9DCA6C29239D14AE00DB4FF3 /* NavigationServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationServiceImp.swift; sourceTree = "<group>"; };
@@ -341,6 +345,7 @@
 				9DCA6C27239D129C00DB4FF3 /* NavigationServiceProtocol.swift */,
 				9DCA6C3F239EF56B00DB4FF3 /* DialogServiceProtocol.swift */,
 				9DFA50D223A17BFC00EA6E7F /* L10NServiceProtocol.swift */,
+				9D96187E23A2F0F7009ECA8B /* ReportServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 				9DCA6C29239D14AE00DB4FF3 /* NavigationServiceImp.swift */,
 				9DCA6C44239EFB9200DB4FF3 /* DialogServiceImp.swift */,
 				9DFA50D423A17D7F00EA6E7F /* L10NServiceImp.swift */,
+				9D96188023A2F209009ECA8B /* ReportServiceImp.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -566,6 +572,7 @@
 				9DCA6C3B239D961400DB4FF3 /* Command.swift in Sources */,
 				9DCA6C35239D5F3900DB4FF3 /* CreateAccountViewController.swift in Sources */,
 				9DCA6C30239D2BED00DB4FF3 /* LoginViewController.swift in Sources */,
+				9D96188123A2F209009ECA8B /* ReportServiceImp.swift in Sources */,
 				9D0890BC239C68DC002F84E6 /* AppSetup.swift in Sources */,
 				9D089091239C674B002F84E6 /* LoadingViewController.swift in Sources */,
 				9DFA50D323A17BFC00EA6E7F /* L10NServiceProtocol.swift in Sources */,
@@ -583,6 +590,7 @@
 				9D0890B7239C6843002F84E6 /* CustomUIExtensions.swift in Sources */,
 				9DCA6C49239EFCD900DB4FF3 /* InfoDialogView.swift in Sources */,
 				9DCA6C2E239D2AD800DB4FF3 /* LoginViewModel.swift in Sources */,
+				9D96187F23A2F0F7009ECA8B /* ReportServiceProtocol.swift in Sources */,
 				9DE0AE89239C8E3F001A32A6 /* ViewModelProtocol.swift in Sources */,
 				9DFA50D523A17D7F00EA6E7F /* L10NServiceImp.swift in Sources */,
 				9D0890BE239C68F0002F84E6 /* Core.swift in Sources */,

@@ -11,5 +11,6 @@ target 'SimpleNotes' do
   end
 
   pod 'LBTATools'
+  pod 'Sentry', '~> 4.4'
 
 end
