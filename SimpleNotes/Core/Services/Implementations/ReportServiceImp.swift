@@ -11,9 +11,9 @@ import Sentry
 
 class ReportServiceImp : ReportServiceProtocol {
     
-    func sendError(error: Any, message: String?) {
+    func sendError(error: Error, message: String?) {
         Sentry.Client.shared?.snapshotStacktrace {
-            let error = error as! NSError
+            let error = error as NSError
 
             let exception = Sentry.Exception(
                 value: "\(error.domain).\(error.code)",

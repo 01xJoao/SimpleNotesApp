@@ -10,43 +10,41 @@ import UIKit
 import Foundation
 
 public class NavigationServiceImp : NavigationServiceProtocol {
+    
     private var containerViewController : ContainerViewController?
     
     public func visibleViewController() -> UIViewController {
         return containerViewController!
     }
     
-    public func navigate<TViewModel>(arguments: Any?, animated: Bool) -> TViewModel? where TViewModel : ViewModelProtocol {
+    public func navigate<TViewModel : ViewModelProtocol>(viewModel: TViewModel.Type, arguments: Any?, animated: Bool){
         DispatchQueue.global(qos: .utility).async {
             DispatchQueue.main.async {
-                let viewController: UIViewController = self._getViewController(type: TViewModel.self, args: arguments)
+                let viewController: UIViewController = self._getViewController(type: viewModel, args: arguments)
                 self.containerViewController?.navigationController?.pushViewController(viewController, animated: animated)
             }
         }
-        return nil
     }
     
-    public func navigateModal<TViewModel>(arguments: Any?) -> TViewModel? where TViewModel : ViewModelProtocol {
+    public func navigateModal<TViewModel : ViewModelProtocol>(viewModel: TViewModel.Type, arguments: Any?) {
         DispatchQueue.global(qos: .utility).async {
             DispatchQueue.main.async {
-                let viewController: UIViewController = self._getViewController(type: TViewModel.self, args: arguments)
+                let viewController: UIViewController = self._getViewController(type: viewModel, args: arguments)
                 self.containerViewController?.navigationController?.present(viewController, animated: true, completion: nil)
             }
         }
-        return nil
     }
     
-    public func navigateAndSetAsContainer<TViewModel>() -> TViewModel? where TViewModel : ViewModelProtocol {
+    public func navigateAndSetAsContainer<TViewModel : ViewModelProtocol>(viewModel: TViewModel.Type) {
         DispatchQueue.global(qos: .utility).async {
             DispatchQueue.main.async {
-                let viewController: UIViewController = self._getViewController(type: TViewModel.self, args: nil)
+                let viewController: UIViewController = self._getViewController(type: viewModel, args: nil)
                 self._setContainerViewController(viewController)
             }
         }
-        return nil
     }
     
-    private func _getViewController<TViewModel : ViewModelProtocol>(type: TViewModel.Type = TViewModel.self, args: Any?) -> UIViewController {
+    private func _getViewController<TViewModel : ViewModelProtocol>(type: TViewModel.Type, args: Any?) -> UIViewController {
         let viewModelName = String(describing: TViewModel.self)
         let viewController: UIViewController = DiContainer.resolveViewController(name: viewModelName)
        

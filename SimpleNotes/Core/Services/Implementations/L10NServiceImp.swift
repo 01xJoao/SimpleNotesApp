@@ -11,15 +11,14 @@ import Foundation
 class L10NServiceImp : L10NServiceProtocol {
     
     private let _reportService: ReportServiceProtocol
-    
-    init(reportService: ReportServiceProtocol) {
-        self._reportService = reportService
-    }
-    
     private var _currentLanguage: String?
     private let _supportedLanguages: [String] = ["en", "pt"]
     private let _defaultLanguage: String = "en"
     private var _resourceManager: [Literal] = []
+    
+    init(reportService: ReportServiceProtocol) {
+        self._reportService = reportService
+    }
     
     func localize(key: String) -> String {
         let value = _getResourceManager().first(where: { $0.key == key })

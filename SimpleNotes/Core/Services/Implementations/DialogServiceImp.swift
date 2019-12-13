@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 
 public class DialogServiceImp: DialogServiceProtocol {
+    
     private var _navigationService: NavigationServiceProtocol
     
     init(navigationService: NavigationServiceProtocol) {

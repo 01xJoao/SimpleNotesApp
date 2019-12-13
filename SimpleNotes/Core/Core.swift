@@ -19,6 +19,7 @@ public class Core {
         DiContainer.registerAsSingleton(L10NServiceProtocol.self) { L10NServiceImp(reportService: DiContainer.resolve()) }
         DiContainer.registerAsSingleton(ReportServiceProtocol.self) { ReportServiceImp() }
         DiContainer.registerAsSingleton(AppSettingsServiceProtocol.self) { AppSettingsServiceImp() }
+        DiContainer.registerAsSingleton(LocationServiceProtocol.self) { LocationServiceImp() }
     }
     
     private static func _registerViewModels(){
@@ -35,6 +36,6 @@ public class Core {
     
     public static func startApp(){
         let navigationService : NavigationServiceProtocol = DiContainer.resolve()
-        let _: LoadingViewModel? = navigationService.navigateAndSetAsContainer()
+        navigationService.navigateAndSetAsContainer(viewModel: LoadingViewModel.self)
     }
 }

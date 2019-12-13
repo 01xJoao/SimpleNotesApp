@@ -24,7 +24,7 @@ public class LoginViewModel: ViewModelBaseWithArguments<Bool> {
     }
     
     private func _createAccount(){
-        let _: CreateAccountViewModel? = navigationService.navigate(arguments: nil, animated: true)
+        navigationService.navigate(viewModel: CreateAccountViewModel.self, arguments: nil, animated: true)
     }
     
     public func navigateBackCommand(){

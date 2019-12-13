@@ -9,6 +9,6 @@
 import Foundation
 
 protocol ReportServiceProtocol {
-    func sendError(error: Any, message: String?)
+    func sendError(error: Error, message: String?)
     func sendEvent(message: String)
 }
