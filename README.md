@@ -9,3 +9,4 @@
 #### L10N Service
 #### Report Service (with Sentry.io)
 #### AppSettings Service (UserDefaults)
+#### Location Service (CLLocationManager)
