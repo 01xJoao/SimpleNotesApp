@@ -1,5 +1,5 @@
 //
-//  LocationServiceProtocol.swift
+//  LocationService.swift
 //  SimpleNotes
 //
 //  Created by João Palma on 13/12/2019.
@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-protocol LocationServiceProtocol {
+protocol LocationService {
     func requestUserAuthorization()
     func getUserLocation() -> String
 }

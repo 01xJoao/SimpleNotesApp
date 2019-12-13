@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-public class NavigationServiceImp : NavigationServiceProtocol {
+public class NavigationServiceImp : NavigationService {
     
     private var containerViewController : ContainerViewController?
     

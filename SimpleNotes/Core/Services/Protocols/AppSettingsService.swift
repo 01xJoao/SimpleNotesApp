@@ -1,5 +1,5 @@
 //
-//  AppSettingsServiceProtocol.swift
+//  AppSettingsService.swift
 //  SimpleNotes
 //
 //  Created by João Palma on 12/12/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AppSettingsServiceProtocol {
+protocol AppSettingsService {
     var userName: String { get set }
     var userEmail: String { get set }
     var isUserLoggedIn: Bool { get set }

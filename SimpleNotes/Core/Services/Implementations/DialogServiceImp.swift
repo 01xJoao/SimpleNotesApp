@@ -9,11 +9,11 @@
 import UIKit
 import Foundation
 
-public class DialogServiceImp: DialogServiceProtocol {
+public class DialogServiceImp: DialogService {
     
-    private var _navigationService: NavigationServiceProtocol
+    private var _navigationService: NavigationService
     
-    init(navigationService: NavigationServiceProtocol) {
+    init(navigationService: NavigationService) {
         self._navigationService = navigationService
     }
     

@@ -1,5 +1,5 @@
 //
-//  NavigationServiceProtocol.swift
+//  NavigationService.swift
 //  SimpleNotes
 //
 //  Created by João Palma on 08/12/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol NavigationServiceProtocol {
+public protocol NavigationService {
     func visibleViewController() -> UIViewController
     
     func navigate<TViewModel : ViewModelProtocol>(viewModel: TViewModel.Type,  arguments: Any?, animated: Bool)

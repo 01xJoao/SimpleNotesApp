@@ -1,5 +1,5 @@
 //
-//  ReportServiceProtocol.swift
+//  ReportService.swift
 //  SimpleNotes
 //
 //  Created by João Palma on 12/12/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ReportServiceProtocol {
+protocol ReportService {
     func sendError(error: Error, message: String?)
     func sendEvent(message: String)
 }

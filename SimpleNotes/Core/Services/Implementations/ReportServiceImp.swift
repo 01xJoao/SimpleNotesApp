@@ -9,7 +9,7 @@
 import Foundation
 import Sentry
 
-class ReportServiceImp : ReportServiceProtocol {
+class ReportServiceImp : ReportService {
     
     func sendError(error: Error, message: String?) {
         Sentry.Client.shared?.snapshotStacktrace {

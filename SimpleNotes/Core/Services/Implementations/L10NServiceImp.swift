@@ -8,15 +8,15 @@
 
 import Foundation
 
-class L10NServiceImp : L10NServiceProtocol {
+class L10NServiceImp : L10NService {
     
-    private let _reportService: ReportServiceProtocol
+    private let _reportService: ReportService
     private var _currentLanguage: String?
     private let _supportedLanguages: [String] = ["en", "pt"]
     private let _defaultLanguage: String = "en"
     private var _resourceManager: [Literal] = []
     
-    init(reportService: ReportServiceProtocol) {
+    init(reportService: ReportService) {
         self._reportService = reportService
     }
     

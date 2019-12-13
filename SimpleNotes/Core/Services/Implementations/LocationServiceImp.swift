@@ -9,9 +9,9 @@
 import Foundation
 import CoreLocation
 
-class LocationServiceImp : NSObject, LocationServiceProtocol, CLLocationManagerDelegate {
+class LocationServiceImp : NSObject, LocationService, CLLocationManagerDelegate {
     
-    private let _reportServiceProtocol: ReportServiceProtocol = DiContainer.resolve()
+    private let _reportServiceProtocol: ReportService = DiContainer.resolve()
     private var _locationManager : CLLocationManager = CLLocationManager()
     private var _currentLocation : String?
     

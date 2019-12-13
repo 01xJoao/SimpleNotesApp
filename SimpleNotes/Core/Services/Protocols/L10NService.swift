@@ -1,5 +1,5 @@
 //
-//  L10NServiceProtocol.swift
+//  L10NService.swift
 //  SimpleNotes
 //
 //  Created by João Palma on 11/12/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol L10NServiceProtocol {
+public protocol L10NService {
     func localize(key: String) -> String
     func getCurrentLanguage() -> String
 }

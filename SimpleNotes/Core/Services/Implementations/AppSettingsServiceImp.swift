@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AppSettingsServiceImp : AppSettingsServiceProtocol {
+class AppSettingsServiceImp : AppSettingsService {
     private let _userDefaults = UserDefaults.standard
     
     var userName: String {

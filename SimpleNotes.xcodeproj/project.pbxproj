@@ -19,12 +19,12 @@
 		9D0890BC239C68DC002F84E6 /* AppSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0890BB239C68DC002F84E6 /* AppSetup.swift */; };
 		9D0890BE239C68F0002F84E6 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0890BD239C68F0002F84E6 /* Core.swift */; };
 		9D0890C0239C69CE002F84E6 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0890BF239C69CE002F84E6 /* ContainerViewController.swift */; };
-		9D96187F23A2F0F7009ECA8B /* ReportServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96187E23A2F0F7009ECA8B /* ReportServiceProtocol.swift */; };
+		9D96187F23A2F0F7009ECA8B /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96187E23A2F0F7009ECA8B /* ReportService.swift */; };
 		9D96188123A2F209009ECA8B /* ReportServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96188023A2F209009ECA8B /* ReportServiceImp.swift */; };
-		9D96188323A2FC2A009ECA8B /* AppSettingsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96188223A2FC2A009ECA8B /* AppSettingsServiceProtocol.swift */; };
+		9D96188323A2FC2A009ECA8B /* AppSettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96188223A2FC2A009ECA8B /* AppSettingsService.swift */; };
 		9D96188523A2FC5A009ECA8B /* AppSettingsServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96188423A2FC5A009ECA8B /* AppSettingsServiceImp.swift */; };
 		9DCA6C26239C996400DB4FF3 /* DiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C25239C996400DB4FF3 /* DiContainer.swift */; };
-		9DCA6C28239D129C00DB4FF3 /* NavigationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C27239D129C00DB4FF3 /* NavigationServiceProtocol.swift */; };
+		9DCA6C28239D129C00DB4FF3 /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C27239D129C00DB4FF3 /* NavigationService.swift */; };
 		9DCA6C2A239D14AE00DB4FF3 /* NavigationServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C29239D14AE00DB4FF3 /* NavigationServiceImp.swift */; };
 		9DCA6C2E239D2AD800DB4FF3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C2D239D2AD800DB4FF3 /* LoginViewModel.swift */; };
 		9DCA6C30239D2BED00DB4FF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C2F239D2BED00DB4FF3 /* LoginViewController.swift */; };
@@ -32,19 +32,21 @@
 		9DCA6C35239D5F3900DB4FF3 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C34239D5F3900DB4FF3 /* CreateAccountViewController.swift */; };
 		9DCA6C3B239D961400DB4FF3 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C3A239D961400DB4FF3 /* Command.swift */; };
 		9DCA6C3E239DB19E00DB4FF3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C3D239DB19E00DB4FF3 /* Extensions.swift */; };
-		9DCA6C40239EF56B00DB4FF3 /* DialogServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C3F239EF56B00DB4FF3 /* DialogServiceProtocol.swift */; };
+		9DCA6C40239EF56B00DB4FF3 /* DialogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C3F239EF56B00DB4FF3 /* DialogService.swift */; };
 		9DCA6C43239EF61F00DB4FF3 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C42239EF61F00DB4FF3 /* Enums.swift */; };
 		9DCA6C45239EFB9200DB4FF3 /* DialogServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C44239EFB9200DB4FF3 /* DialogServiceImp.swift */; };
 		9DCA6C49239EFCD900DB4FF3 /* InfoDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C48239EFCD900DB4FF3 /* InfoDialogView.swift */; };
 		9DCA6C4B239F094400DB4FF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C4A239F094400DB4FF3 /* Constants.swift */; };
-		9DCCF75323A435DF0061CB11 /* LocationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCCF75223A435DF0061CB11 /* LocationServiceProtocol.swift */; };
+		9DCCF75323A435DF0061CB11 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCCF75223A435DF0061CB11 /* LocationService.swift */; };
 		9DCCF75523A4361D0061CB11 /* LocationServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCCF75423A4361D0061CB11 /* LocationServiceImp.swift */; };
 		9DE0AE87239C8CF8001A32A6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE86239C8CF8001A32A6 /* BaseViewController.swift */; };
 		9DE0AE89239C8E3F001A32A6 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE88239C8E3F001A32A6 /* ViewModelProtocol.swift */; };
 		9DE0AE8C239C8F7C001A32A6 /* ViewModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE8B239C8F7C001A32A6 /* ViewModelBase.swift */; };
 		9DE0AE8E239C9160001A32A6 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE8D239C9160001A32A6 /* LoadingViewModel.swift */; };
+		9DE8F85D23A4565400E3939C /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8F85C23A4565400E3939C /* DatabaseService.swift */; };
+		9DE8F85F23A4566400E3939C /* DatabaseServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE8F85E23A4566400E3939C /* DatabaseServiceImp.swift */; };
 		9DFA50D123A0544A00EA6E7F /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA50D023A0544A00EA6E7F /* Animations.swift */; };
-		9DFA50D323A17BFC00EA6E7F /* L10NServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA50D223A17BFC00EA6E7F /* L10NServiceProtocol.swift */; };
+		9DFA50D323A17BFC00EA6E7F /* L10NService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA50D223A17BFC00EA6E7F /* L10NService.swift */; };
 		9DFA50D523A17D7F00EA6E7F /* L10NServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA50D423A17D7F00EA6E7F /* L10NServiceImp.swift */; };
 		9DFA50D823A17DC600EA6E7F /* Literal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA50D723A17DC600EA6E7F /* Literal.swift */; };
 		9DFA50E823A193DA00EA6E7F /* pt.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DFA50E623A193DA00EA6E7F /* pt.json */; };
@@ -82,12 +84,12 @@
 		9D0890BB239C68DC002F84E6 /* AppSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetup.swift; sourceTree = "<group>"; };
 		9D0890BD239C68F0002F84E6 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		9D0890BF239C69CE002F84E6 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
-		9D96187E23A2F0F7009ECA8B /* ReportServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportServiceProtocol.swift; sourceTree = "<group>"; };
+		9D96187E23A2F0F7009ECA8B /* ReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
 		9D96188023A2F209009ECA8B /* ReportServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportServiceImp.swift; sourceTree = "<group>"; };
-		9D96188223A2FC2A009ECA8B /* AppSettingsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsServiceProtocol.swift; sourceTree = "<group>"; };
+		9D96188223A2FC2A009ECA8B /* AppSettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsService.swift; sourceTree = "<group>"; };
 		9D96188423A2FC5A009ECA8B /* AppSettingsServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsServiceImp.swift; sourceTree = "<group>"; };
 		9DCA6C25239C996400DB4FF3 /* DiContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiContainer.swift; sourceTree = "<group>"; };
-		9DCA6C27239D129C00DB4FF3 /* NavigationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationServiceProtocol.swift; sourceTree = "<group>"; };
+		9DCA6C27239D129C00DB4FF3 /* NavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
 		9DCA6C29239D14AE00DB4FF3 /* NavigationServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationServiceImp.swift; sourceTree = "<group>"; };
 		9DCA6C2D239D2AD800DB4FF3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9DCA6C2F239D2BED00DB4FF3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -95,19 +97,21 @@
 		9DCA6C34239D5F3900DB4FF3 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		9DCA6C3A239D961400DB4FF3 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		9DCA6C3D239DB19E00DB4FF3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		9DCA6C3F239EF56B00DB4FF3 /* DialogServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogServiceProtocol.swift; sourceTree = "<group>"; };
+		9DCA6C3F239EF56B00DB4FF3 /* DialogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogService.swift; sourceTree = "<group>"; };
 		9DCA6C42239EF61F00DB4FF3 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		9DCA6C44239EFB9200DB4FF3 /* DialogServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogServiceImp.swift; sourceTree = "<group>"; };
 		9DCA6C48239EFCD900DB4FF3 /* InfoDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDialogView.swift; sourceTree = "<group>"; };
 		9DCA6C4A239F094400DB4FF3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		9DCCF75223A435DF0061CB11 /* LocationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceProtocol.swift; sourceTree = "<group>"; };
+		9DCCF75223A435DF0061CB11 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		9DCCF75423A4361D0061CB11 /* LocationServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceImp.swift; sourceTree = "<group>"; };
 		9DE0AE86239C8CF8001A32A6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9DE0AE88239C8E3F001A32A6 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		9DE0AE8B239C8F7C001A32A6 /* ViewModelBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBase.swift; sourceTree = "<group>"; };
 		9DE0AE8D239C9160001A32A6 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
+		9DE8F85C23A4565400E3939C /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		9DE8F85E23A4566400E3939C /* DatabaseServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceImp.swift; sourceTree = "<group>"; };
 		9DFA50D023A0544A00EA6E7F /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
-		9DFA50D223A17BFC00EA6E7F /* L10NServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10NServiceProtocol.swift; sourceTree = "<group>"; };
+		9DFA50D223A17BFC00EA6E7F /* L10NService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10NService.swift; sourceTree = "<group>"; };
 		9DFA50D423A17D7F00EA6E7F /* L10NServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10NServiceImp.swift; sourceTree = "<group>"; };
 		9DFA50D723A17DC600EA6E7F /* Literal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literal.swift; sourceTree = "<group>"; };
 		9DFA50E623A193DA00EA6E7F /* pt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pt.json; sourceTree = "<group>"; };
@@ -350,12 +354,13 @@
 		9DFFCE12239C81C000B21033 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				9DCA6C27239D129C00DB4FF3 /* NavigationServiceProtocol.swift */,
-				9DCA6C3F239EF56B00DB4FF3 /* DialogServiceProtocol.swift */,
-				9DFA50D223A17BFC00EA6E7F /* L10NServiceProtocol.swift */,
-				9D96187E23A2F0F7009ECA8B /* ReportServiceProtocol.swift */,
-				9D96188223A2FC2A009ECA8B /* AppSettingsServiceProtocol.swift */,
-				9DCCF75223A435DF0061CB11 /* LocationServiceProtocol.swift */,
+				9DCA6C27239D129C00DB4FF3 /* NavigationService.swift */,
+				9DCA6C3F239EF56B00DB4FF3 /* DialogService.swift */,
+				9DFA50D223A17BFC00EA6E7F /* L10NService.swift */,
+				9D96187E23A2F0F7009ECA8B /* ReportService.swift */,
+				9D96188223A2FC2A009ECA8B /* AppSettingsService.swift */,
+				9DCCF75223A435DF0061CB11 /* LocationService.swift */,
+				9DE8F85C23A4565400E3939C /* DatabaseService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 				9D96188023A2F209009ECA8B /* ReportServiceImp.swift */,
 				9D96188423A2FC5A009ECA8B /* AppSettingsServiceImp.swift */,
 				9DCCF75423A4361D0061CB11 /* LocationServiceImp.swift */,
+				9DE8F85E23A4566400E3939C /* DatabaseServiceImp.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -589,15 +595,17 @@
 				9D96188123A2F209009ECA8B /* ReportServiceImp.swift in Sources */,
 				9D0890BC239C68DC002F84E6 /* AppSetup.swift in Sources */,
 				9D089091239C674B002F84E6 /* LoadingViewController.swift in Sources */,
-				9DFA50D323A17BFC00EA6E7F /* L10NServiceProtocol.swift in Sources */,
+				9DFA50D323A17BFC00EA6E7F /* L10NService.swift in Sources */,
 				9DE0AE8E239C9160001A32A6 /* LoadingViewModel.swift in Sources */,
 				9DCA6C4B239F094400DB4FF3 /* Constants.swift in Sources */,
 				9D08908D239C674B002F84E6 /* AppDelegate.swift in Sources */,
+				9DE8F85F23A4566400E3939C /* DatabaseServiceImp.swift in Sources */,
 				9D08908F239C674B002F84E6 /* SceneDelegate.swift in Sources */,
 				9DCA6C3E239DB19E00DB4FF3 /* Extensions.swift in Sources */,
-				9D96188323A2FC2A009ECA8B /* AppSettingsServiceProtocol.swift in Sources */,
-				9DCA6C28239D129C00DB4FF3 /* NavigationServiceProtocol.swift in Sources */,
-				9DCA6C40239EF56B00DB4FF3 /* DialogServiceProtocol.swift in Sources */,
+				9D96188323A2FC2A009ECA8B /* AppSettingsService.swift in Sources */,
+				9DE8F85D23A4565400E3939C /* DatabaseService.swift in Sources */,
+				9DCA6C28239D129C00DB4FF3 /* NavigationService.swift in Sources */,
+				9DCA6C40239EF56B00DB4FF3 /* DialogService.swift in Sources */,
 				9DE0AE8C239C8F7C001A32A6 /* ViewModelBase.swift in Sources */,
 				9DFA50D123A0544A00EA6E7F /* Animations.swift in Sources */,
 				9DE0AE87239C8CF8001A32A6 /* BaseViewController.swift in Sources */,
@@ -605,7 +613,7 @@
 				9D0890B7239C6843002F84E6 /* CustomUIExtensions.swift in Sources */,
 				9DCA6C49239EFCD900DB4FF3 /* InfoDialogView.swift in Sources */,
 				9DCA6C2E239D2AD800DB4FF3 /* LoginViewModel.swift in Sources */,
-				9D96187F23A2F0F7009ECA8B /* ReportServiceProtocol.swift in Sources */,
+				9D96187F23A2F0F7009ECA8B /* ReportService.swift in Sources */,
 				9DE0AE89239C8E3F001A32A6 /* ViewModelProtocol.swift in Sources */,
 				9DFA50D523A17D7F00EA6E7F /* L10NServiceImp.swift in Sources */,
 				9D0890BE239C68F0002F84E6 /* Core.swift in Sources */,
@@ -615,7 +623,7 @@
 				9D0890C0239C69CE002F84E6 /* ContainerViewController.swift in Sources */,
 				9DCA6C43239EF61F00DB4FF3 /* Enums.swift in Sources */,
 				9D089097239C674B002F84E6 /* SimpleNotes.xcdatamodeld in Sources */,
-				9DCCF75323A435DF0061CB11 /* LocationServiceProtocol.swift in Sources */,
+				9DCCF75323A435DF0061CB11 /* LocationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
