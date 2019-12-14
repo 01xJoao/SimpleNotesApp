@@ -17,22 +17,22 @@ public class NavigationServiceImp : NavigationService {
         return containerViewController!
     }
     
-    public func navigate<TViewModel : ViewModelProtocol>(viewModel: TViewModel.Type, arguments: Any?, animated: Bool){
+    public func navigate<TViewModel : ViewModel>(viewModel: TViewModel.Type, arguments: Any?, animated: Bool){
         let viewController: UIViewController = self._getViewController(type: viewModel, args: arguments)
         self.containerViewController?.navigationController?.pushViewController(viewController, animated: animated)
     }
     
-    public func navigateModal<TViewModel : ViewModelProtocol>(viewModel: TViewModel.Type, arguments: Any?) {
+    public func navigateModal<TViewModel : ViewModel>(viewModel: TViewModel.Type, arguments: Any?) {
         let viewController: UIViewController = self._getViewController(type: viewModel, args: arguments)
         self.containerViewController?.navigationController?.present(viewController, animated: true, completion: nil)
     }
     
-    public func navigateAndSetAsContainer<TViewModel : ViewModelProtocol>(viewModel: TViewModel.Type) {
+    public func navigateAndSetAsContainer<TViewModel : ViewModel>(viewModel: TViewModel.Type) {
         let viewController: UIViewController = self._getViewController(type: viewModel, args: nil)
         self._setContainerViewController(viewController)
     }
     
-    private func _getViewController<TViewModel : ViewModelProtocol>(type: TViewModel.Type, args: Any?) -> UIViewController {
+    private func _getViewController<TViewModel : ViewModel>(type: TViewModel.Type, args: Any?) -> UIViewController {
         let viewModelName = String(describing: TViewModel.self)
         let viewController: UIViewController = DiContainer.resolveViewController(name: viewModelName)
        

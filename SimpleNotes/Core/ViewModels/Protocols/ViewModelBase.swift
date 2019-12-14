@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ViewModelBase : ViewModelProtocol {
+public class ViewModelBase : ViewModel {
 
     private let _navigationService: NavigationService = DiContainer.resolve()
     private let _l10nService: L10NService = DiContainer.resolve()

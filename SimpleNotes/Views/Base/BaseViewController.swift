@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-public class BaseViewController<TViewModel> : UIViewController where TViewModel : ViewModelProtocol {
+public class BaseViewController<TViewModel> : UIViewController where TViewModel : ViewModel {
     public var parameterData: Any?
     
     private var _viewModel: TViewModel!

@@ -7,7 +7,14 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
 
 class DatabaseServiceImp : DatabaseService {
+    private let _managedContext: NSManagedObjectContext?
     
+    init() {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        _managedContext = appDelegate?.persistentContainer.viewContext
+    }
 }

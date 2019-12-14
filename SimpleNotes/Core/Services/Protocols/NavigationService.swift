@@ -11,9 +11,9 @@ import UIKit
 public protocol NavigationService {
     func visibleViewController() -> UIViewController
     
-    func navigate<TViewModel : ViewModelProtocol>(viewModel: TViewModel.Type,  arguments: Any?, animated: Bool)
-    func navigateModal<TViewModel : ViewModelProtocol>(viewModel: TViewModel.Type,arguments: Any?)
-    func navigateAndSetAsContainer<TViewModel : ViewModelProtocol>(viewModel: TViewModel.Type)
+    func navigate<TViewModel : ViewModel>(viewModel: TViewModel.Type,  arguments: Any?, animated: Bool)
+    func navigateModal<TViewModel : ViewModel>(viewModel: TViewModel.Type,arguments: Any?)
+    func navigateAndSetAsContainer<TViewModel : ViewModel>(viewModel: TViewModel.Type)
     
     func close(arguments: Any?, animated: Bool);
     func closeModal(arguments: Any?);
