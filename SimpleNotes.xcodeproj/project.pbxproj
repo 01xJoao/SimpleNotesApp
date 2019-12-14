@@ -29,6 +29,7 @@
 		9D9FE2E123A53B14005CDE8C /* DatabaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9FE2E023A53B14005CDE8C /* DatabaseUserService.swift */; };
 		9D9FE2E323A53B2B005CDE8C /* DatabaseNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9FE2E223A53B2B005CDE8C /* DatabaseNoteService.swift */; };
 		9D9FE2E523A5431E005CDE8C /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9FE2E423A5431E005CDE8C /* UserObject.swift */; };
+		9D9FE2E723A54C3A005CDE8C /* NoteObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9FE2E623A54C3A005CDE8C /* NoteObject.swift */; };
 		9DB8C23523A512DB00CBBCB9 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB8C23423A512DB00CBBCB9 /* Note.swift */; };
 		9DCA6C26239C996400DB4FF3 /* DiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C25239C996400DB4FF3 /* DiContainer.swift */; };
 		9DCA6C28239D129C00DB4FF3 /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C27239D129C00DB4FF3 /* NavigationService.swift */; };
@@ -99,6 +100,7 @@
 		9D9FE2E023A53B14005CDE8C /* DatabaseUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseUserService.swift; sourceTree = "<group>"; };
 		9D9FE2E223A53B2B005CDE8C /* DatabaseNoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseNoteService.swift; sourceTree = "<group>"; };
 		9D9FE2E423A5431E005CDE8C /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
+		9D9FE2E623A54C3A005CDE8C /* NoteObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteObject.swift; sourceTree = "<group>"; };
 		9DB8C23423A512DB00CBBCB9 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		9DCA6C25239C996400DB4FF3 /* DiContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiContainer.swift; sourceTree = "<group>"; };
 		9DCA6C27239D129C00DB4FF3 /* NavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 			children = (
 				9DFA50D723A17DC600EA6E7F /* LiteralObject.swift */,
 				9D9FE2E423A5431E005CDE8C /* UserObject.swift */,
+				9D9FE2E623A54C3A005CDE8C /* NoteObject.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				9DE0AE89239C8E3F001A32A6 /* ViewModel.swift in Sources */,
 				9D9FE2DC23A53339005CDE8C /* DatabaseUserServiceImp.swift in Sources */,
 				9DFA50D523A17D7F00EA6E7F /* L10NServiceImp.swift in Sources */,
+				9D9FE2E723A54C3A005CDE8C /* NoteObject.swift in Sources */,
 				9D0890BE239C68F0002F84E6 /* Core.swift in Sources */,
 				9DCA6C33239D5F2200DB4FF3 /* CreateAccountViewModel.swift in Sources */,
 				9DCA6C2A239D14AE00DB4FF3 /* NavigationServiceImp.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  UserModel.swift
+//  UserObject.swift
 //  SimpleNotes
 //
 //  Created by João Palma on 14/12/2019.
@@ -9,13 +9,13 @@
 import Foundation
 
 struct UserObject {
-    var id: String!
-    var name: String!
-    var email: String!
+    var id: String?
+    var name: String?
+    var email: String?
     var photo: Data?
     var pushNotificationId: String?
     
-    init(id: String, name: String, email: String, photo: Data? = nil, pushNotificationId: String? = "") {
+    init(id: String, name: String, email: String, photo: Data? = nil, pushNotificationId: String = "") {
         self.id = id
         self.name = name
         self.email = email

@@ -8,15 +8,15 @@
 
 import Foundation
 
-public class Note {
-    private var _note: NoteData
+public struct Note {
+    private var _note: NoteObject
     
-    init(_ note: NoteData) {
+    init(_ note: NoteObject) {
         self._note = note
     }
     
     public func getId() -> UUID {
-        return _note.id!
+         return UUID(uuidString: _note.id ?? "")!
     }
     
     public func getTitle() -> String {
@@ -28,7 +28,7 @@ public class Note {
     }
     
     public func getLastEdit() -> Date {
-        return _note.lastedit!
+        return _note.lastEdit ?? Date()
     }
     
     public func getLocation() -> String {

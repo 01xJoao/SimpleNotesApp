@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 public struct User {
     private var _user: UserObject
@@ -21,7 +20,7 @@ public struct User {
     }
     
     public func getUUID() -> UUID {
-        return UUID(uuidString: _user.id)!
+        return UUID(uuidString: _user.id ?? "")!
     }
     
     public func getName() -> String {

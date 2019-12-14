@@ -55,7 +55,7 @@ class DatabaseUserServiceImp : DatabaseUserService {
                         name: data.name!,
                         email: data.email!,
                         photo: data.photo,
-                        pushNotificationId: data.pushnotificationid
+                        pushNotificationId: data.pushnotificationid!
                 )
                 users.append(user)
             }
@@ -66,6 +66,16 @@ class DatabaseUserServiceImp : DatabaseUserService {
         return users
     }
     
+    func getUser() -> UserObject {
+        return UserObject(id: "", name: "", email: "")
+    }
     
+    func updateUser(_ user: User) {
+    }
     
+    func deleteUser(_ userId: String) {
+    }
+    
+    func deleteAllUsers() {
+    }
 }
