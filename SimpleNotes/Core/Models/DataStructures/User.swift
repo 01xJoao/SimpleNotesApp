@@ -9,19 +9,19 @@
 import Foundation
 import UIKit
 
-public class User {
-    private var _user: UserData
+public struct User {
+    private var _user: UserObject
     
-    init(_ user: UserData) {
+    init(_ user: UserObject) {
         self._user = user
     }
     
-    public func getEntity() -> String {
-        return String(describing: UserData.self)
+    public func getId() -> String {
+        return _user.id ?? ""
     }
     
-    public func getId() -> UUID {
-        return _user.id!
+    public func getUUID() -> UUID {
+        return UUID(uuidString: _user.id)!
     }
     
     public func getName() -> String {
@@ -37,6 +37,6 @@ public class User {
     }
     
     public func getPushNotificationId() -> String {
-        return _user.pushnotificationid ?? ""
+        return _user.pushNotificationId ?? ""
     }
 }

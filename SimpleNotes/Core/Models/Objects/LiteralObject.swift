@@ -1,5 +1,5 @@
 //
-//  Literal.swift
+//  LiteralObject.swift
 //  SimpleNotes
 //
 //  Created by João Palma on 11/12/2019.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct LiteralData {
+struct LiteralObject {
     public var key, translated : String
 }
