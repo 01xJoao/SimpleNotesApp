@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Note {
+public class Note {
     private var _note: NoteData
     
     init(_ note: NoteData) {

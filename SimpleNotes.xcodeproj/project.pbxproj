@@ -24,6 +24,8 @@
 		9D96188123A2F209009ECA8B /* ReportServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96188023A2F209009ECA8B /* ReportServiceImp.swift */; };
 		9D96188323A2FC2A009ECA8B /* AppSettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96188223A2FC2A009ECA8B /* AppSettingsService.swift */; };
 		9D96188523A2FC5A009ECA8B /* AppSettingsServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96188423A2FC5A009ECA8B /* AppSettingsServiceImp.swift */; };
+		9D9FE2DC23A53339005CDE8C /* DatabaseUserServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9FE2DB23A53339005CDE8C /* DatabaseUserServiceImp.swift */; };
+		9D9FE2DE23A5334D005CDE8C /* DatabaseNoteServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9FE2DD23A5334D005CDE8C /* DatabaseNoteServiceImp.swift */; };
 		9DB8C23523A512DB00CBBCB9 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB8C23423A512DB00CBBCB9 /* Note.swift */; };
 		9DCA6C26239C996400DB4FF3 /* DiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C25239C996400DB4FF3 /* DiContainer.swift */; };
 		9DCA6C28239D129C00DB4FF3 /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C27239D129C00DB4FF3 /* NavigationService.swift */; };
@@ -91,6 +93,8 @@
 		9D96188023A2F209009ECA8B /* ReportServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportServiceImp.swift; sourceTree = "<group>"; };
 		9D96188223A2FC2A009ECA8B /* AppSettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsService.swift; sourceTree = "<group>"; };
 		9D96188423A2FC5A009ECA8B /* AppSettingsServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsServiceImp.swift; sourceTree = "<group>"; };
+		9D9FE2DB23A53339005CDE8C /* DatabaseUserServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseUserServiceImp.swift; sourceTree = "<group>"; };
+		9D9FE2DD23A5334D005CDE8C /* DatabaseNoteServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseNoteServiceImp.swift; sourceTree = "<group>"; };
 		9DB8C23423A512DB00CBBCB9 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		9DCA6C25239C996400DB4FF3 /* DiContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiContainer.swift; sourceTree = "<group>"; };
 		9DCA6C27239D129C00DB4FF3 /* NavigationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationService.swift; sourceTree = "<group>"; };
@@ -272,6 +276,22 @@
 			path = DataStructures;
 			sourceTree = "<group>";
 		};
+		9D9FE2DA23A51E96005CDE8C /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				9D9FE2DB23A53339005CDE8C /* DatabaseUserServiceImp.swift */,
+				9D9FE2DD23A5334D005CDE8C /* DatabaseNoteServiceImp.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		9D9FE2DF23A53352005CDE8C /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		9DCA6C31239D2F8300DB4FF3 /* DiContainer */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +379,7 @@
 		9DFFCE12239C81C000B21033 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				9D9FE2DF23A53352005CDE8C /* Database */,
 				9DCA6C27239D129C00DB4FF3 /* NavigationService.swift */,
 				9DCA6C3F239EF56B00DB4FF3 /* DialogService.swift */,
 				9DFA50D223A17BFC00EA6E7F /* L10NService.swift */,
@@ -373,6 +394,7 @@
 		9DFFCE13239C81CB00B21033 /* Implementations */ = {
 			isa = PBXGroup;
 			children = (
+				9D9FE2DA23A51E96005CDE8C /* Database */,
 				9DCA6C29239D14AE00DB4FF3 /* NavigationServiceImp.swift */,
 				9DCA6C44239EFB9200DB4FF3 /* DialogServiceImp.swift */,
 				9DFA50D423A17D7F00EA6E7F /* L10NServiceImp.swift */,
@@ -622,12 +644,14 @@
 				9DCA6C2E239D2AD800DB4FF3 /* LoginViewModel.swift in Sources */,
 				9D96187F23A2F0F7009ECA8B /* ReportService.swift in Sources */,
 				9DE0AE89239C8E3F001A32A6 /* ViewModel.swift in Sources */,
+				9D9FE2DC23A53339005CDE8C /* DatabaseUserServiceImp.swift in Sources */,
 				9DFA50D523A17D7F00EA6E7F /* L10NServiceImp.swift in Sources */,
 				9D0890BE239C68F0002F84E6 /* Core.swift in Sources */,
 				9DCA6C33239D5F2200DB4FF3 /* CreateAccountViewModel.swift in Sources */,
 				9DCA6C2A239D14AE00DB4FF3 /* NavigationServiceImp.swift in Sources */,
 				9DCA6C26239C996400DB4FF3 /* DiContainer.swift in Sources */,
 				9DB8C23523A512DB00CBBCB9 /* Note.swift in Sources */,
+				9D9FE2DE23A5334D005CDE8C /* DatabaseNoteServiceImp.swift in Sources */,
 				9D0890C0239C69CE002F84E6 /* ContainerViewController.swift in Sources */,
 				9DCA6C43239EF61F00DB4FF3 /* Enums.swift in Sources */,
 				9D089097239C674B002F84E6 /* SimpleNotes.xcdatamodeld in Sources */,

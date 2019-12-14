@@ -9,11 +9,15 @@
 import Foundation
 import UIKit
 
-struct User {
+public class User {
     private var _user: UserData
     
     init(_ user: UserData) {
         self._user = user
+    }
+    
+    public func getEntity() -> String {
+        return String(describing: UserData.self)
     }
     
     public func getId() -> UUID {
