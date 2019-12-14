@@ -18,30 +18,18 @@ public class NavigationServiceImp : NavigationService {
     }
     
     public func navigate<TViewModel : ViewModelProtocol>(viewModel: TViewModel.Type, arguments: Any?, animated: Bool){
-        DispatchQueue.global(qos: .utility).async {
-            DispatchQueue.main.async {
-                let viewController: UIViewController = self._getViewController(type: viewModel, args: arguments)
-                self.containerViewController?.navigationController?.pushViewController(viewController, animated: animated)
-            }
-        }
+        let viewController: UIViewController = self._getViewController(type: viewModel, args: arguments)
+        self.containerViewController?.navigationController?.pushViewController(viewController, animated: animated)
     }
     
     public func navigateModal<TViewModel : ViewModelProtocol>(viewModel: TViewModel.Type, arguments: Any?) {
-        DispatchQueue.global(qos: .utility).async {
-            DispatchQueue.main.async {
-                let viewController: UIViewController = self._getViewController(type: viewModel, args: arguments)
-                self.containerViewController?.navigationController?.present(viewController, animated: true, completion: nil)
-            }
-        }
+        let viewController: UIViewController = self._getViewController(type: viewModel, args: arguments)
+        self.containerViewController?.navigationController?.present(viewController, animated: true, completion: nil)
     }
     
     public func navigateAndSetAsContainer<TViewModel : ViewModelProtocol>(viewModel: TViewModel.Type) {
-        DispatchQueue.global(qos: .utility).async {
-            DispatchQueue.main.async {
-                let viewController: UIViewController = self._getViewController(type: viewModel, args: nil)
-                self._setContainerViewController(viewController)
-            }
-        }
+        let viewController: UIViewController = self._getViewController(type: viewModel, args: nil)
+        self._setContainerViewController(viewController)
     }
     
     private func _getViewController<TViewModel : ViewModelProtocol>(type: TViewModel.Type, args: Any?) -> UIViewController {
@@ -56,7 +44,6 @@ public class NavigationServiceImp : NavigationService {
     
         return viewController
     }
-    
     
     private func _setContainerViewController(_ viewController : UIViewController) {
         let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate

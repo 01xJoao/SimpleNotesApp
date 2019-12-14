@@ -37,7 +37,6 @@ class DiContainer {
         registrations[dependencyName] = resolver
     }
     
-    //Weak may only be applied to class and class-bound types, not 'Any'
     static func registerWeakSingleton<T>(_: T.Type, constructor: @escaping () -> AnyObject) {
         let dependencyName = String(describing: T.self)
         var instance: AnyObject?

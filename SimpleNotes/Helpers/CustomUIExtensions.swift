@@ -35,6 +35,5 @@ extension UIColor {
     static var black = UIColor().fromRGBA(red: 0, green: 0, blue: 0, alpha: 1.0)
     static var grey = UIColor().fromRGBA(red: 205, green: 199, blue: 190, alpha: 1.0)
     static var darkGrey = UIColor().fromRGBA(red: 158, green: 150, blue: 141, alpha: 1.0)
-    
   }
 }

@@ -21,18 +21,18 @@ public class BaseViewController<TViewModel> : UIViewController where TViewModel 
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        _createChildrenDismissNotification()
+        _createViewControllerDismissNotification()
         _resolveViewModel()
     }
     
-    private func _createChildrenDismissNotification(){
+    private func _createViewControllerDismissNotification() {
         NotificationCenter.default.addObserver(self,
            selector: #selector(self._handleViewDismiss(_:)),
            name: NSNotification.Name(rawValue: String(describing: self)),
            object: nil)
     }
     
-    private func _resolveViewModel(){
+    private func _resolveViewModel() {
         let viewModel : TViewModel = DiContainer.resolve()
         if(parameterData != nil){
             viewModel.prepare(dataObject: parameterData!)
@@ -58,7 +58,7 @@ public class BaseViewController<TViewModel> : UIViewController where TViewModel 
     }
     
     public override func viewDidDisappear(_ animated: Bool) {
-        if(isMovingFromParent){
+        if(isMovingFromParent) {
             NotificationCenter.default.removeObserver(self)
         }
     }

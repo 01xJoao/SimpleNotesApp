@@ -20,6 +20,9 @@ class LoadingViewController: BaseViewController<LoadingViewModel> {
         button.addTarget(self, action: #selector(_navigate), for: UIControl.Event.touchUpInside)
         
         self.view.addSubview(button)
+        
+        let teste: DialogService = DiContainer.resolve()
+        teste.showInfo("OKKK", informationType: .good)
     }
     
     @objc func _navigate(sender: UIButton){

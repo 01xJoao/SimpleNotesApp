@@ -12,5 +12,6 @@ protocol AppSettingsService {
     var userName: String { get set }
     var userEmail: String { get set }
     var isUserLoggedIn: Bool { get set }
+    
     func clearUserData()
 }

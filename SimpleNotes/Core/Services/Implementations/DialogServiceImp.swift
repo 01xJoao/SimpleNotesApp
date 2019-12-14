@@ -31,5 +31,4 @@ public class DialogServiceImp: DialogService {
         let visibleViewController = _navigationService.visibleViewController()
         visibleViewController.present(alert, animated: true)
     }
-    
 }

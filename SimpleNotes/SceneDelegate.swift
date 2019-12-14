@@ -11,16 +11,19 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    public var containerViewController : ContainerViewController!
+    public var containerViewController = ContainerViewController()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        _setWindow(scene)
+        AppSetup.configure()
+    }
+    
+    private func _setWindow(_ scene: UIScene){
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            containerViewController = ContainerViewController()
             window.rootViewController = UINavigationController(rootViewController: containerViewController)
             window.makeKeyAndVisible()
             self.window = window
-            AppSetup.configure()
         }
     }
 
