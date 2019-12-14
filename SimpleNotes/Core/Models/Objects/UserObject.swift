@@ -15,7 +15,7 @@ struct UserObject {
     var photo: Data?
     var pushNotificationId: String?
     
-    init(id: String, name: String, email: String, photo: Data? = nil, pushNotificationId: String = "") {
+    init(id: String = "", name: String = "", email: String = "", photo: Data? = nil, pushNotificationId: String = "") {
         self.id = id
         self.name = name
         self.email = email

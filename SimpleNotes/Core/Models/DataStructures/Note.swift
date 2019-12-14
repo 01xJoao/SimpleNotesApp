@@ -15,8 +15,12 @@ public struct Note {
         self._note = note
     }
     
-    public func getId() -> UUID {
-         return UUID(uuidString: _note.id ?? "")!
+    public func getId() -> String {
+        return _note.id ?? ""
+    }
+    
+    public func getUUID() -> UUID {
+        return UUID(uuidString: _note.id ?? "")!
     }
     
     public func getTitle() -> String {
@@ -33,5 +37,17 @@ public struct Note {
     
     public func getLocation() -> String {
         return _note.location ?? ""
+    }
+    
+    public mutating func setTitle(_ title: String){
+        _note.title = title
+    }
+    
+    public mutating func setContent(_ content: String){
+        _note.content = content
+    }
+    
+    public mutating func setLastEdit(_ lastEdit: Date) {
+        _note.lastEdit = lastEdit
     }
 }

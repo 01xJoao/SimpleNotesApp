@@ -38,4 +38,20 @@ public struct User {
     public func getPushNotificationId() -> String {
         return _user.pushNotificationId ?? ""
     }
+    
+    public mutating func setName(_ name: String){
+        _user.name = name
+    }
+    
+    public mutating func setEmail(_ email: String) {
+        _user.email = email
+    }
+    
+    public mutating func setPhoto(_ photo: Data){
+        _user.photo = photo
+    }
+    
+    public mutating func setPushNotificationId(_ pushId: String) {
+        _user.pushNotificationId = pushId
+    }
 }

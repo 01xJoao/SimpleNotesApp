@@ -15,7 +15,7 @@ struct NoteObject {
     var lastEdit: Date?
     var location: String?
 
-    init(id: String, title: String, content: String, lastEdit: Date = Date(), location: String = "") {
+    init(id: String = "", title: String = "", content: String = "", lastEdit: Date = Date(), location: String = "") {
         self.id = id
         self.title = title
         self.content = content
