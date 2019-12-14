@@ -14,7 +14,7 @@ class L10NServiceImp : L10NService {
     private var _currentLanguage: String?
     private let _supportedLanguages: [String] = ["en", "pt"]
     private let _defaultLanguage: String = "en"
-    private var _resourceManager: [Literal] = []
+    private var _resourceManager: [LiteralData] = []
     
     init(reportService: ReportService) {
         self._reportService = reportService
@@ -25,7 +25,7 @@ class L10NServiceImp : L10NService {
         return value?.translated ?? ""
     }
     
-    func _getResourceManager() -> [Literal] {
+    func _getResourceManager() -> [LiteralData] {
         if(_resourceManager.isEmpty) {
             _setLanguage()
             _loadJsonString()
@@ -45,7 +45,7 @@ class L10NServiceImp : L10NService {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves) as! NSDictionary
                 for (key, value) in jsonResult {
-                    _resourceManager.append(Literal(key: key as! String, translated: value as! String))
+                    _resourceManager.append(LiteralData(key: key as! String, translated: value as! String))
                 }
           } catch let error {
                 _reportService.sendError(error: error, message: "Error loading json")

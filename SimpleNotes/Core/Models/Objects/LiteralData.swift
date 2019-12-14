@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Literal {
+struct LiteralData {
     public var key, translated : String
 }
