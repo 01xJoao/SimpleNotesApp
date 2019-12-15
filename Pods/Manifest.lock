@@ -1,22 +1,26 @@
 PODS:
   - LBTATools (1.0.12)
+  - Networking (5.0.1)
   - Sentry (4.4.3):
     - Sentry/Core (= 4.4.3)
   - Sentry/Core (4.4.3)
 
 DEPENDENCIES:
   - LBTATools
+  - Networking (~> 5.0)
   - Sentry (~> 4.4)
 
 SPEC REPOS:
   trunk:
     - LBTATools
+    - Networking
     - Sentry
 
 SPEC CHECKSUMS:
   LBTATools: 389a901a01b9a56bea5682c40cd6e23530f40015
+  Networking: 0a77e3315c32133e3aefb8dd2bd027ff536fd25d
   Sentry: 14bdd673870e8cf64932b149fad5bbbf39a9b390
 
-PODFILE CHECKSUM: c11776aadd4e2c5c82143940e680ddc2db6fdf61
+PODFILE CHECKSUM: 04bc06b8252787742f1b1a03c0a19d06bf675c81
 
 COCOAPODS: 1.8.4

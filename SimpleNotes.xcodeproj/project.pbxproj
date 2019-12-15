@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		62524AA4ABB9CA56D7D2AC04 /* Pods_SimpleNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045667FAE82CD00927DD91BB /* Pods_SimpleNotes.framework */; };
+		9D042C8B23A5A98D003948FD /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D042C8A23A5A98D003948FD /* WebService.swift */; };
+		9D042C8D23A5A99C003948FD /* WebServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D042C8C23A5A99C003948FD /* WebServiceImp.swift */; };
 		9D08908D239C674B002F84E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D08908C239C674B002F84E6 /* AppDelegate.swift */; };
 		9D08908F239C674B002F84E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D08908E239C674B002F84E6 /* SceneDelegate.swift */; };
 		9D089091239C674B002F84E6 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D089090239C674B002F84E6 /* LoadingViewController.swift */; };
@@ -75,6 +77,8 @@
 		045667FAE82CD00927DD91BB /* Pods_SimpleNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39AA8C314A0FAABDC2D6C02F /* Pods-SimpleNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleNotesTests.release.xcconfig"; path = "Target Support Files/Pods-SimpleNotesTests/Pods-SimpleNotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		750D66B11B43E571767E3AF6 /* Pods-SimpleNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleNotes.debug.xcconfig"; path = "Target Support Files/Pods-SimpleNotes/Pods-SimpleNotes.debug.xcconfig"; sourceTree = "<group>"; };
+		9D042C8A23A5A98D003948FD /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		9D042C8C23A5A99C003948FD /* WebServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceImp.swift; sourceTree = "<group>"; };
 		9D089089239C674B002F84E6 /* SimpleNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D08908C239C674B002F84E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D08908E239C674B002F84E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -392,6 +396,7 @@
 				9D96187E23A2F0F7009ECA8B /* ReportService.swift */,
 				9D96188223A2FC2A009ECA8B /* AppSettingsService.swift */,
 				9DCCF75223A435DF0061CB11 /* LocationService.swift */,
+				9D042C8A23A5A98D003948FD /* WebService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -406,6 +411,7 @@
 				9D96188023A2F209009ECA8B /* ReportServiceImp.swift */,
 				9D96188423A2FC5A009ECA8B /* AppSettingsServiceImp.swift */,
 				9DCCF75423A4361D0061CB11 /* LocationServiceImp.swift */,
+				9D042C8C23A5A99C003948FD /* WebServiceImp.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -638,6 +644,8 @@
 				9D08908F239C674B002F84E6 /* SceneDelegate.swift in Sources */,
 				9DCA6C3E239DB19E00DB4FF3 /* Extensions.swift in Sources */,
 				9D96188323A2FC2A009ECA8B /* AppSettingsService.swift in Sources */,
+				9D042C8B23A5A98D003948FD /* WebService.swift in Sources */,
+				9D042C8D23A5A99C003948FD /* WebServiceImp.swift in Sources */,
 				9DCA6C28239D129C00DB4FF3 /* NavigationService.swift in Sources */,
 				9DCA6C40239EF56B00DB4FF3 /* DialogService.swift in Sources */,
 				9DE0AE8C239C8F7C001A32A6 /* ViewModelBase.swift in Sources */,

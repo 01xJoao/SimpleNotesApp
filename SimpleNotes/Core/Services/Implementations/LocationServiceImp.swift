@@ -49,8 +49,8 @@ class LocationServiceImp : NSObject, LocationService, CLLocationManagerDelegate 
         let location = locations.last
         let currentlocation = CLLocation(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
         
-        _fetchCityAndCountry(from: currentlocation) {
-            city, country, error in guard let city = city, let country = country, error == nil else {
+        _fetchCityAndCountry(from: currentlocation) { city, country, error in
+            guard let city = city, let country = country, error == nil else {
                 if(error != nil){
                     self._reportServiceProtocol.sendError(error: error!, message: "Coudn't fetch city and country")
                 }
@@ -62,8 +62,8 @@ class LocationServiceImp : NSObject, LocationService, CLLocationManagerDelegate 
     }
     
     func _fetchCityAndCountry(from location: CLLocation, completion: @escaping (_ city: String?, _ country:  String?, _ error: Error?) -> ()) {
-        CLGeocoder().reverseGeocodeLocation(location) {
-            placemarks, error in completion(placemarks?.first?.locality, placemarks?.first?.country, error)
+        CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+            completion(placemarks?.first?.locality, placemarks?.first?.country, error)
         }
     }
     

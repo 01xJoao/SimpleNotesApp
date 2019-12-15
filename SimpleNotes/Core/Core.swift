@@ -22,6 +22,7 @@ public class Core {
         DiContainer.registerAsSingleton(LocationService.self) { LocationServiceImp() }
         DiContainer.registerAsSingleton(DatabaseUserService.self) { DatabaseUserServiceImp(reportService: DiContainer.resolve()) }
         DiContainer.registerAsSingleton(DatabaseNoteService.self) { DatabaseNoteServiceImp(reportService: DiContainer.resolve()) }
+        DiContainer.registerAsSingleton(WebService.self) { WebServiceImp() }
     }
     
     private static func _registerViewModels(){
