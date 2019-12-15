@@ -7,6 +7,8 @@
 #### Command Pattern
 #### Dialog Service
 #### L10N Service
-#### Report Service (with Sentry.io)
+#### Report Service (Sentry.io)
 #### AppSettings Service (UserDefaults)
 #### Location Service (CLLocationManager)
+#### Database Service (Core Data)
+#### Web Service (Networking)
