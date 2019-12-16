@@ -1,5 +1,5 @@
 //
-//  NoteWebServiceImp.swift
+//  NoteWebService.swift
 //  SimpleNotes
 //
 //  Created by João Palma on 16/12/2019.
@@ -8,6 +8,5 @@
 
 import Foundation
 
-class NoteWebServiceImp : NoteWebService {
-    
+protocol NoteWebService {
 }

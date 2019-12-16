@@ -47,6 +47,9 @@
 		9DCA6C45239EFB9200DB4FF3 /* DialogServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C44239EFB9200DB4FF3 /* DialogServiceImp.swift */; };
 		9DCA6C49239EFCD900DB4FF3 /* InfoDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C48239EFCD900DB4FF3 /* InfoDialogView.swift */; };
 		9DCA6C4B239F094400DB4FF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA6C4A239F094400DB4FF3 /* Constants.swift */; };
+		9DCA888D23A81A6D005E841C /* WebServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA888C23A81A6D005E841C /* WebServicesTests.swift */; };
+		9DCA889023A81B1B005E841C /* UserWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA888F23A81B1B005E841C /* UserWebService.swift */; };
+		9DCA889223A81B26005E841C /* NoteWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA889123A81B26005E841C /* NoteWebService.swift */; };
 		9DCCF75323A435DF0061CB11 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCCF75223A435DF0061CB11 /* LocationService.swift */; };
 		9DCCF75523A4361D0061CB11 /* LocationServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCCF75423A4361D0061CB11 /* LocationServiceImp.swift */; };
 		9DCDB75723A7FB1700B4CBFC /* UserWebServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB75623A7FB1700B4CBFC /* UserWebServiceImp.swift */; };
@@ -122,6 +125,9 @@
 		9DCA6C44239EFB9200DB4FF3 /* DialogServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogServiceImp.swift; sourceTree = "<group>"; };
 		9DCA6C48239EFCD900DB4FF3 /* InfoDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDialogView.swift; sourceTree = "<group>"; };
 		9DCA6C4A239F094400DB4FF3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9DCA888C23A81A6D005E841C /* WebServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServicesTests.swift; sourceTree = "<group>"; };
+		9DCA888F23A81B1B005E841C /* UserWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWebService.swift; sourceTree = "<group>"; };
+		9DCA889123A81B26005E841C /* NoteWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWebService.swift; sourceTree = "<group>"; };
 		9DCCF75223A435DF0061CB11 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		9DCCF75423A4361D0061CB11 /* LocationServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceImp.swift; sourceTree = "<group>"; };
 		9DCDB75623A7FB1700B4CBFC /* UserWebServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWebServiceImp.swift; sourceTree = "<group>"; };
@@ -215,6 +221,7 @@
 			children = (
 				9D0890A6239C674C002F84E6 /* DatabaseTests.swift */,
 				9D0890A8239C674C002F84E6 /* Info.plist */,
+				9DCA888C23A81A6D005E841C /* WebServicesTests.swift */,
 			);
 			path = SimpleNotesTests;
 			sourceTree = "<group>";
@@ -365,6 +372,15 @@
 			path = Dialogs;
 			sourceTree = "<group>";
 		};
+		9DCA888E23A81B0C005E841C /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				9DCA888F23A81B1B005E841C /* UserWebService.swift */,
+				9DCA889123A81B26005E841C /* NoteWebService.swift */,
+			);
+			path = WebServices;
+			sourceTree = "<group>";
+		};
 		9DCDB75523A7FAF000B4CBFC /* WebServices */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +418,7 @@
 		9DFFCE12239C81C000B21033 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				9DCA888E23A81B0C005E841C /* WebServices */,
 				9D9FE2DF23A53352005CDE8C /* Database */,
 				9DCA6C27239D129C00DB4FF3 /* NavigationService.swift */,
 				9DCA6C3F239EF56B00DB4FF3 /* DialogService.swift */,
@@ -640,6 +657,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DCA889223A81B26005E841C /* NoteWebService.swift in Sources */,
 				9DCDB75723A7FB1700B4CBFC /* UserWebServiceImp.swift in Sources */,
 				9DCA6C45239EFB9200DB4FF3 /* DialogServiceImp.swift in Sources */,
 				9DCA6C3B239D961400DB4FF3 /* Command.swift in Sources */,
@@ -666,6 +684,7 @@
 				9DE0AE8C239C8F7C001A32A6 /* ViewModelBase.swift in Sources */,
 				9DFA50D123A0544A00EA6E7F /* Animations.swift in Sources */,
 				9D9FE2E323A53B2B005CDE8C /* DatabaseNoteService.swift in Sources */,
+				9DCA889023A81B1B005E841C /* UserWebService.swift in Sources */,
 				9DE0AE87239C8CF8001A32A6 /* BaseViewController.swift in Sources */,
 				9DFA50D823A17DC600EA6E7F /* LiteralObject.swift in Sources */,
 				9D0890B7239C6843002F84E6 /* CustomUIExtensions.swift in Sources */,
@@ -695,6 +714,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DCA888D23A81A6D005E841C /* WebServicesTests.swift in Sources */,
 				9D0890A7239C674C002F84E6 /* DatabaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

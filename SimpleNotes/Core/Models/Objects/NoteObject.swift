@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct NoteObject {
+struct NoteObject : Decodable {
     var id: Int16
-    var uuid: UUID?
+    var uuid: String?
     var title: String
     var content: String
     var lastEdit: Date?
     var location: String
 
-    init(id: Int16 = -1, uuid: UUID? = nil, title: String = "", content: String = "", lastEdit: Date = Date(), location: String = "") {
+    init(id: Int16 = -1, uuid: String? = nil, title: String = "", content: String = "", lastEdit: Date = Date(), location: String = "") {
         self.id = id
         self.uuid = uuid
         self.title = title

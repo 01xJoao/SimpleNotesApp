@@ -19,7 +19,7 @@ public struct Note {
         return _note.id
     }
     
-    public func getUuid() -> UUID? {
+    public func getUuid() -> String? {
         return _note.uuid
     }
     

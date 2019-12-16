@@ -17,13 +17,9 @@ class DatabaseTests: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
-        let userObj = UserObject(uuid: UUID(), name: "João Palma", email: "joaowd@outlook.com", pushNotificationId: UUID().uuidString)
+        let userObj = UserObject(uuid: UUID().uuidString, name: "João Palma", email: "joaowd@outlook.com", pushNotificationId: UUID().uuidString)
         user = User(userObj)
         
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
     func testCreateUserInDatabaseAndRetriveIt() {

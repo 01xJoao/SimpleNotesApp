@@ -8,15 +8,15 @@
 
 import Foundation
 
-class UserWebServiceImp {
+class UserWebServiceImp : UserWebService {
     private let _webService: WebService
     
     init(webService: WebService) {
         self._webService = webService
     }
     
-    func getUser<T>(userId: Int16, completion: @escaping (_ user: T?) -> Void){
-        //_webService.getRequest(requestUri: "user/\(userId)") { user in completion(user as! User) }
-        _webService.getRequest(requestUri: "user/\(userId)", completion: completion)
+    func getUser(userId: Int16, completion: @escaping (_ user: UserObject?) -> Void) -> String {
+        let cancelationToken = _webService.getRequest(requestUri: "user/\(userId)"){ user in completion(user) }
+        return cancelationToken
     }
 }

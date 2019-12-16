@@ -41,7 +41,7 @@ class DatabaseNoteServiceImp : DatabaseNoteService {
         func _saveNote(noteData: NoteData, note: Note) {
             do {
                 noteData.setValue(note.getId(), forKey: String(describing: "id"))
-                noteData.setValue(note.getUuid() ?? UUID(), forKey: String(describing: "id"))
+                noteData.setValue(note.getUuid() ?? UUID().uuidString, forKey: String(describing: "uuid"))
                 noteData.setValue(note.getTitle(), forKey: String(describing: "title"))
                 noteData.setValue(note.getContent(), forKey: String(describing: "content"))
                 noteData.setValue(note.getLastEdit(), forKey: String(describing: "lastedit"))
@@ -87,12 +87,12 @@ class DatabaseNoteServiceImp : DatabaseNoteService {
             )
         }
         
-        func getNote(_ uuid: UUID) -> NoteObject {
+        func getNote(_ uuid: String) -> NoteObject {
             var note = NoteObject()
             
             let fetchRequest = _defaultFetchRequest
             fetchRequest.fetchLimit = 1
-            fetchRequest.predicate = NSPredicate(format: "uuid = %@", uuid.uuidString)
+            fetchRequest.predicate = NSPredicate(format: "uuid = %@", uuid)
             
             do {
                 let result = try _managedContext.fetch(fetchRequest)
@@ -112,7 +112,7 @@ class DatabaseNoteServiceImp : DatabaseNoteService {
         func updateNote(_ note: Note) {
             let fetchRequest = _defaultFetchRequest
             fetchRequest.fetchLimit = 1
-            fetchRequest.predicate = NSPredicate(format: "uuid = %@", note.getUuid()!.uuidString)
+            fetchRequest.predicate = NSPredicate(format: "uuid = %@", note.getUuid()!)
             
             do {
                 let result = try _managedContext.fetch(fetchRequest)
@@ -127,9 +127,9 @@ class DatabaseNoteServiceImp : DatabaseNoteService {
             }
         }
         
-        func deleteNote(_ uuid: UUID) {
+        func deleteNote(_ uuid: String) {
             let fetchRequest = _defaultFetchRequest
-            fetchRequest.predicate = NSPredicate(format: "uuid = %@", uuid.uuidString)
+            fetchRequest.predicate = NSPredicate(format: "uuid = %@", uuid)
             let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
             _executeDeleteRequest(deleteRequest)
         }

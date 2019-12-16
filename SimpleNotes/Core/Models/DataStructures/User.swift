@@ -19,7 +19,7 @@ public struct User {
         return _user.id
     }
     
-    public func getUuid() -> UUID? {
+    public func getUuid() -> String? {
         return _user.uuid
     }
     
