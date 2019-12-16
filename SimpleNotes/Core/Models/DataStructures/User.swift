@@ -15,12 +15,8 @@ public struct User {
         self._user = user
     }
     
-    public func getId() -> String {
-        return _user.id ?? ""
-    }
-    
-    public func getUUID() -> UUID {
-        return UUID(uuidString: _user.id ?? "")!
+    public func getId() -> Int16 {
+        return _user.id
     }
     
     public func getName() -> String {

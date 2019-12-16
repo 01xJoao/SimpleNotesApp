@@ -40,7 +40,7 @@ class DatabaseNoteServiceImp : DatabaseNoteService {
         
         func _saveNote(noteData: NoteData, note: Note) {
             do {
-                noteData.setValue(note.getUUID(), forKey: String(describing: "id"))
+                noteData.setValue(note.getId(), forKey: String(describing: "id"))
                 noteData.setValue(note.getTitle(), forKey: String(describing: "title"))
                 noteData.setValue(note.getContent(), forKey: String(describing: "content"))
                 noteData.setValue(note.getLastEdit(), forKey: String(describing: "lastedit"))
@@ -77,7 +77,7 @@ class DatabaseNoteServiceImp : DatabaseNoteService {
     
         func _createNoteObject(_ data: NoteData) -> NoteObject {
             return NoteObject(
-              id: data.id!.uuidString,
+              id: data.id,
               title: data.title!,
               content: data.content!,
               lastEdit: data.lastedit!,

@@ -9,13 +9,13 @@
 import Foundation
 
 struct UserObject {
-    var id: String?
+    var id: Int16
     var name: String?
     var email: String?
     var photo: Data?
     var pushNotificationId: String?
     
-    init(id: String = "", name: String = "", email: String = "", photo: Data? = nil, pushNotificationId: String = "") {
+    init(id: Int16 = -1, name: String = "", email: String = "", photo: Data? = nil, pushNotificationId: String = "") {
         self.id = id
         self.name = name
         self.email = email

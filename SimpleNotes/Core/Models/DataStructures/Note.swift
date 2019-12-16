@@ -15,12 +15,8 @@ public struct Note {
         self._note = note
     }
     
-    public func getId() -> String {
-        return _note.id ?? ""
-    }
-    
-    public func getUUID() -> UUID {
-        return UUID(uuidString: _note.id ?? "")!
+    public func getId() -> Int16 {
+        return _note.id
     }
     
     public func getTitle() -> String {

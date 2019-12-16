@@ -40,7 +40,7 @@ class DatabaseUserServiceImp : DatabaseUserService {
     
     func _saveUser(userData: UserData, user: User) {
         do {
-            userData.setValue(user.getUUID(), forKey: String(describing: "id"))
+            userData.setValue(user.getId(), forKey: String(describing: "id"))
             userData.setValue(user.getName(), forKey: String(describing: "name"))
             userData.setValue(user.getEmail(), forKey: String(describing: "email"))
             userData.setValue(user.getPhoto(), forKey: String(describing: "photo"))
@@ -77,7 +77,7 @@ class DatabaseUserServiceImp : DatabaseUserService {
     
     func _createUserObject(_ data: UserData) -> UserObject{
         return UserObject(
-          id: data.id!.uuidString,
+          id: data.id,
           name: data.name!,
           email: data.email!,
           photo: data.photo,

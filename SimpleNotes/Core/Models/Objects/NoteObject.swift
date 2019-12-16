@@ -9,13 +9,13 @@
 import Foundation
 
 struct NoteObject {
-    var id: String?
+    var id: Int16
     var title: String?
     var content: String?
     var lastEdit: Date?
     var location: String?
 
-    init(id: String = "", title: String = "", content: String = "", lastEdit: Date = Date(), location: String = "") {
+    init(id: Int16 = -1, title: String = "", content: String = "", lastEdit: Date = Date(), location: String = "") {
         self.id = id
         self.title = title
         self.content = content
