@@ -11,6 +11,7 @@ import CoreData
 import UIKit
 
 class DatabaseUserServiceImp : DatabaseUserService {
+
     private let _userEntity = "UserData"
     private let _reportService: ReportService
     private var _managedContext: NSManagedObjectContext!
@@ -41,6 +42,7 @@ class DatabaseUserServiceImp : DatabaseUserService {
     func _saveUser(userData: UserData, user: User) {
         do {
             userData.setValue(user.getId(), forKey: String(describing: "id"))
+            userData.setValue(user.getUuid() ?? UUID(), forKey: String(describing: "uuid"))
             userData.setValue(user.getName(), forKey: String(describing: "name"))
             userData.setValue(user.getEmail(), forKey: String(describing: "email"))
             userData.setValue(user.getPhoto(), forKey: String(describing: "photo"))
@@ -78,6 +80,7 @@ class DatabaseUserServiceImp : DatabaseUserService {
     func _createUserObject(_ data: UserData) -> UserObject{
         return UserObject(
           id: data.id,
+          uuid: data.uuid!,
           name: data.name!,
           email: data.email!,
           photo: data.photo,
@@ -85,12 +88,12 @@ class DatabaseUserServiceImp : DatabaseUserService {
         )
     }
     
-    func getUser(_ userId: String) -> UserObject {
+    func getUser(_ uuid: UUID) -> UserObject {
         var user = UserObject()
         
         let fetchRequest = _defaultFetchRequest
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "id = %@", userId)
+        fetchRequest.predicate = NSPredicate(format: "uuid = %@", uuid.uuidString)
         
         do {
             let result = try _managedContext.fetch(fetchRequest)
@@ -110,7 +113,7 @@ class DatabaseUserServiceImp : DatabaseUserService {
     func updateUser(_ user: User) {
         let fetchRequest = _defaultFetchRequest
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "id = %@", user.getId())
+        fetchRequest.predicate = NSPredicate(format: "uuid = %@", user.getUuid()!.uuidString)
         
         do {
             let result = try _managedContext.fetch(fetchRequest)
@@ -125,9 +128,9 @@ class DatabaseUserServiceImp : DatabaseUserService {
         }
     }
     
-    func deleteUser(_ userId: String) {
+    func deleteUser(_ uuid: UUID) {
         let fetchRequest = _defaultFetchRequest
-        fetchRequest.predicate = NSPredicate(format: "id = %@", userId)
+        fetchRequest.predicate = NSPredicate(format: "uuid = %@", uuid.uuidString)
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         _executeDeleteRequest(deleteRequest)
     }

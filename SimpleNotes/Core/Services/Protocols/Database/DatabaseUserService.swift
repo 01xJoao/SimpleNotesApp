@@ -10,9 +10,9 @@ import Foundation
 
 protocol DatabaseUserService {
     func createUser(_ user: User)
-    func getUser(_ userId: String) -> UserObject
+    func getUser(_ uuid: UUID) -> UserObject
     func getAllUsers() -> [UserObject]
     func updateUser(_ user: User)
-    func deleteUser(_ userId: String)
+    func deleteUser(_ uuid: UUID)
     func deleteAllUsers()
 }

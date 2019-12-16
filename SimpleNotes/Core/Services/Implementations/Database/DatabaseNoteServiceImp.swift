@@ -41,6 +41,7 @@ class DatabaseNoteServiceImp : DatabaseNoteService {
         func _saveNote(noteData: NoteData, note: Note) {
             do {
                 noteData.setValue(note.getId(), forKey: String(describing: "id"))
+                noteData.setValue(note.getUuid() ?? UUID(), forKey: String(describing: "id"))
                 noteData.setValue(note.getTitle(), forKey: String(describing: "title"))
                 noteData.setValue(note.getContent(), forKey: String(describing: "content"))
                 noteData.setValue(note.getLastEdit(), forKey: String(describing: "lastedit"))
@@ -78,6 +79,7 @@ class DatabaseNoteServiceImp : DatabaseNoteService {
         func _createNoteObject(_ data: NoteData) -> NoteObject {
             return NoteObject(
               id: data.id,
+              uuid: data.uuid!,
               title: data.title!,
               content: data.content!,
               lastEdit: data.lastedit!,
@@ -85,12 +87,12 @@ class DatabaseNoteServiceImp : DatabaseNoteService {
             )
         }
         
-        func getNote(_ noteId: String) -> NoteObject {
+        func getNote(_ uuid: UUID) -> NoteObject {
             var note = NoteObject()
             
             let fetchRequest = _defaultFetchRequest
             fetchRequest.fetchLimit = 1
-            fetchRequest.predicate = NSPredicate(format: "id = %@", noteId)
+            fetchRequest.predicate = NSPredicate(format: "uuid = %@", uuid.uuidString)
             
             do {
                 let result = try _managedContext.fetch(fetchRequest)
@@ -110,7 +112,7 @@ class DatabaseNoteServiceImp : DatabaseNoteService {
         func updateNote(_ note: Note) {
             let fetchRequest = _defaultFetchRequest
             fetchRequest.fetchLimit = 1
-            fetchRequest.predicate = NSPredicate(format: "id = %@", note.getId())
+            fetchRequest.predicate = NSPredicate(format: "uuid = %@", note.getUuid()!.uuidString)
             
             do {
                 let result = try _managedContext.fetch(fetchRequest)
@@ -125,9 +127,9 @@ class DatabaseNoteServiceImp : DatabaseNoteService {
             }
         }
         
-        func deleteNote(_ noteId: String) {
+        func deleteNote(_ uuid: UUID) {
             let fetchRequest = _defaultFetchRequest
-            fetchRequest.predicate = NSPredicate(format: "id = %@", noteId)
+            fetchRequest.predicate = NSPredicate(format: "uuid = %@", uuid.uuidString)
             let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
             _executeDeleteRequest(deleteRequest)
         }

@@ -10,9 +10,9 @@ import Foundation
 
 protocol DatabaseNoteService {
     func createNote(_ note: Note)
-    func getNote(_ noteId: String) -> NoteObject
+    func getNote(_ uuid: UUID) -> NoteObject
     func getAllNotes() -> [NoteObject]
     func updateNote(_ note: Note)
-    func deleteNote(_ noteId: String)
+    func deleteNote(_ uuid: UUID)
     func deleteAllNotes()
 }

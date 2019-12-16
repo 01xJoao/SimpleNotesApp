@@ -9,7 +9,7 @@
 import XCTest
 @testable import SimpleNotes
 
-class SimpleNotesTests: XCTestCase {
+class DatabaseTests: XCTestCase {
     
     let userDatabase: DatabaseUserService = DiContainer.resolve()
     var user: User!
@@ -17,7 +17,7 @@ class SimpleNotesTests: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
-        let userObj = UserObject(id: UUID().uuidString, name: "João Palma", email: "joaowd@outlook.com", pushNotificationId: UUID().uuidString)
+        let userObj = UserObject(uuid: UUID(), name: "João Palma", email: "joaowd@outlook.com", pushNotificationId: UUID().uuidString)
         user = User(userObj)
         
     }
@@ -31,8 +31,8 @@ class SimpleNotesTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         userDatabase.createUser(user)
         
-        let getUser = userDatabase.getUser(user.getId())
-        XCTAssert(user.getId() == getUser.id, "Users are not the same")
+        let getUser = userDatabase.getUser(user.getUuid()!)
+        XCTAssert(user.getUuid() == getUser.uuid, "Users are not the same")
     }
     
     func testCreateAndUpdateUserInDatabase() {
@@ -42,16 +42,16 @@ class SimpleNotesTests: XCTestCase {
         
         userDatabase.updateUser(user)
         
-        let getUser = userDatabase.getUser(user.getId())
+        let getUser = userDatabase.getUser(user.getUuid()!)
         XCTAssert(getUser.name == "João", "Users name are not the same")
     }
     
     func testDeleteUserFromDatabase() {
-        userDatabase.deleteUser(user.getId())
+        userDatabase.deleteUser(user.getUuid()!)
         
-        let getUser = userDatabase.getUser(user.getId())
+        let getUser = userDatabase.getUser(user.getUuid()!)
         
-        XCTAssert(user.getId() != getUser.id, "User not deleted")
+        XCTAssert(user.getUuid() != getUser.uuid, "User not deleted")
     }
     
     func testDeleteAllUsers() {

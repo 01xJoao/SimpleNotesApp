@@ -19,12 +19,16 @@ public struct User {
         return _user.id
     }
     
+    public func getUuid() -> UUID? {
+        return _user.uuid
+    }
+    
     public func getName() -> String {
-        return _user.name ?? ""
+        return _user.name
     }
     
     public func getEmail() -> String {
-        return _user.email ?? ""
+        return _user.email
     }
     
     public func getPhoto() -> Data? {
@@ -32,7 +36,7 @@ public struct User {
     }
     
     public func getPushNotificationId() -> String {
-        return _user.pushNotificationId ?? ""
+        return _user.pushNotificationId
     }
     
     public mutating func setName(_ name: String){

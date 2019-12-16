@@ -11,13 +11,13 @@ import Networking
 
 class WebServiceImp : WebService {
     private let _reportService: ReportService
-    private let _networking = Networking(baseURL : "http://simplenotes.com/api/")
+    private let _networking = Networking(baseURL : "ec2-52-56-38-215.eu-west-2.compute.amazonaws.com:8080/api/v1/")
     
     init(reportService: ReportService) {
         _reportService = reportService
     }
     
-    func getRequest(requestUri: String, completion: @escaping (_ result: Any?) -> Void) -> String {
+    func getRequest<T>(requestUri: String, completion: @escaping (_ result: T?) -> Void) -> String {
         
         let requestId = _networking.get("\(requestUri)") { result in
             self._handleResult(result, completion)
@@ -54,17 +54,16 @@ class WebServiceImp : WebService {
         return requestId
     }
     
-    
-    func _handleResult(_ result: JSONResult, _ completion: (_ result: Any?) -> Void ) {
+    func _handleResult<T>(_ result: JSONResult, _ completion: (_ result: T?) -> Void ) {
         switch result {
             
         case .success(let response):
             let res = response.arrayBody
-            completion(res)
+            completion(res as? T)
             
         case .failure(let response):
             let errorCode = response.error.code
-            completion(errorCode)
+            //completion(errorCode)
         }
     }
 }
