@@ -3,11 +3,11 @@
 ### Implemented features:
 
 #### MVVM Architecture
-#### Navigation Service with ViewModel-First navigation
 #### Command Pattern
 #### Observer Pattern
 #### Dialog Service
 #### L10N Service
+#### Navigation Service (ViewModel-First navigation)
 #### Report Service (Sentry Pod)
 #### AppSettings Service (UserDefaults)
 #### Location Service (CLLocationManager)
