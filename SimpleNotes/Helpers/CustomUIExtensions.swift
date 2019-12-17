@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class CustomUIExtensions {
+public struct CustomUIExtensions {
     public static func textShadow() -> NSShadow{
         let textShadow = NSShadow()
         textShadow.shadowColor = UIColor.Theme.black

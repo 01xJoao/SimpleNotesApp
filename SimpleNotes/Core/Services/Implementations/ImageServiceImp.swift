@@ -9,7 +9,7 @@
 import UIKit
 import AWSS3
 
-class ImageService {
+class ImageServiceImp : ImageService {
     private let _reportService: ReportService
     
     private let _bucketId = "simplenotesbucket"

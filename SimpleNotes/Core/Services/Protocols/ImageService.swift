@@ -6,4 +6,8 @@
 //  Copyright © 2019 João Palma. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol ImageService {
+    func uploadImage(image: UIImage, completion: @escaping (String?) -> Void)
+}

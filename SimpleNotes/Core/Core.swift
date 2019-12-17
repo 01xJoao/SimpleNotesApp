@@ -7,13 +7,13 @@
 //
 
 public class Core {
-    public static func initialize(){
+    public static func initialize() {
         _registerServices()
         _registerViewModels()
         _registerViewControllers()
     }
     
-    private static func _registerServices(){
+    private static func _registerServices() {
         DiContainer.registerAsSingleton(NavigationService.self) { NavigationServiceImp() }
         DiContainer.registerAsSingleton(DialogService.self) { DialogServiceImp(navigationService: DiContainer.resolve()) }
         DiContainer.registerAsSingleton(L10NService.self) { L10NServiceImp(reportService: DiContainer.resolve()) }
@@ -25,21 +25,22 @@ public class Core {
         DiContainer.registerAsSingleton(WebService.self) { WebServiceImp(reportService: DiContainer.resolve()) }
         DiContainer.registerAsSingleton(UserWebService.self) { UserWebServiceImp(webService: DiContainer.resolve()) }
         DiContainer.registerAsSingleton(NoteWebService.self) { NoteWebServiceImp(webService: DiContainer.resolve()) }
+        DiContainer.registerAsSingleton(ImageService.self) { ImageServiceImp(reportService: DiContainer.resolve()) }
     }
     
-    private static func _registerViewModels(){
+    private static func _registerViewModels() {
         DiContainer.register(LoadingViewModel.self) { LoadingViewModel() }
         DiContainer.register(LoginViewModel.self) { LoginViewModel() }
         DiContainer.register(CreateAccountViewModel.self) { CreateAccountViewModel() }
     }
     
-    private static func _registerViewControllers(){
+    private static func _registerViewControllers() {
         DiContainer.registerViewController(LoadingViewModel.self) { LoadingViewController() }
         DiContainer.registerViewController(LoginViewModel.self) { LoginViewController() }
         DiContainer.registerViewController(CreateAccountViewModel.self) { CreateAccountViewController() }
     }
     
-    public static func startApp(){
+    public static func startApp() {
         let navigationService : NavigationService = DiContainer.resolve()
         navigationService.navigateAndSetAsContainer(viewModel: LoadingViewModel.self)
     }

@@ -51,9 +51,7 @@ public struct Note {
         _note.lastEdit = lastEdit
     }
     
-    func serializeNote() -> NSDictionary {
-        let jsonData = try? JSONEncoder().encode(_note)
-        let jsonResult = try? JSONSerialization.jsonObject(with: jsonData!) as? NSDictionary
-        return jsonResult ?? ["" : ""]
+    func serialize() -> NSDictionary {
+        return Utils.serializeJson(object: _note)
     }
 }

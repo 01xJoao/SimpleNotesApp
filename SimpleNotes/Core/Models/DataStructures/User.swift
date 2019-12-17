@@ -51,9 +51,7 @@ public struct User {
         _user.pushNotificationId = pushId
     }
     
-    func serializeUser() -> NSDictionary {
-        let jsonData = try? JSONEncoder().encode(_user)
-        let jsonResult = try? JSONSerialization.jsonObject(with: jsonData!) as? NSDictionary
-        return jsonResult ?? ["" : ""]
+    func serialize() -> NSDictionary {
+        return Utils.serializeJson(object: _user)
     }
 }
