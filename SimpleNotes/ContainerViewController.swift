@@ -28,7 +28,7 @@ public class ContainerViewController: UIViewController {
         return currentViewmodelName
     }
     
-    public func changeViewController(_ viewController: UIViewController){
+    public func changeViewController(_ viewController: UIViewController) {
         if(_checkIfCurrentViewControllerIsEqualsToNew(viewController)){
             return
         }
@@ -40,8 +40,8 @@ public class ContainerViewController: UIViewController {
         return currentViewController == viewController.self
     }
     
-    func _removeCurrentViewController(){
-        if(currentViewController != nil){
+    func _removeCurrentViewController() {
+        if(currentViewController != nil) {
             currentViewController?.removeFromParent()
             currentViewController?.view.removeFromSuperview()
             currentViewController = nil

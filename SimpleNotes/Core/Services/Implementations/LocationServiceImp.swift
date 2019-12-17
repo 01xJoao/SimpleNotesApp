@@ -21,7 +21,7 @@ class LocationServiceImp : NSObject, LocationService, CLLocationManagerDelegate 
     }
     
     func _setupLocationManager() {
-        if(CLLocationManager.locationServicesEnabled()){
+        if(CLLocationManager.locationServicesEnabled()) {
             _locationManager.delegate = self
             _locationManager.desiredAccuracy = kCLLocationAccuracyBest
             _locationManager.distanceFilter = kCLDistanceFilterNone
@@ -30,7 +30,7 @@ class LocationServiceImp : NSObject, LocationService, CLLocationManagerDelegate 
     }
     
     func requestUserAuthorization() {
-        if(!CLLocationManager.locationServicesEnabled()){
+        if(!CLLocationManager.locationServicesEnabled()) {
             self._locationManager.requestWhenInUseAuthorization()
         }
     }
@@ -51,7 +51,7 @@ class LocationServiceImp : NSObject, LocationService, CLLocationManagerDelegate 
         
         _fetchCityAndCountry(from: currentlocation) { city, country, error in
             guard let city = city, let country = country, error == nil else {
-                if(error != nil){
+                if(error != nil) {
                     self._reportServiceProtocol.sendError(error: error!, message: "Coudn't fetch city and country")
                 }
                 return

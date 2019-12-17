@@ -34,7 +34,7 @@ public class BaseViewController<TViewModel> : UIViewController where TViewModel 
     
     private func _resolveViewModel() {
         let viewModel : TViewModel = DiContainer.resolve()
-        if(parameterData != nil){
+        if(parameterData != nil) {
             viewModel.prepare(dataObject: parameterData!)
         }
         viewModel.initialize()

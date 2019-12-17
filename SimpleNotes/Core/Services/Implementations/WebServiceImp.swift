@@ -59,7 +59,7 @@ class WebServiceImp : WebService {
             
         case .success(let response):
             do {
-                if(response.dictionaryBody["status"] as! String == "OK"){
+                if(response.dictionaryBody["status"] as! String == "OK") {
                     let jsonData = try JSONSerialization.data(withJSONObject: response.dictionaryBody["data"]!)
                     let obj = try JSONDecoder().decode(T.self, from: jsonData)
                     completion(obj)
