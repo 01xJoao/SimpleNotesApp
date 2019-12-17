@@ -20,11 +20,11 @@ class NoteWebServiceImp : NoteWebService {
     }
     
     func createNote(userId: Int16, note: Note, completion: @escaping (NoteObject?) -> Void) -> String {
-        _webService.postRequest(requestUri: "note/create/\(userId)", params: note) { note in completion(note) }
+        _webService.postRequest(requestUri: "note/create/\(userId)", params: note.serialize()) { note in completion(note) }
     }
     
     func updateNote(note: Note, completion: @escaping (NoteObject?) -> Void) -> String {
-        _webService.putRequest(requestUri: "note", params: note) { note in completion(note) }
+        _webService.putRequest(requestUri: "note", params: note.serialize()) { note in completion(note) }
     }
     
     func deleteNote(noteId: Int16, completion: @escaping (NoteObject?) -> Void) -> String {

@@ -26,12 +26,12 @@ class UserWebServiceImp : UserWebService {
     }
     
     func createUser(user: User, completion: @escaping (UserObject?) -> Void) -> String {
-        let cancelationToken = _webService.postRequest(requestUri: "user", params: user.serializeUser()) { user in completion(user) }
+        let cancelationToken = _webService.postRequest(requestUri: "user", params: user.serialize()) { user in completion(user) }
         return cancelationToken
     }
     
     func updateUser(user: User, completion: @escaping (UserObject?) -> Void) -> String {
-        let cancelationToken = _webService.putRequest(requestUri: "user", params: user.serializeUser()) { user in completion(user) }
+        let cancelationToken = _webService.putRequest(requestUri: "user", params: user.serialize()) { user in completion(user) }
         return cancelationToken
     }
     
