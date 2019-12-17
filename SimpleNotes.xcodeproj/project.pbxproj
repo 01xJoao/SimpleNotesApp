@@ -21,6 +21,8 @@
 		9D0890BC239C68DC002F84E6 /* AppSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0890BB239C68DC002F84E6 /* AppSetup.swift */; };
 		9D0890BE239C68F0002F84E6 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0890BD239C68F0002F84E6 /* Core.swift */; };
 		9D0890C0239C69CE002F84E6 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0890BF239C69CE002F84E6 /* ContainerViewController.swift */; };
+		9D161F9023A86DEC00F0AC0F /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D161F8F23A86DEC00F0AC0F /* ImageService.swift */; };
+		9D161F9223A86DFE00F0AC0F /* ImageServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D161F9123A86DFE00F0AC0F /* ImageServiceImp.swift */; };
 		9D6074FD23A50F3A00839368 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6074FC23A50F3A00839368 /* User.swift */; };
 		9D96187F23A2F0F7009ECA8B /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96187E23A2F0F7009ECA8B /* ReportService.swift */; };
 		9D96188123A2F209009ECA8B /* ReportServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96188023A2F209009ECA8B /* ReportServiceImp.swift */; };
@@ -99,6 +101,8 @@
 		9D0890BB239C68DC002F84E6 /* AppSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetup.swift; sourceTree = "<group>"; };
 		9D0890BD239C68F0002F84E6 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		9D0890BF239C69CE002F84E6 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		9D161F8F23A86DEC00F0AC0F /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		9D161F9123A86DFE00F0AC0F /* ImageServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceImp.swift; sourceTree = "<group>"; };
 		9D6074FC23A50F3A00839368 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9D96187E23A2F0F7009ECA8B /* ReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
 		9D96188023A2F209009ECA8B /* ReportServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportServiceImp.swift; sourceTree = "<group>"; };
@@ -427,6 +431,7 @@
 				9D96188223A2FC2A009ECA8B /* AppSettingsService.swift */,
 				9DCCF75223A435DF0061CB11 /* LocationService.swift */,
 				9D042C8A23A5A98D003948FD /* WebService.swift */,
+				9D161F8F23A86DEC00F0AC0F /* ImageService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 				9D96188423A2FC5A009ECA8B /* AppSettingsServiceImp.swift */,
 				9DCCF75423A4361D0061CB11 /* LocationServiceImp.swift */,
 				9D042C8C23A5A99C003948FD /* WebServiceImp.swift */,
+				9D161F9123A86DFE00F0AC0F /* ImageServiceImp.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -675,6 +681,7 @@
 				9D08908D239C674B002F84E6 /* AppDelegate.swift in Sources */,
 				9D9FE2E123A53B14005CDE8C /* DatabaseUserService.swift in Sources */,
 				9D08908F239C674B002F84E6 /* SceneDelegate.swift in Sources */,
+				9D161F9223A86DFE00F0AC0F /* ImageServiceImp.swift in Sources */,
 				9DCA6C3E239DB19E00DB4FF3 /* Extensions.swift in Sources */,
 				9D96188323A2FC2A009ECA8B /* AppSettingsService.swift in Sources */,
 				9D042C8B23A5A98D003948FD /* WebService.swift in Sources */,
@@ -704,6 +711,7 @@
 				9D9FE2DE23A5334D005CDE8C /* DatabaseNoteServiceImp.swift in Sources */,
 				9D0890C0239C69CE002F84E6 /* ContainerViewController.swift in Sources */,
 				9DCA6C43239EF61F00DB4FF3 /* Enums.swift in Sources */,
+				9D161F9023A86DEC00F0AC0F /* ImageService.swift in Sources */,
 				9DCDB75923A7FB2700B4CBFC /* NoteWebServiceImp.swift in Sources */,
 				9D089097239C674B002F84E6 /* SimpleNotes.xcdatamodeld in Sources */,
 				9DCCF75323A435DF0061CB11 /* LocationService.swift in Sources */,

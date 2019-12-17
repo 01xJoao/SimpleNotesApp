@@ -19,10 +19,6 @@ public struct User {
         return _user.id
     }
     
-    public func getUuid() -> String? {
-        return _user.uuid
-    }
-    
     public func getName() -> String {
         return _user.name
     }

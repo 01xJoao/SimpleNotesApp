@@ -11,15 +11,14 @@
     </entity>
     <entity name="UserData" representedClassName="UserData" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="photo" optional="YES" attributeType="Binary"/>
         <attribute name="pushnotificationid" optional="YES" attributeType="String"/>
-        <attribute name="uuid" optional="YES" attributeType="String"/>
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NoteData" inverseName="users" inverseEntity="NoteData"/>
     </entity>
     <elements>
         <element name="NoteData" positionX="-362.3828125" positionY="-3.3125" width="128" height="148"/>
-        <element name="UserData" positionX="-578.29296875" positionY="-18.18359375" width="128" height="148"/>
+        <element name="UserData" positionX="-578.29296875" positionY="-18.18359375" width="128" height="133"/>
     </elements>
 </model>

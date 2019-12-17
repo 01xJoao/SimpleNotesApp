@@ -1,4 +1,9 @@
 PODS:
+  - AWSCognito (2.12.3):
+    - AWSCore (= 2.12.3)
+  - AWSCore (2.12.3)
+  - AWSS3 (2.12.3):
+    - AWSCore (= 2.12.3)
   - LBTATools (1.0.12)
   - Networking (5.0.1)
   - Sentry (4.4.3):
@@ -6,21 +11,30 @@ PODS:
   - Sentry/Core (4.4.3)
 
 DEPENDENCIES:
+  - AWSCognito
+  - AWSCore
+  - AWSS3
   - LBTATools
   - Networking (~> 5.0)
   - Sentry (~> 4.4)
 
 SPEC REPOS:
   trunk:
+    - AWSCognito
+    - AWSCore
+    - AWSS3
     - LBTATools
     - Networking
     - Sentry
 
 SPEC CHECKSUMS:
+  AWSCognito: 32fb164c537b27794ce6f049e2d036f9e915f896
+  AWSCore: a4b4aeb414bdfd55a5e8879adb4985c46da157d6
+  AWSS3: 511a7b646572686c7e193aa19bd6a5cc43ec2977
   LBTATools: 389a901a01b9a56bea5682c40cd6e23530f40015
   Networking: 0a77e3315c32133e3aefb8dd2bd027ff536fd25d
   Sentry: 14bdd673870e8cf64932b149fad5bbbf39a9b390
 
-PODFILE CHECKSUM: 04bc06b8252787742f1b1a03c0a19d06bf675c81
+PODFILE CHECKSUM: 68dd6b576e3a4d3abbf8ee8a5f28fb1bf21bd0ee
 
 COCOAPODS: 1.8.4

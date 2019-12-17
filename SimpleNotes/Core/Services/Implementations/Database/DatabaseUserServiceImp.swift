@@ -42,7 +42,6 @@ class DatabaseUserServiceImp : DatabaseUserService {
     func _saveUser(userData: UserData, user: User) {
         do {
             userData.setValue(user.getId(), forKey: String(describing: "id"))
-            userData.setValue(user.getUuid() ?? UUID().uuidString, forKey: String(describing: "uuid"))
             userData.setValue(user.getName(), forKey: String(describing: "name"))
             userData.setValue(user.getEmail(), forKey: String(describing: "email"))
             userData.setValue(user.getPhoto(), forKey: String(describing: "photo"))
@@ -80,7 +79,6 @@ class DatabaseUserServiceImp : DatabaseUserService {
     func _createUserObject(_ data: UserData) -> UserObject{
         return UserObject(
           id: data.id,
-          uuid: data.uuid!,
           name: data.name!,
           email: data.email!,
           photo: data.photo,
@@ -88,12 +86,12 @@ class DatabaseUserServiceImp : DatabaseUserService {
         )
     }
     
-    func getUser(_ uuid: String) -> UserObject {
+    func getUser(_ userId: Int16) -> UserObject {
         var user = UserObject()
         
         let fetchRequest = _defaultFetchRequest
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "uuid = %@", uuid)
+        fetchRequest.predicate = NSPredicate(format: "id == \(userId)")
         
         do {
             let result = try _managedContext.fetch(fetchRequest)
@@ -113,7 +111,7 @@ class DatabaseUserServiceImp : DatabaseUserService {
     func updateUser(_ user: User) {
         let fetchRequest = _defaultFetchRequest
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "uuid = %@", user.getUuid()!)
+        fetchRequest.predicate = NSPredicate(format: "id == \(user.getId())")
         
         do {
             let result = try _managedContext.fetch(fetchRequest)
@@ -128,9 +126,9 @@ class DatabaseUserServiceImp : DatabaseUserService {
         }
     }
     
-    func deleteUser(_ uuid: String) {
+    func deleteUser(_ userId: Int16) {
         let fetchRequest = _defaultFetchRequest
-        fetchRequest.predicate = NSPredicate(format: "uuid = %@", uuid)
+        fetchRequest.predicate = NSPredicate(format: "id == \(userId)", userId)
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         _executeDeleteRequest(deleteRequest)
     }

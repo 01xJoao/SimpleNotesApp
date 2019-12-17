@@ -13,5 +13,8 @@ target 'SimpleNotes' do
   pod 'LBTATools'
   pod 'Sentry', '~> 4.4'
   pod 'Networking', '~> 5.0'
+  pod 'AWSCognito'
+  pod 'AWSCore'
+  pod 'AWSS3'
 
 end
