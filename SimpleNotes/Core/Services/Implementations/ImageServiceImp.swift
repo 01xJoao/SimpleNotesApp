@@ -50,7 +50,7 @@ class ImageServiceImp : ImageService {
                 if let error = task.error {
                     self._reportService.sendError(error: error, message: "Error unable to load image")
                 } else if (task.result != nil ) {
-                    completion("http://s3.amazonaws.com/\(self._bucketId)/\(imageKey)")
+                    completion("http://\(self._bucketId).s3.eu-west-2.amazonaws.com/\(imageKey)")
                 } else {
                     completion(nil)
                 }
