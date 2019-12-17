@@ -9,7 +9,7 @@
 import Foundation
 
 public class LoadingViewModel : ViewModelBase {
-    public func navigateToLoginCommand(){
-        navigationService.navigate(viewModel: LoginViewModel.self, arguments: false, animated: true)
+    public override func appeared() {
+        navigationService.navigateAndSetAsContainer(viewModel: LoginViewModel.self)
     }
 }

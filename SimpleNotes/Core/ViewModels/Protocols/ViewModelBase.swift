@@ -25,33 +25,19 @@ public class ViewModelBase : ViewModel {
         }
     }
     
-    private var _isBusy = false
-    public var isBusy : Bool {
-        get {
-            return _isBusy
-        }
-        set {
-            _isBusy = newValue
-            //Add notify
-        }
-    }
+    public var isBusy : DynamicValue<Bool> = DynamicValue<Bool>(false)
     
     public func prepare(dataObject: Any) {}
     
-    public func initialize(){
-    }
+    public func initialize() {}
     
-    public func appearing(){
-    }
+    public func appearing() {}
     
-    public func appeared(){
-    }
+    public func appeared() {}
     
-    public func disappearing(){
-    }
+    public func disappearing() {}
     
-    public func dismissChildViewNotify(dataObject: Any?) {
-    }
+    public func dismissChildViewNotify(dataObject: Any?) {}
 }
 
 public class ViewModelBaseWithArguments<TObject> : ViewModelBase {

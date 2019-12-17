@@ -18,19 +18,11 @@ public class LoginViewModel: ViewModelBaseWithArguments<Bool> {
     override public func prepare(data: Bool) {
     }
     
-    private func _createAccount(){
+    private func _createAccount() {
         navigationService.navigate(viewModel: CreateAccountViewModel.self, arguments: nil, animated: true)
     }
     
-    public func navigateBackCommand(){
-        navigationService.close(arguments: true, animated: true)
-    }
-    
-    private func _dialogCallback(option: Bool){
-        print(option)
-    }
-    
     public func _canExecute() -> Bool {
-        return !isBusy
+        return !isBusy.value
     }
 }

@@ -10,6 +10,7 @@
 		62524AA4ABB9CA56D7D2AC04 /* Pods_SimpleNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045667FAE82CD00927DD91BB /* Pods_SimpleNotes.framework */; };
 		9D042C8B23A5A98D003948FD /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D042C8A23A5A98D003948FD /* WebService.swift */; };
 		9D042C8D23A5A99C003948FD /* WebServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D042C8C23A5A99C003948FD /* WebServiceImp.swift */; };
+		9D08160923A9421F00EC0A13 /* FormBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D08160823A9421F00EC0A13 /* FormBaseViewController.swift */; };
 		9D08908D239C674B002F84E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D08908C239C674B002F84E6 /* AppDelegate.swift */; };
 		9D08908F239C674B002F84E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D08908E239C674B002F84E6 /* SceneDelegate.swift */; };
 		9D089091239C674B002F84E6 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D089090239C674B002F84E6 /* LoadingViewController.swift */; };
@@ -90,6 +91,7 @@
 		750D66B11B43E571767E3AF6 /* Pods-SimpleNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleNotes.debug.xcconfig"; path = "Target Support Files/Pods-SimpleNotes/Pods-SimpleNotes.debug.xcconfig"; sourceTree = "<group>"; };
 		9D042C8A23A5A98D003948FD /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		9D042C8C23A5A99C003948FD /* WebServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceImp.swift; sourceTree = "<group>"; };
+		9D08160823A9421F00EC0A13 /* FormBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormBaseViewController.swift; sourceTree = "<group>"; };
 		9D089089239C674B002F84E6 /* SimpleNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D08908C239C674B002F84E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D08908E239C674B002F84E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -242,7 +244,7 @@
 		9D0890B1239C67E0002F84E6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9DE0AE84239C8CB2001A32A6 /* Base */,
+				9DE0AE84239C8CB2001A32A6 /* Bases */,
 				9D089090239C674B002F84E6 /* LoadingViewController.swift */,
 				9DCA6C2F239D2BED00DB4FF3 /* LoginViewController.swift */,
 				9DCA6C34239D5F3900DB4FF3 /* CreateAccountViewController.swift */,
@@ -414,12 +416,13 @@
 			path = WebServices;
 			sourceTree = "<group>";
 		};
-		9DE0AE84239C8CB2001A32A6 /* Base */ = {
+		9DE0AE84239C8CB2001A32A6 /* Bases */ = {
 			isa = PBXGroup;
 			children = (
 				9DE0AE86239C8CF8001A32A6 /* BaseViewController.swift */,
+				9D08160823A9421F00EC0A13 /* FormBaseViewController.swift */,
 			);
-			path = Base;
+			path = Bases;
 			sourceTree = "<group>";
 		};
 		9DFA50D923A187B300EA6E7F /* Resources */ = {
@@ -735,6 +738,7 @@
 				9DCA6C43239EF61F00DB4FF3 /* Enums.swift in Sources */,
 				9D161F9023A86DEC00F0AC0F /* ImageService.swift in Sources */,
 				9DCDB75923A7FB2700B4CBFC /* NoteWebServiceImp.swift in Sources */,
+				9D08160923A9421F00EC0A13 /* FormBaseViewController.swift in Sources */,
 				9D161F9A23A9088600F0AC0F /* Generics.swift in Sources */,
 				9D089097239C674B002F84E6 /* SimpleNotes.xcdatamodeld in Sources */,
 				9DCCF75323A435DF0061CB11 /* LocationService.swift in Sources */,

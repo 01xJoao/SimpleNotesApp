@@ -10,7 +10,7 @@ import Foundation
 
 typealias CompletionHandler = (() -> Void)
 
-class DynamicValue<T> {
+public class DynamicValue<T> {
     private var _observers = [String: CompletionHandler]()
     
     public var value : T {
@@ -23,11 +23,11 @@ class DynamicValue<T> {
         self.value = value
     }
     
-    public func addObserver(_ observer: NSObject, completionHandler: @escaping CompletionHandler) {
+    func addObserver(_ observer: NSObject, completionHandler: @escaping CompletionHandler) {
         _observers[observer.description] = completionHandler
     }
     
-    public func addAndNotify(_ observer: NSObject, completionHandler: @escaping CompletionHandler) {
+    func addAndNotify(_ observer: NSObject, completionHandler: @escaping CompletionHandler) {
         self.addObserver(observer, completionHandler: completionHandler)
         self._notify()
     }

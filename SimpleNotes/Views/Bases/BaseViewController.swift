@@ -68,4 +68,8 @@ public class BaseViewController<TViewModel> : UIViewController where TViewModel 
             viewModel.dismissChildViewNotify(dataObject: params["arguments"]!)
         }
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }

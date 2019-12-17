@@ -9,7 +9,4 @@
 import Foundation
 
 public class CreateAccountViewModel : ViewModelBase {
-    public func navigateBackCommand(){
-        navigationService.close(arguments: nil, animated: true)
-    }
 }
