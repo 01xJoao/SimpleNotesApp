@@ -16,7 +16,31 @@ class UserWebServiceImp : UserWebService {
     }
     
     func getUser(userId: Int16, completion: @escaping (_ user: UserObject?) -> Void) -> String {
-        let cancelationToken = _webService.getRequest(requestUri: "user/\(userId)"){ user in completion(user) }
+        let cancelationToken = _webService.getRequest(requestUri: "user/\(userId)") { user in completion(user) }
         return cancelationToken
+    }
+    
+    func getAllUsers(completion: @escaping (_ user: [UserObject]?) -> Void) -> String {
+        let cancelationToken = _webService.getRequest(requestUri: "user") { users in completion(users) }
+        return cancelationToken
+    }
+    
+    func createUser(user: User, completion: @escaping (UserObject?) -> Void) -> String {
+        let cancelationToken = _webService.postRequest(requestUri: "user", params: user.serializeUser()) { user in completion(user) }
+        return cancelationToken
+    }
+    
+    func updateUser(user: User, completion: @escaping (UserObject?) -> Void) -> String {
+        let cancelationToken = _webService.putRequest(requestUri: "user", params: user.serializeUser()) { user in completion(user) }
+        return cancelationToken
+    }
+    
+    func deleteUser(userId: Int16, completion: @escaping (UserObject?) -> Void) -> String {
+        let cancelationToken = _webService.deleteRequest(requestUri: "user/\(userId)") { user in completion(user) }
+        return cancelationToken
+    }
+    
+    func cancelRequest(id: String){
+        _webService.cancelRequest(id)
     }
 }

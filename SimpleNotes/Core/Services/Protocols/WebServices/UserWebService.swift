@@ -10,4 +10,9 @@ import Foundation
 
 protocol UserWebService {
     func getUser(userId: Int16, completion: @escaping (_ user: UserObject?) -> Void) -> String
+    func getAllUsers(completion: @escaping (_ user: [UserObject]?) -> Void) -> String
+    func createUser(user: User, completion: @escaping (_ user: UserObject?) -> Void) -> String
+    func updateUser(user: User, completion: @escaping (UserObject?) -> Void) -> String
+    func deleteUser(userId: Int16, completion: @escaping (UserObject?) -> Void) -> String
+    func cancelRequest(id: String)
 }

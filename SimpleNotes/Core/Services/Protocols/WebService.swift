@@ -9,8 +9,9 @@
 import Foundation
 
 protocol WebService {
-    func getRequest<T : Decodable>(requestUri: String, completion: @escaping (_ result: T?) -> Void) -> String
-    func postRequest<T : Decodable>(requestUri: String, params: [String: Any], completion: @escaping (_ result: T?) -> Void) -> String
-    func putRequest<T : Decodable>(requestUri: String, params: [String: Any], completion: @escaping (_ result: T?) -> Void) -> String
-    func deleteRequest<T : Decodable>(requestUri: String, completion: @escaping (_ result: T?) -> Void) -> String
+    func getRequest<T : Codable>(requestUri: String, completion: @escaping (_ result: T?) -> Void) -> String
+    func postRequest<T : Codable>(requestUri: String, params: Any, completion: @escaping (_ result: T?) -> Void) -> String
+    func putRequest<T : Codable>(requestUri: String, params: Any, completion: @escaping (_ result: T?) -> Void) -> String
+    func deleteRequest<T : Codable>(requestUri: String, completion: @escaping (_ result: T?) -> Void) -> String
+    func cancelRequest(_ id: String)
 }

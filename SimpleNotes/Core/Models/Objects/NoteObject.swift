@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct NoteObject : Decodable {
+struct NoteObject : Codable {
     var id: Int16
     var uuid: String?
     var title: String

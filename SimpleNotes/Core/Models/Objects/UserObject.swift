@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserObject : Decodable {
+struct UserObject : Codable {
     var id: Int16
     var uuid: String?
     var name: String

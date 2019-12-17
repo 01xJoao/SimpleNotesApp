@@ -50,4 +50,10 @@ public struct Note {
     public mutating func setLastEdit(_ lastEdit: Date) {
         _note.lastEdit = lastEdit
     }
+    
+    func serializeNote() -> NSDictionary {
+        let jsonData = try? JSONEncoder().encode(_note)
+        let jsonResult = try? JSONSerialization.jsonObject(with: jsonData!) as? NSDictionary
+        return jsonResult ?? ["" : ""]
+    }
 }

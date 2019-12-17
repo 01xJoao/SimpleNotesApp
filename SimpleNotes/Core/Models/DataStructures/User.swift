@@ -54,4 +54,10 @@ public struct User {
     public mutating func setPushNotificationId(_ pushId: String) {
         _user.pushNotificationId = pushId
     }
+    
+    func serializeUser() -> NSDictionary {
+        let jsonData = try? JSONEncoder().encode(_user)
+        let jsonResult = try? JSONSerialization.jsonObject(with: jsonData!) as? NSDictionary
+        return jsonResult ?? ["" : ""]
+    }
 }
