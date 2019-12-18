@@ -12,24 +12,24 @@ import LBTATools
 
 public class LoginViewController : FormBaseViewController<LoginViewModel>, UITextFieldDelegate {
     
-    let _signInButton = UIButton(title: "Sign In", titleColor: UIColor.Theme.white,
+    private let _signInButton = UIButton(title: "Sign In", titleColor: UIColor.Theme.white,
                                  font: .systemFont(ofSize: 16), backgroundColor: UIColor.Theme.mainBlue)
     
-    let _signInKeyboardButton = UIButton(title: "Sign In", titleColor: UIColor.Theme.white,
+    private let _signInKeyboardButton = UIButton(title: "Sign In", titleColor: UIColor.Theme.white,
                                     font: .systemFont(ofSize: 16), backgroundColor: UIColor.Theme.mainBlue)
     
-    let _signUpButton = UIButton(title: "First time around here? Sign Up!",
+    private let _signUpButton = UIButton(title: "First time around here? Sign Up!",
                                  titleColor: UIColor.Theme.darkBlue, font: .systemFont(ofSize: 14))
     
-    let _imageView = UIImageView(image: #imageLiteral(resourceName: "logo_blue_2"), contentMode: .scaleAspectFit)
+    private let _imageView = UIImageView(image: #imageLiteral(resourceName: "logo_blue_2"), contentMode: .scaleAspectFit)
     
-    let _emailIndicatorLabel = UILabel(text: "Email address", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
-    let _emailTextField = IndentedTextField(keyboardType: .emailAddress)
-    let _emailLineView = UIView(backgroundColor: UIColor.Theme.darkGrey)
+    private let _emailIndicatorLabel = UILabel(text: "Email address", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
+    private let _emailTextField = IndentedTextField(keyboardType: .emailAddress)
+    private let _emailLineView = UIView(backgroundColor: UIColor.Theme.darkGrey)
     
-    let _passwordIndicatorLabel = UILabel(text: "Password", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
-    let _passwordTextField = IndentedTextField(isSecureTextEntry: true)
-    let _passwordLineView = UIView(backgroundColor: UIColor.Theme.darkGrey)
+    private let _passwordIndicatorLabel = UILabel(text: "Password", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
+    private let _passwordTextField = IndentedTextField(isSecureTextEntry: true)
+    private let _passwordLineView = UIView(backgroundColor: UIColor.Theme.darkGrey)
                                  
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +37,12 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
     }
 
     private func _setUpView() {
-        keyboardButtonHeight = 50
         _setupViewSizes()
         _setupTextFields()
         _addViewsToFormStackContainer()
         
         scrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(_handleTapDismiss)))
         self.navigationController?.navigationBar.barStyle = .default
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     private func _setupTextFields() {
@@ -73,7 +71,9 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
         _passwordTextField.textContentType = .oneTimeCode
     }
     
-    func _setupViewSizes() {
+    private func _setupViewSizes() {
+        keyboardButtonHeight = 50
+        
         _imageView.constrainHeight(74)
         
         _signInKeyboardButton.constrainHeight(keyboardButtonHeight)
@@ -85,13 +85,14 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
          _passwordTextField].forEach{$0.constrainHeight(32)}
     }
     
-    func _addViewsToFormStackContainer(){
+    private func _addViewsToFormStackContainer(){
         formContainerStackView.stack(
            UIView().stack(_imageView).padTop(20).padBottom(45),
            UIView().stack(_emailIndicatorLabel, _emailTextField, _emailLineView),
            UIView().stack(_passwordIndicatorLabel, _passwordTextField, _passwordLineView),
            UIView().stack(_signUpButton).padTop(35).padBottom(80),
-           spacing: 16).withMargins(.init(top: 16, left: 30, bottom: 16, right: 30))
+           spacing: 16
+        ).withMargins(.init(top: 16, left: 30, bottom: 16, right: 30))
     }
     
     
@@ -108,70 +109,47 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
     }
     
     public func textFieldDidBeginEditing(_ textField: UITextField) {
-        switch textField.tag {
-        case 0:
-            _emailLineView.backgroundColor = UIColor.Theme.darkBlue
-            _emailIndicatorLabel.textColor = UIColor.Theme.darkBlue
-        case 1:
-            _passwordLineView.backgroundColor = UIColor.Theme.darkBlue
-            _passwordIndicatorLabel.textColor = UIColor.Theme.darkBlue
-        default:
-            break;
-        }
+        let indicatorLabel = _getIndicatorLabel(textField)
+        let lineView = _getLineView(textField)
+        _changeFormColors(lineView, indicatorLabel, UIColor.Theme.darkBlue)
     }
     
-    @objc func keyboardWillShow(_ notification: Notification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            _updateScrollViewSize(keyboardRectangle.height)
-        }
-    }
-    
-    func _updateScrollViewSize(_ keyboardHeight: CGFloat) {
+    private func _changeFormColors(_ line: UIView, _ label: UILabel, _ color: UIColor) {
+        line.backgroundColor = color
+        label.textColor = color
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        switch textField.tag {
-        case 0:
-            UIView.animate(withDuration: 0.3) { self._emailIndicatorLabel.alpha = string == "" && textField.text?.count == 1 ? 0 : 1 }
-        case 1:
-            UIView.animate(withDuration: 0.3) { self._passwordIndicatorLabel.alpha = string == "" && textField.text?.count == 1 ? 0 : 1 }
-        default:
-            break;
-        }
+        let indicatorLabel = _getIndicatorLabel(textField)
+        _animateIndicatorText(textField, string, indicatorLabel)
         return true
     }
     
+    private func _animateIndicatorText(_ textField: UITextField, _ string: String, _ label: UILabel) {
+         UIView.animate(withDuration: 0.3) { label.alpha = string == "" && textField.text?.count == 1 ? 0 : 1 }
+    }
     
     public func textFieldDidEndEditing(_ textField: UITextField) {
-        switch textField.tag {
-        case 0:
-            _emailLineView.backgroundColor = UIColor.Theme.darkGrey
-            _emailIndicatorLabel.textColor = UIColor.Theme.darkGrey
-            UIView.animate(withDuration: 0.3) { self._emailIndicatorLabel.alpha = textField.text!.isEmpty ? 0 : 1 }
-        case 1:
-            _passwordLineView.backgroundColor = UIColor.Theme.darkGrey
-            _passwordIndicatorLabel.textColor = UIColor.Theme.darkGrey
-            UIView.animate(withDuration: 0.3) { self._passwordIndicatorLabel.alpha = textField.text!.isEmpty ? 0 : 1 }
-        default:
-            break;
-        }
+        let indicatorLabel = _getIndicatorLabel(textField)
+        let lineView = _getLineView(textField)
+        _animateFormOnFinishEditing(textField,  indicatorLabel, lineView)
+    }
+    
+    private func _animateFormOnFinishEditing(_ textField: UITextField, _ label: UILabel, _ line: UIView){
+        _changeFormColors(line, label, UIColor.Theme.darkGrey)
+        UIView.animate(withDuration: 0.3) { label.alpha = textField.text!.isEmpty ? 0 : 1 }
     }
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch textField.tag {
-        case 0:
-            _passwordTextField.becomeFirstResponder()
-        case 1:
-             _passwordTextField.resignFirstResponder()
-        default:
-            break;
-        }
-        return true
+        return textField.tag == 0 ? _passwordTextField.becomeFirstResponder() : _passwordTextField.resignFirstResponder()
     }
     
-    @objc fileprivate func _handleClickKeyboardButton() {
-        view.endEditing(true)
+    private func _getIndicatorLabel(_ textField: UITextField) -> UILabel {
+        return textField.tag == 0 ? _emailIndicatorLabel : _passwordIndicatorLabel
+    }
+    
+    private func _getLineView(_ textField: UITextField) -> UIView {
+        return textField.tag == 0 ? _emailLineView : _passwordLineView
     }
     
     @objc fileprivate func _handleTapDismiss() {
