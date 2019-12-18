@@ -15,14 +15,11 @@ public class LoginViewModel: ViewModelBaseWithArguments<Bool> {
         get { _createAccountCommand ??= Command(_createAccount, canExecute: _canExecute); return _createAccountCommand!}
     }
     
-    override public func prepare(data: Bool) {
-    }
-    
     private func _createAccount() {
         navigationService.navigate(viewModel: CreateAccountViewModel.self, arguments: nil, animated: true)
     }
     
-    public func _canExecute() -> Bool {
+    private func _canExecute() -> Bool {
         return !isBusy.value
     }
 }

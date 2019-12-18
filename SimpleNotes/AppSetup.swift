@@ -16,10 +16,19 @@ public class AppSetup {
     }
     
     private static func _setViewAppearance(){
-        UINavigationBar.appearance().barTintColor = UIColor.Theme.mainBlue
+        UINavigationBar.appearance().barTintColor = UIColor.Theme.darkBlue
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Theme.white]
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.Theme.white], for: UIControl.State.normal)
         UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Theme.white,
                                                                  NSAttributedString.Key.shadow: CustomUIExtensions.textShadow()]
+    }
+}
+
+extension UINavigationController {
+    override open func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.topViewController?.navigationItem.backBarButtonItem = backButton
+        self.topViewController?.navigationItem.backBarButtonItem?.tintColor = UIColor.white
     }
 }

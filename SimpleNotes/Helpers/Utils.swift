@@ -6,6 +6,7 @@
 //  Copyright © 2019 João Palma. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 public struct Utils {
@@ -16,4 +17,5 @@ public struct Utils {
         return jsonResult ?? ["" : ""]
     }
     
+    public let keyWindow: UIWindow? = UIApplication.shared.windows.first {$0.isKeyWindow}
 }

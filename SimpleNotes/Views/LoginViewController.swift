@@ -39,6 +39,7 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
     private func _setUpView() {
         _setupViewSizes()
         _setupTextFields()
+        _setupButtons()
         _addViewsToFormStackContainer()
         
         scrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(_handleTapDismiss)))
@@ -71,6 +72,15 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
         _passwordTextField.textContentType = .oneTimeCode
     }
     
+    private func _setupButtons() {
+        _signUpButton.addTarget(self, action: #selector(_navigateToCreateAccount), for: UIControl.Event.touchUpInside)
+        
+        self.view.addSubview(_signInButton)
+        _signInButton.translatesAutoresizingMaskIntoConstraints = false
+        _signInButton.anchor(top: nil, leading: self.view.leadingAnchor, bottom: self.view.bottomAnchor, trailing: self.view.trailingAnchor)
+        _signInButton.constrainHeight(50 + (Utils().keyWindow?.safeAreaInsets.bottom)!)
+    }
+    
     private func _setupViewSizes() {
         keyboardButtonHeight = 50
         
@@ -93,19 +103,6 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
            UIView().stack(_signUpButton).padTop(35).padBottom(80),
            spacing: 16
         ).withMargins(.init(top: 16, left: 30, bottom: 16, right: 30))
-    }
-    
-    
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        _setupSignInButton()
-    }
-    
-    private func _setupSignInButton(){
-        self.view.addSubview(_signInButton)
-        _signInButton.translatesAutoresizingMaskIntoConstraints = false
-        _signInButton.anchor(top: nil, leading: self.view.leadingAnchor, bottom: self.view.bottomAnchor, trailing: self.view.trailingAnchor)
-        _signInButton.constrainHeight(keyboardButtonHeight + self.view.safeAreaInsets.bottom)
     }
     
     public func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -150,6 +147,10 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
     
     private func _getLineView(_ textField: UITextField) -> UIView {
         return textField.tag == 0 ? _emailLineView : _passwordLineView
+    }
+    
+    @objc fileprivate func _navigateToCreateAccount(sender: UIButton){
+        viewModel.createAccountCommand.executeIf()
     }
     
     @objc fileprivate func _handleTapDismiss() {

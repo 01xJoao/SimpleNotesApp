@@ -10,20 +10,30 @@ import UIKit
 import Foundation
 import LBTATools
 
-public class CreateAccountViewController : BaseViewController<CreateAccountViewModel> {
+public class CreateAccountViewController : FormBaseViewController<CreateAccountViewModel> {
+    private let _signInButton = UIButton(title: "Create", titleColor: UIColor.Theme.white,
+                                 font: .systemFont(ofSize: 16), backgroundColor: UIColor.Theme.mainBlue)
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.view.backgroundColor = UIColor.Theme.green
-//
-//        let button = UIButton(frame: CGRect(x: 0, y: 50, width: 200, height: 50))
-//        button.backgroundColor = UIColor.Theme.mainBlue
-//        button.setTitle("Navigate Back", for: UIControl.State.normal)
-//        button.addTarget(self, action: #selector(_navigateBack), for: UIControl.Event.touchUpInside)
-//
-//        self.view.addSubview(button)
+        self.title = "Create Account"
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationBar.barStyle = .black
+        _setupSignInButton()
     }
     
-//    @objc func _navigateBack(sender: UIButton){
-//    }
+    private func _setupSignInButton(){
+        self.view.addSubview(_signInButton)
+        _signInButton.translatesAutoresizingMaskIntoConstraints = false
+        _signInButton.anchor(top: nil, leading: self.view.leadingAnchor, bottom: self.view.bottomAnchor, trailing: self.view.trailingAnchor)
+        _signInButton.constrainHeight(50 + (Utils().keyWindow?.safeAreaInsets.bottom)!)
+    }
+    
+    override public  func viewSafeAreaInsetsDidChange() {
+        _setupSignInButton()
+    }
+    
+    public override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
 }
