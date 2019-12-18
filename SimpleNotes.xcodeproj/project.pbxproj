@@ -33,6 +33,7 @@
 		9D96188123A2F209009ECA8B /* ReportServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96188023A2F209009ECA8B /* ReportServiceImp.swift */; };
 		9D96188323A2FC2A009ECA8B /* AppSettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96188223A2FC2A009ECA8B /* AppSettingsService.swift */; };
 		9D96188523A2FC5A009ECA8B /* AppSettingsServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D96188423A2FC5A009ECA8B /* AppSettingsServiceImp.swift */; };
+		9D9B45EE23A9C905000B47CE /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B45ED23A9C905000B47CE /* UITextFieldExtensions.swift */; };
 		9D9FE2DC23A53339005CDE8C /* DatabaseUserServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9FE2DB23A53339005CDE8C /* DatabaseUserServiceImp.swift */; };
 		9D9FE2DE23A5334D005CDE8C /* DatabaseNoteServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9FE2DD23A5334D005CDE8C /* DatabaseNoteServiceImp.swift */; };
 		9D9FE2E123A53B14005CDE8C /* DatabaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9FE2E023A53B14005CDE8C /* DatabaseUserService.swift */; };
@@ -118,6 +119,7 @@
 		9D96188023A2F209009ECA8B /* ReportServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportServiceImp.swift; sourceTree = "<group>"; };
 		9D96188223A2FC2A009ECA8B /* AppSettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsService.swift; sourceTree = "<group>"; };
 		9D96188423A2FC5A009ECA8B /* AppSettingsServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsServiceImp.swift; sourceTree = "<group>"; };
+		9D9B45ED23A9C905000B47CE /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 		9D9FE2DB23A53339005CDE8C /* DatabaseUserServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseUserServiceImp.swift; sourceTree = "<group>"; };
 		9D9FE2DD23A5334D005CDE8C /* DatabaseNoteServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseNoteServiceImp.swift; sourceTree = "<group>"; };
 		9D9FE2E023A53B14005CDE8C /* DatabaseUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseUserService.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				9DFA50D023A0544A00EA6E7F /* Animations.swift */,
 				9D161F9323A8FFEE00F0AC0F /* Utils.swift */,
 				9D161F9923A9088600F0AC0F /* Generics.swift */,
+				9D9B45ED23A9C905000B47CE /* UITextFieldExtensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				9D96188323A2FC2A009ECA8B /* AppSettingsService.swift in Sources */,
 				9D042C8B23A5A98D003948FD /* WebService.swift in Sources */,
 				9D042C8D23A5A99C003948FD /* WebServiceImp.swift in Sources */,
+				9D9B45EE23A9C905000B47CE /* UITextFieldExtensions.swift in Sources */,
 				9DCA6C28239D129C00DB4FF3 /* NavigationService.swift in Sources */,
 				9DCA6C40239EF56B00DB4FF3 /* DialogService.swift in Sources */,
 				9DE0AE8C239C8F7C001A32A6 /* ViewModelBase.swift in Sources */,

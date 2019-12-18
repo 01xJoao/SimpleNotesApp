@@ -10,8 +10,8 @@ import UIKit
 import Foundation
 
 public class FormBaseViewController<TViewModel> : BaseViewController<TViewModel>, UIScrollViewDelegate where TViewModel : ViewModel {
-    var lowestElement: UIView!
     
+    var lowestElement: UIView!
     lazy fileprivate var distanceToBottom = self.distanceFromLowestElementToBottom()
     
     public lazy var scrollView: UIScrollView = {
@@ -29,7 +29,7 @@ public class FormBaseViewController<TViewModel> : BaseViewController<TViewModel>
         return sv
     }()
     
-    public let alignment: FormAlignment = .top
+    public var viewAlignment: FormAlignment = .center
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -42,20 +42,15 @@ public class FormBaseViewController<TViewModel> : BaseViewController<TViewModel>
     }
     
     override public func viewWillAppear(_ animated: Bool) {
-        if alignment == .top {
+        if viewAlignment == .top {
             formContainerStackView.anchor(top: scrollView.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor)
         } else {
             formContainerStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
             formContainerStackView.centerInSuperview()
         }
-    }
-    
-    override public func viewDidAppear(_ animated: Bool) {
-        scrollView.contentInset.bottom += view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
         
         _ = distanceToBottom
     }
-
     
     override open func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
