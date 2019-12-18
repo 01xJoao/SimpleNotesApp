@@ -10,10 +10,14 @@ import UIKit
 import Foundation
 import LBTATools
 
-public class LoginViewController : FormBaseViewController<LoginViewModel> {
+public class LoginViewController : FormBaseViewController<LoginViewModel>, UITextFieldDelegate {
     
     let _signInButton = UIButton(title: "Sign In", titleColor: UIColor.Theme.white,
                                  font: .systemFont(ofSize: 16), backgroundColor: UIColor.Theme.mainBlue)
+    
+    let _signInKeyboardButton = UIButton(title: "Sign In", titleColor: UIColor.Theme.white,
+                                    font: .systemFont(ofSize: 16), backgroundColor: UIColor.Theme.mainBlue)
+    
     let _signUpButton = UIButton(title: "First time around here? Sign Up!",
                                  titleColor: UIColor.Theme.darkBlue, font: .systemFont(ofSize: 14))
     
@@ -33,45 +37,97 @@ public class LoginViewController : FormBaseViewController<LoginViewModel> {
     }
 
     private func _setUpView() {
-        self.navigationController?.navigationBar.barStyle = .default
-        self.view.addSubview(_signInButton)
-        
         lowestElement = _passwordTextField
+        _setupViewSizes()
+        _setupTextFields()
+        _addViewsToFormStackContainer()
         
+        scrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(_handleTapDismiss)))
+        self.navigationController?.navigationBar.barStyle = .default
+    }
+    
+    private func _setupTextFields() {
+        _emailTextField.tag = 0
+        _passwordTextField.tag = 1
+        
+        
+        UITextFieldExtensions.setupField(indicatorText: "Email address", indicatorLabel: _passwordIndicatorLabel,
+                                         textField: _emailTextField, divider: _emailLineView, returnKeyType: .done,
+                                         activeColor: UIColor.Theme.darkBlue, inactiveColor: UIColor.Theme.darkGrey)
+        
+        
+        UITextFieldExtensions.setupField(indicatorText: "Password", indicatorLabel: _emailIndicatorLabel,
+                                        textField: _passwordTextField, divider: _passwordLineView, returnKeyType: .done,
+                                        activeColor: UIColor.Theme.darkBlue, inactiveColor: UIColor.Theme.darkGrey)
+        
+        
+
+        
+        _emailTextField.inputAccessoryView = _signInKeyboardButton
+        _passwordTextField.inputAccessoryView = _signInKeyboardButton
+        
+        _emailTextField.delegate = self
+        _passwordTextField.delegate = self
+        
+        _emailTextField.textContentType = .oneTimeCode
+        _passwordTextField.textContentType = .oneTimeCode
+        
+        _emailTextField.autocorrectionType = .no
+        _passwordTextField.textContentType = .oneTimeCode
+    }
+    
+    func _setupViewSizes() {
         _imageView.constrainHeight(74)
-        _emailLineView.constrainHeight(1)
-        _passwordLineView.constrainHeight(1)
         
-        scrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapDismiss)))
-        
-        _emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [
-            NSAttributedString.Key.foregroundColor: UIColor.Theme.darkGrey,
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)])
-        
-        _passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [
-            NSAttributedString.Key.foregroundColor: UIColor.Theme.darkGrey,
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)])
-        
+        _signInKeyboardButton.constrainHeight(50)
+
+        [_emailLineView,
+        _passwordLineView].forEach{$0.constrainHeight(1)}
+                
         [_emailTextField,
          _passwordTextField].forEach{$0.constrainHeight(32)}
-        
+    }
+    
+    func _addViewsToFormStackContainer(){
         formContainerStackView.stack(
-            UIView().stack(_imageView).padTop(20).padBottom(45),
-            UIView().stack(_emailIndicatorLabel, _emailTextField, _emailLineView),
-            UIView().stack(_passwordIndicatorLabel, _passwordTextField, _passwordLineView),
-            UIView().stack(_signUpButton).padTop(35).padBottom(80),
-            spacing: 16).withMargins(.init(top: 16, left: 30, bottom: 16, right: 30)
-        )
+           UIView().stack(_imageView).padTop(20).padBottom(45),
+           UIView().stack(_emailIndicatorLabel, _emailTextField, _emailLineView),
+           UIView().stack(_passwordIndicatorLabel, _passwordTextField, _passwordLineView),
+           UIView().stack(_signUpButton).padTop(35).padBottom(80),
+           spacing: 16).withMargins(.init(top: 16, left: 30, bottom: 16, right: 30))
     }
     
     
     public override func viewDidAppear(_ animated: Bool) {
+        _setupSignInButton()
+    }
+    
+    private func _setupSignInButton(){
+        self.view.addSubview(_signInButton)
         _signInButton.translatesAutoresizingMaskIntoConstraints = false
         _signInButton.anchor(top: nil, leading: self.view.leadingAnchor, bottom: self.view.bottomAnchor, trailing: self.view.trailingAnchor)
         _signInButton.constrainHeight(50 + self.view.safeAreaInsets.bottom)
     }
     
-    @objc fileprivate func handleTapDismiss() {
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
+    }
+    
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true
+    }
+    
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+    }
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    @objc fileprivate func _handleClickKeyboardButton() {
+        view.endEditing(true)
+    }
+    
+    @objc fileprivate func _handleTapDismiss() {
         view.endEditing(true)
     }
 }

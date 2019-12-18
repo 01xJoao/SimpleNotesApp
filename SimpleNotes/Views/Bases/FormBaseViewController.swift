@@ -10,7 +10,6 @@ import UIKit
 import Foundation
 
 public class FormBaseViewController<TViewModel> : BaseViewController<TViewModel>, UIScrollViewDelegate where TViewModel : ViewModel {
-    
     var lowestElement: UIView!
     lazy fileprivate var distanceToBottom = self.distanceFromLowestElementToBottom()
     
