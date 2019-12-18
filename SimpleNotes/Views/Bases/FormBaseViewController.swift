@@ -10,8 +10,7 @@ import UIKit
 import Foundation
 
 public class FormBaseViewController<TViewModel> : BaseViewController<TViewModel>, UIScrollViewDelegate where TViewModel : ViewModel {
-    var lowestElement: UIView!
-    lazy fileprivate var distanceToBottom = self.distanceFromLowestElementToBottom()
+    var keyboardButtonHeight: CGFloat = 0
     
     public lazy var scrollView: UIScrollView = {
         let sv = UIScrollView()
@@ -41,14 +40,13 @@ public class FormBaseViewController<TViewModel> : BaseViewController<TViewModel>
     }
     
     override public func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if viewAlignment == .top {
             formContainerStackView.anchor(top: scrollView.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor)
         } else {
             formContainerStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
             formContainerStackView.centerInSuperview()
         }
-        
-        _ = distanceToBottom
     }
     
     override open func viewDidLayoutSubviews() {
@@ -59,6 +57,12 @@ public class FormBaseViewController<TViewModel> : BaseViewController<TViewModel>
         } else {
             scrollView.contentSize.height = view.frame.height
         }
+        
+        if (UIScreen.main.bounds.width > UIScreen.main.bounds.height) {
+            scrollView.contentInset.top = 32
+        } else {
+            scrollView.contentInset.top = 0
+        }
     }
     
     fileprivate func setupKeyboardNotifications() {
@@ -66,27 +70,21 @@ public class FormBaseViewController<TViewModel> : BaseViewController<TViewModel>
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    fileprivate func distanceFromLowestElementToBottom() -> CGFloat {
-        if lowestElement != nil {
-            guard let frame = lowestElement.superview?.convert(lowestElement.frame, to: view) else { return 0 }
-            let distance = view.frame.height - frame.origin.y - frame.height
-            return distance
-        }
-        
-        return view.frame.height - formContainerStackView.frame.maxY
-    }
-    
     @objc public func handleKeyboardShow(notification: Notification) {
         guard let value = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
         let keyboardFrame = value.cgRectValue
         
-        scrollView.contentInset.bottom = keyboardFrame.height
+        scrollView.contentInset.bottom = keyboardButtonHeight
         
-        if distanceToBottom > 0 {
-            scrollView.contentInset.bottom -= distanceToBottom
+        if (UIScreen.main.bounds.width > UIScreen.main.bounds.height) {
+            scrollView.contentInset.bottom += self.view.safeAreaInsets.bottom
         }
         
-        self.scrollView.verticalScrollIndicatorInsets.bottom = keyboardFrame.height
+        self.scrollView.verticalScrollIndicatorInsets.bottom = keyboardFrame.height - keyboardButtonHeight
+    }
+    
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollView.contentOffset.x = 0.0
     }
     
     @objc public func handleKeyboardHide() {
