@@ -9,14 +9,21 @@
 import UIKit
 import CoreData
 import Sentry
+import OneSignal
 
-private let _sentryDNS: String = "https://17fc5da01c414945af356999aca3aecc@sentry.io/1855619"
+fileprivate let _sentryDNS: String = "https://17fc5da01c414945af356999aca3aecc@sentry.io/1855619"
+fileprivate let _oneSignalId: String = "328b8558-e708-4934-8a58-c7b651ca5026"
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    //START OneSignal initialization code
+    let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         _instantiateSentryService()
+        _instantiateOneSignal(launchOptions)
         return true
     }
     
@@ -27,6 +34,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch let error {
             print("\(error)")
         }
+    }
+    
+    func _instantiateOneSignal(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        OneSignal.initWithLaunchOptions(launchOptions,
+            appId: "328b8558-e708-4934-8a58-c7b651ca5026",
+            handleNotificationAction: nil,
+            settings: onesignalInitSettings)
+        
+        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
     }
 
     // MARK: UISceneSession Lifecycle

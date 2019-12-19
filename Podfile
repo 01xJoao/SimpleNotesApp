@@ -16,5 +16,11 @@ target 'SimpleNotes' do
   pod 'AWSCognito'
   pod 'AWSCore'
   pod 'AWSS3'
+  pod 'OneSignal', '>= 2.11.2', '< 3.0'
 
+end
+
+target 'NotificationServiceExtension' do
+  use_frameworks!
+  pod 'OneSignal', '>= 2.11.2', '< 3.0'
 end

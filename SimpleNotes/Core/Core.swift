@@ -26,6 +26,8 @@ public class Core {
         DiContainer.registerAsSingleton(UserWebService.self) { UserWebServiceImp(webService: DiContainer.resolve()) }
         DiContainer.registerAsSingleton(NoteWebService.self) { NoteWebServiceImp(webService: DiContainer.resolve()) }
         DiContainer.registerAsSingleton(ImageService.self) { ImageServiceImp(reportService: DiContainer.resolve()) }
+        DiContainer.registerAsSingleton(ImageService.self) { ImageServiceImp(reportService: DiContainer.resolve()) }
+        DiContainer.registerAsSingleton(NotificationService.self) { NotificationServiceImp(appSettingsService: DiContainer.resolve()) }
     }
     
     private static func _registerViewModels() {

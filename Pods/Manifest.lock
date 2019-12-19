@@ -6,6 +6,7 @@ PODS:
     - AWSCore (= 2.12.3)
   - LBTATools (1.0.12)
   - Networking (5.0.1)
+  - OneSignal (2.12.3)
   - Sentry (4.4.3):
     - Sentry/Core (= 4.4.3)
   - Sentry/Core (4.4.3)
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - AWSS3
   - LBTATools
   - Networking (~> 5.0)
+  - OneSignal (< 3.0, >= 2.11.2)
   - Sentry (~> 4.4)
 
 SPEC REPOS:
@@ -25,6 +27,7 @@ SPEC REPOS:
     - AWSS3
     - LBTATools
     - Networking
+    - OneSignal
     - Sentry
 
 SPEC CHECKSUMS:
@@ -33,8 +36,9 @@ SPEC CHECKSUMS:
   AWSS3: 511a7b646572686c7e193aa19bd6a5cc43ec2977
   LBTATools: 389a901a01b9a56bea5682c40cd6e23530f40015
   Networking: 0a77e3315c32133e3aefb8dd2bd027ff536fd25d
+  OneSignal: 30b6e03a1f14169c4313e301a7b7bdf467b5a575
   Sentry: 14bdd673870e8cf64932b149fad5bbbf39a9b390
 
-PODFILE CHECKSUM: 68dd6b576e3a4d3abbf8ee8a5f28fb1bf21bd0ee
+PODFILE CHECKSUM: f9ea78f91eaf9e0fca8527d74ff5331da3bc5271
 
 COCOAPODS: 1.8.4

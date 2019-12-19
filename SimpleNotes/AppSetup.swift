@@ -9,6 +9,7 @@
 import UIKit
 
 public class AppSetup {
+    
     public static func configure(){
         Core.initialize()
         _setViewAppearance()

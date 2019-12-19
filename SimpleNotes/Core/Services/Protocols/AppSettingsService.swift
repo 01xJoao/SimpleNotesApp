@@ -12,6 +12,8 @@ protocol AppSettingsService {
     var userName: String { get set }
     var userEmail: String { get set }
     var isUserLoggedIn: Bool { get set }
+    var userAlreadyAskedForNotificationPermissions: Bool { get set }
+    var userNotificationId: String { get set }
     
     func clearUserData()
 }

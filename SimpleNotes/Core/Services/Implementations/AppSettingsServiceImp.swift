@@ -9,6 +9,7 @@
 import Foundation
 
 class AppSettingsServiceImp : AppSettingsService {
+    
     private let _userDefaults = UserDefaults.standard
     
     var userName: String {
@@ -34,6 +35,25 @@ class AppSettingsServiceImp : AppSettingsService {
             _userDefaults.set(newValue, forKey: "isUserLoggedIn")
         }
     }
+    
+    
+    var userAlreadyAskedForNotificationPermissions: Bool {
+        get {
+            return _userDefaults.bool(forKey: "userAlreadyAskedForNotificationPermissions")
+        } set {
+            _userDefaults.set(newValue, forKey: "userAlreadyAskedForNotificationPermissions")
+        }
+    }
+    
+    var userNotificationId: String {
+        get {
+            return _userDefaults.string(forKey: "userNotificationId") ?? ""
+        } set {
+            _userDefaults.set(newValue, forKey: "userNotificationId")
+        }
+    }
+    
+    
     
     func clearUserData() {
         let domain = Bundle.main.bundleIdentifier!
