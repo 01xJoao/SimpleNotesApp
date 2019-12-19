@@ -70,8 +70,10 @@ public class CreateAccountViewController : FormBaseViewController<CreateAccountV
     }
     
     private func _setupTextFields() {
-        _emailTextField.tag = 0
-        _passwordTextField.tag = 1
+        _nameTextField.tag = 0
+        _emailTextField.tag = 1
+        _passwordTextField.tag = 2
+        _confirmPasswordTextField.tag = 3
         
         UITextFieldExtensions.setupField(
             indicatorText: "Name", indicatorLabel: _nameIndicatorLabel,
@@ -121,7 +123,58 @@ public class CreateAccountViewController : FormBaseViewController<CreateAccountV
         ).withMargins(.init(top: 40, left: 30, bottom: bottomButtonHeight + 30, right: 30))
     }
     
-    public func textFieldDidBeginEditing(_ textField: UITextField) {
+        public func textFieldDidBeginEditing(_ textField: UITextField) {
+        let indicatorLabel = _getIndicatorLabel(textField)
+        let lineView = _getLineView(textField)
+        UITextFieldExtensions.changeFormColors(lineView, indicatorLabel, UIColor.Theme.darkBlue)
+    }
+    
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let indicatorLabel = _getIndicatorLabel(textField)
+        UITextFieldExtensions.animateIndicatorText(textField, string, indicatorLabel)
+        return true
+    }
+    
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        let indicatorLabel = _getIndicatorLabel(textField)
+        let lineView = _getLineView(textField)
+        UITextFieldExtensions.animateFormOnFinishEditing(textField, indicatorLabel, lineView, UIColor.Theme.darkGrey)
+    }
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1;
+        let nextResponder = self.view.viewWithTag(nextTag);
+        return nextResponder != nil ? nextResponder!.becomeFirstResponder() : textField.resignFirstResponder();
+    }
+    
+    private func _getIndicatorLabel(_ textField: UITextField) -> UILabel {
+        switch textField.tag {
+        case 0:
+            return _nameIndicatorLabel
+        case 1:
+            return _emailIndicatorLabel
+        case 2:
+            return _passwordIndicatorLabel
+        case 3:
+            return _confirmPasswordIndicatorLabel
+        default:
+            return _nameIndicatorLabel;
+        }
+    }
+    
+    private func _getLineView(_ textField: UITextField) -> UIView {
+        switch textField.tag {
+        case 0:
+            return _nameLineView
+        case 1:
+            return _emailLineView
+        case 2:
+            return _passwordLineView
+        case 3:
+            return _confirmPasswordLineView
+        default:
+            return _nameLineView;
+        }
     }
     
     public override func viewWillDisappear(_ animated: Bool) {

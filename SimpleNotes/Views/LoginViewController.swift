@@ -105,33 +105,19 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         let indicatorLabel = _getIndicatorLabel(textField)
         let lineView = _getLineView(textField)
-        _changeFormColors(lineView, indicatorLabel, UIColor.Theme.darkBlue)
-    }
-        
-    private func _changeFormColors(_ line: UIView, _ label: UILabel, _ color: UIColor) {
-        line.backgroundColor = color
-        label.textColor = color
+        UITextFieldExtensions.changeFormColors(lineView, indicatorLabel, UIColor.Theme.darkBlue)
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let indicatorLabel = _getIndicatorLabel(textField)
-        _animateIndicatorText(textField, string, indicatorLabel)
+        UITextFieldExtensions.animateIndicatorText(textField, string, indicatorLabel)
         return true
-    }
-    
-    private func _animateIndicatorText(_ textField: UITextField, _ string: String, _ label: UILabel) {
-         UIView.animate(withDuration: 0.3) { label.alpha = string == "" && textField.text?.count == 1 ? 0 : 1 }
     }
     
     public func textFieldDidEndEditing(_ textField: UITextField) {
         let indicatorLabel = _getIndicatorLabel(textField)
         let lineView = _getLineView(textField)
-        _animateFormOnFinishEditing(textField,  indicatorLabel, lineView)
-    }
-    
-    private func _animateFormOnFinishEditing(_ textField: UITextField, _ label: UILabel, _ line: UIView){
-        _changeFormColors(line, label, UIColor.Theme.darkGrey)
-        UIView.animate(withDuration: 0.3) { label.alpha = textField.text!.isEmpty ? 0 : 1 }
+        UITextFieldExtensions.animateFormOnFinishEditing(textField, indicatorLabel, lineView, UIColor.Theme.darkGrey)
     }
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
