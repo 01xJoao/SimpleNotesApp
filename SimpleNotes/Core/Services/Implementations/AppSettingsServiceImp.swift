@@ -28,11 +28,11 @@ class AppSettingsServiceImp : AppSettingsService {
         }
     }
     
-    var isUserLoggedIn: Bool {
+    var isUserSignedIn: Bool {
         get {
-            return _userDefaults.bool(forKey: "isUserLoggedIn")
+            return _userDefaults.bool(forKey: "isUserSignedIn")
         } set {
-            _userDefaults.set(newValue, forKey: "isUserLoggedIn")
+            _userDefaults.set(newValue, forKey: "isUserSignedIn")
         }
     }
     

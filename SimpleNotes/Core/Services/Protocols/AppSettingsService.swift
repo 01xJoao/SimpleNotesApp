@@ -10,7 +10,7 @@ import Foundation
 
 protocol AppSettingsService {
     var userEmail: String { get set }
-    var isUserLoggedIn: Bool { get set }
+    var isUserSignedIn: Bool { get set }
     var userAlreadyAskedForNotificationPermissions: Bool { get set }
     var userNotificationId: String { get set }
     

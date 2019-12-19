@@ -67,7 +67,7 @@ public class LoginViewModel: ViewModelBaseWithArguments<Bool> {
         let user = User(userObj)
         databaseUserService.createUser(user)
         
-        appSettingsService.isUserLoggedIn = true
+        appSettingsService.isUserSignedIn = true
         appSettingsService.userEmail = user.getEmail()
     }
     
