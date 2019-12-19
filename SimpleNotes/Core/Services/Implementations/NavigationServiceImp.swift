@@ -29,7 +29,8 @@ public class NavigationServiceImp : NavigationService {
     
     public func navigateAndSetAsContainer<TViewModel : ViewModel>(viewModel: TViewModel.Type) {
         let viewController: UIViewController = self._getViewController(type: viewModel, args: nil)
-        self._setContainerViewController(viewController)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        self._setContainerViewController(navigationController)
     }
     
     private func _getViewController<TViewModel : ViewModel>(type: TViewModel.Type, args: Any?) -> UIViewController {

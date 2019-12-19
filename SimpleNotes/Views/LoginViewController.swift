@@ -46,6 +46,7 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
         
         scrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(_handleTapDismiss)))
         self.navigationController?.navigationBar.barStyle = .default
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     private func _setupViewSizes() {
@@ -94,7 +95,7 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
         _signInButton.anchor(top: nil, leading: self.view.leadingAnchor, bottom: self.view.bottomAnchor, trailing: self.view.trailingAnchor)
         _signInButton.constrainHeight(bottomButtonHeight + (Utils().keyWindow?.safeAreaInsets.bottom)!)
         _signInButton.addTarget(self, action: #selector(_loginAccount), for: UIControl.Event.touchUpInside)
-    
+        _signInKeyboardButton.addTarget(self, action: #selector(_loginAccount), for: UIControl.Event.touchUpInside)
         _signUpButton.addTarget(self, action: #selector(_navigateToCreateAccount), for: UIControl.Event.touchUpInside)
     }
     

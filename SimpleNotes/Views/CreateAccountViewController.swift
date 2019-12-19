@@ -35,10 +35,10 @@ public class CreateAccountViewController : FormBaseViewController<CreateAccountV
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        _setupView()
     }
     
-    private func setupView() {
+    private func _setupView() {
         bottomButtonHeight = 50
         
         _setupViewSizes()

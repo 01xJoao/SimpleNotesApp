@@ -25,7 +25,7 @@ public class InfoDialogView: UIView {
     
     private func _configureView(_ text: String, _ infoType: InfoDialogType) {
         self.backgroundColor = infoType.rawValue
-        let textLabel: UILabel = UILabel.init(text: text, font: .boldSystemFont(ofSize: 14), textColor: UIColor.Theme.white, numberOfLines: 2)
+        let textLabel: UILabel = UILabel(text: text, font: .boldSystemFont(ofSize: 14), textColor: UIColor.Theme.white, textAlignment: .center, numberOfLines: 2)
         
         stack(textLabel, alignment: .center).padBottom(12).padLeft(8).padRight(8).anchor(top: self.topAnchor, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor)
     }

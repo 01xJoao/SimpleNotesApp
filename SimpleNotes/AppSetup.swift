@@ -17,11 +17,21 @@ public class AppSetup {
     }
     
     private static func _setViewAppearance(){
-        UINavigationBar.appearance().barTintColor = UIColor.Theme.darkBlue
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Theme.white]
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.Theme.white], for: UIControl.State.normal)
-        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Theme.white,
-                                                                 NSAttributedString.Key.shadow: CustomUIExtensions.textShadow()]
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = UIColor.Theme.darkBlue
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.Theme.white]
+            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.Theme.white, .shadow: CustomUIExtensions.textShadow()]
+            
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().compactAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+            UIBarButtonItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.Theme.white], for: .normal)
+        } else {
+            UINavigationBar.appearance().tintColor = UIColor.Theme.darkBlue
+            UINavigationBar.appearance().barTintColor = UIColor.Theme.darkBlue
+            UINavigationBar.appearance().isTranslucent = false
+        }
     }
 }
 

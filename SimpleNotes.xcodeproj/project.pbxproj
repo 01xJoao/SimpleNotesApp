@@ -67,6 +67,8 @@
 		9DCDB75923A7FB2700B4CBFC /* NoteWebServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB75823A7FB2700B4CBFC /* NoteWebServiceImp.swift */; };
 		9DCEF74223AB1609006099FA /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCEF74123AB1609006099FA /* NotificationService.swift */; };
 		9DCEF74423AB16BE006099FA /* NotificationServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCEF74323AB16BE006099FA /* NotificationServiceImp.swift */; };
+		9DDF6D4C23ABFC6200DEA8A0 /* NotesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDF6D4B23ABFC6200DEA8A0 /* NotesListViewModel.swift */; };
+		9DDF6D4E23ABFC8900DEA8A0 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDF6D4D23ABFC8900DEA8A0 /* NotesListViewController.swift */; };
 		9DE0AE87239C8CF8001A32A6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE86239C8CF8001A32A6 /* BaseViewController.swift */; };
 		9DE0AE89239C8E3F001A32A6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE88239C8E3F001A32A6 /* ViewModel.swift */; };
 		9DE0AE8C239C8F7C001A32A6 /* ViewModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE8B239C8F7C001A32A6 /* ViewModelBase.swift */; };
@@ -182,6 +184,8 @@
 		9DCEF74023AB1348006099FA /* SimpleNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleNotes.entitlements; sourceTree = "<group>"; };
 		9DCEF74123AB1609006099FA /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		9DCEF74323AB16BE006099FA /* NotificationServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServiceImp.swift; sourceTree = "<group>"; };
+		9DDF6D4B23ABFC6200DEA8A0 /* NotesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewModel.swift; sourceTree = "<group>"; };
+		9DDF6D4D23ABFC8900DEA8A0 /* NotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
 		9DE0AE86239C8CF8001A32A6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9DE0AE88239C8E3F001A32A6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		9DE0AE8B239C8F7C001A32A6 /* ViewModelBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBase.swift; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 				9D089090239C674B002F84E6 /* LoadingViewController.swift */,
 				9DCA6C2F239D2BED00DB4FF3 /* LoginViewController.swift */,
 				9DCA6C34239D5F3900DB4FF3 /* CreateAccountViewController.swift */,
+				9DDF6D4D23ABFC8900DEA8A0 /* NotesListViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -543,6 +548,7 @@
 				9DE0AE8D239C9160001A32A6 /* LoadingViewModel.swift */,
 				9DCA6C2D239D2AD800DB4FF3 /* LoginViewModel.swift */,
 				9DCA6C32239D5F2200DB4FF3 /* CreateAccountViewModel.swift */,
+				9DDF6D4B23ABFC6200DEA8A0 /* NotesListViewModel.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -808,6 +814,7 @@
 				9DCA6C3B239D961400DB4FF3 /* Command.swift in Sources */,
 				9DCA6C35239D5F3900DB4FF3 /* CreateAccountViewController.swift in Sources */,
 				9D6074FD23A50F3A00839368 /* User.swift in Sources */,
+				9DDF6D4E23ABFC8900DEA8A0 /* NotesListViewController.swift in Sources */,
 				9DCCF75523A4361D0061CB11 /* LocationServiceImp.swift in Sources */,
 				9D161F9723A901E300F0AC0F /* DynamicValue.swift in Sources */,
 				9D96188523A2FC5A009ECA8B /* AppSettingsServiceImp.swift in Sources */,
@@ -842,6 +849,7 @@
 				9DE0AE89239C8E3F001A32A6 /* ViewModel.swift in Sources */,
 				9D9FE2DC23A53339005CDE8C /* DatabaseUserServiceImp.swift in Sources */,
 				9DFA50D523A17D7F00EA6E7F /* L10NServiceImp.swift in Sources */,
+				9DDF6D4C23ABFC6200DEA8A0 /* NotesListViewModel.swift in Sources */,
 				9D9FE2E723A54C3A005CDE8C /* NoteObject.swift in Sources */,
 				9D0890BE239C68F0002F84E6 /* Core.swift in Sources */,
 				9DCA6C33239D5F2200DB4FF3 /* CreateAccountViewModel.swift in Sources */,

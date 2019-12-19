@@ -9,7 +9,21 @@
 import Foundation
 
 public class LoadingViewModel : ViewModelBase {
-    public override func appeared() {
-        navigationService.navigateAndSetAsContainer(viewModel: LoginViewModel.self)
+    let appSettingsService: AppSettingsService
+    
+    init(appSettingsService: AppSettingsService) {
+        self.appSettingsService = appSettingsService
+    }
+    
+    public override func initialize() {
+        _checkIfUserIsSignedIn()
+    }
+    
+    private func _checkIfUserIsSignedIn() {
+        if(appSettingsService.isUserLoggedIn) {
+            navigationService.navigateAndSetAsContainer(viewModel: NotesListViewModel.self)
+        } else {
+            navigationService.navigateAndSetAsContainer(viewModel: LoginViewModel.self)
+        }
     }
 }

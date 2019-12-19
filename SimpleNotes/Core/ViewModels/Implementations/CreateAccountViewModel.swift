@@ -55,10 +55,10 @@ public class CreateAccountViewModel : ViewModelBase {
     
     private func _createUserCompletion(_ userObj: UserObject?) {
         if (userObj != nil) {
-            _sendAlert("User created succefully! \nPlease Log In", .good)
+            _sendAlert("User created succefully! Please sign in", .good)
             navigationService.close(arguments: userObj?.email, animated: true)
         } else {
-            _sendAlert("Something went wrong. Please check your form.", .bad)
+            _sendAlert("Something went wrong. \nPlease check your form.", .bad)
         }
     }
     

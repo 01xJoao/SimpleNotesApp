@@ -43,12 +43,15 @@ public class Core {
             dialogService: DiContainer.resolve(),
             appSettingsService: DiContainer.resolve())
         }
+        
+        DiContainer.register(NotesListViewModel.self) { NotesListViewModel() }
     }
     
     private static func _registerViewControllers() {
         DiContainer.registerViewController(LoadingViewModel.self) { LoadingViewController() }
         DiContainer.registerViewController(LoginViewModel.self) { LoginViewController() }
         DiContainer.registerViewController(CreateAccountViewModel.self) { CreateAccountViewController() }
+        DiContainer.registerViewController(NotesListViewModel.self) { NotesListViewController() }
     }
     
     public static func startApp() {

@@ -58,6 +58,8 @@ public class LoginViewModel: ViewModelBaseWithArguments<Bool> {
     private func _loginCompletion(_ userObject: UserObject?) {
         if(userObject != nil) {
             _saveUserInformation(userObject!)
+            navigationService.navigateAndSetAsContainer(viewModel: NotesListViewModel.self)
+            dialogService.showInfo("Signed in successfully!", informationType: .good)
         }
     }
     
