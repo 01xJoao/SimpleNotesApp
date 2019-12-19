@@ -3,6 +3,7 @@
 ### Implemented features:
 
 #### MVVM Architecture
+#### Dependency Injection
 #### Command Pattern
 #### Observer Pattern
 #### Dialog Service
