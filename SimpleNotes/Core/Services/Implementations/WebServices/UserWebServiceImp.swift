@@ -15,6 +15,11 @@ class UserWebServiceImp : UserWebService {
         self._webService = webService
     }
     
+    func login(user: User, completion: @escaping (UserObject?) -> Void) -> String {
+        let cancelationToken = _webService.postRequest(requestUri: "user/login", params: user.serialize()) { user in completion(user) }
+        return cancelationToken
+    }
+    
     func getUser(userId: Int16, completion: @escaping (_ user: UserObject?) -> Void) -> String {
         let cancelationToken = _webService.getRequest(requestUri: "user/\(userId)") { user in completion(user) }
         return cancelationToken

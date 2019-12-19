@@ -9,6 +9,7 @@
 import Foundation
 
 protocol UserWebService {
+    func login(user: User, completion: @escaping (_ user: UserObject?) -> Void) -> String
     func getUser(userId: Int16, completion: @escaping (_ user: UserObject?) -> Void) -> String
     func getAllUsers(completion: @escaping (_ user: [UserObject]?) -> Void) -> String
     func createUser(user: User, completion: @escaping (_ user: UserObject?) -> Void) -> String

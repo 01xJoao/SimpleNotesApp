@@ -81,6 +81,10 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
             $0.inputAccessoryView = _signInKeyboardButton
             $0.constrainHeight(32)
         }
+        
+        viewModel.email.addObserver(self) {
+            self._emailTextField.text = self.viewModel.email.value
+        }
     }
     
     private func _setupButtons() {
@@ -135,7 +139,7 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
     }
     
     @objc fileprivate func _loginAccount(sender: UIButton) {
-        print(sender)
+        viewModel.loginCommand.executeIf([_emailTextField.text!, _passwordTextField.text!])
     }
     
     @objc fileprivate func _navigateToCreateAccount(sender: UIButton) {

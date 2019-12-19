@@ -37,7 +37,7 @@ public class ViewModelBase : ViewModel {
     
     public func disappearing() {}
     
-    public func dismissChildViewNotify(dataObject: Any?) {}
+    public func dataNotify(dataObject: Any?) {}
 }
 
 public class ViewModelBaseWithArguments<TObject> : ViewModelBase {

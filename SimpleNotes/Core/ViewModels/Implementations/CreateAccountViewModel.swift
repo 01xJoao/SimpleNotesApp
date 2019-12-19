@@ -15,15 +15,15 @@ public class CreateAccountViewModel : ViewModelBase {
     
     private var user: User?
     
+    private var _createAccountCommand: WpCommand<[String]>?
+    public var createAccountCommand: WpCommand<[String]> {
+        get { _createAccountCommand ??= WpCommand<[String]>(_createUserAccount, canExecute: _canExecute); return _createAccountCommand!}
+    }
+    
     init(userWebService: UserWebService, dialogService: DialogService, appSettingsService: AppSettingsService) {
         self.userWebService = userWebService
         self.dialogService = dialogService
         self.appSettingsService = appSettingsService
-    }
-    
-    private var _createAccountCommand: WpCommand<[String]>?
-    public var createAccountCommand: WpCommand<[String]> {
-        get { _createAccountCommand ??= WpCommand<[String]>(_createUserAccount, canExecute: _canExecute); return _createAccountCommand!}
     }
     
     private func _createUserAccount(userString: [String]) {

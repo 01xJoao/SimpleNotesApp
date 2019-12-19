@@ -65,7 +65,7 @@ public class BaseViewController<TViewModel> : UIViewController where TViewModel 
     
     @objc func _handleViewDismiss(_ notification: NSNotification) {
         if let params = notification.userInfo as NSDictionary? {
-            viewModel.dismissChildViewNotify(dataObject: params["arguments"]!)
+            viewModel.dataNotify(dataObject: params["arguments"]!)
         }
     }
     
