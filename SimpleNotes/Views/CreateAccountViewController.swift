@@ -10,30 +10,125 @@ import UIKit
 import Foundation
 import LBTATools
 
-public class CreateAccountViewController : FormBaseViewController<CreateAccountViewModel> {
+public class CreateAccountViewController : FormBaseViewController<CreateAccountViewModel>, UITextFieldDelegate {
+    
+    private let _imageView = UIImageView(image: #imageLiteral(resourceName: "logo_blue_3"), contentMode: .scaleAspectFit)
+    
     private let _signInButton = UIButton(title: "Create", titleColor: UIColor.Theme.white,
                                  font: .systemFont(ofSize: 16), backgroundColor: UIColor.Theme.mainBlue)
     
+    private let _nameIndicatorLabel = UILabel(text: "Name", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
+    private let _nameTextField = IndentedTextField(keyboardType: .default)
+    private let _nameLineView = UIView(backgroundColor: UIColor.Theme.darkGrey)
+    
+    private let _emailIndicatorLabel = UILabel(text: "Email address", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
+    private let _emailTextField = IndentedTextField(keyboardType: .emailAddress)
+    private let _emailLineView = UIView(backgroundColor: UIColor.Theme.darkGrey)
+    
+    private let _passwordIndicatorLabel = UILabel(text: "Password", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
+    private let _passwordTextField = IndentedTextField(isSecureTextEntry: true)
+    private let _passwordLineView = UIView(backgroundColor: UIColor.Theme.darkGrey)
+    
+    private let _confirmPasswordIndicatorLabel = UILabel(text: "Confirm password", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
+    private let _confirmPasswordTextField = IndentedTextField(isSecureTextEntry: true)
+    private let _confirmPasswordLineView = UIView(backgroundColor: UIColor.Theme.darkGrey)
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    private func setupView() {
+        bottomButtonHeight = 50
+        
+        _setupViewSizes()
+        _setupCreateButton()
+        _setupTextFields()
+        _addViewsToFormStackContainer()
+        
+        viewAlignment = .top
         self.title = "Create Account"
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.navigationBar.barStyle = .black
-        _setupSignInButton()
+        scrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(_handleTapDismiss)))
     }
     
-    private func _setupSignInButton(){
+    private func _setupViewSizes() {
+        _imageView.constrainHeight(27.5)
+        
+        [ _nameLineView,
+          _emailLineView,
+          _passwordLineView,
+          _confirmPasswordLineView ].forEach{$0.constrainHeight(1)}
+     }
+    
+    private func _setupCreateButton() {
         self.view.addSubview(_signInButton)
         _signInButton.translatesAutoresizingMaskIntoConstraints = false
         _signInButton.anchor(top: nil, leading: self.view.leadingAnchor, bottom: self.view.bottomAnchor, trailing: self.view.trailingAnchor)
-        _signInButton.constrainHeight(50 + (Utils().keyWindow?.safeAreaInsets.bottom)!)
+        _signInButton.constrainHeight(bottomButtonHeight + (Utils().keyWindow?.safeAreaInsets.bottom)!)
     }
     
-    override public  func viewSafeAreaInsetsDidChange() {
-        _setupSignInButton()
+    private func _setupTextFields() {
+        _emailTextField.tag = 0
+        _passwordTextField.tag = 1
+        
+        UITextFieldExtensions.setupField(
+            indicatorText: "Name", indicatorLabel: _nameIndicatorLabel,
+            textField: _nameTextField, divider: _nameLineView, returnKeyType: .next,
+            activeColor: UIColor.Theme.darkBlue, inactiveColor: UIColor.Theme.darkGrey)
+        
+        UITextFieldExtensions.setupField(
+            indicatorText: "Email address", indicatorLabel: _emailIndicatorLabel,
+            textField: _emailTextField, divider: _emailLineView, returnKeyType: .next,
+            activeColor: UIColor.Theme.darkBlue, inactiveColor: UIColor.Theme.darkGrey)
+        
+        UITextFieldExtensions.setupField(
+            indicatorText: "Password", indicatorLabel: _passwordIndicatorLabel,
+            textField: _passwordTextField, divider: _passwordLineView, returnKeyType: .next,
+            activeColor: UIColor.Theme.darkBlue, inactiveColor: UIColor.Theme.darkGrey)
+        
+        UITextFieldExtensions.setupField(
+            indicatorText: "Confirm Password", indicatorLabel: _confirmPasswordIndicatorLabel,
+            textField: _confirmPasswordTextField, divider: _confirmPasswordLineView, returnKeyType: .done,
+            activeColor: UIColor.Theme.darkBlue, inactiveColor: UIColor.Theme.darkGrey)
+        
+        [ _nameTextField,
+          _emailTextField,
+          _passwordTextField,
+          _confirmPasswordTextField
+        ].forEach {
+            $0.delegate = self
+            $0.textContentType = .oneTimeCode
+            $0.autocorrectionType = .no
+            $0.constrainHeight(32)
+        }
+    }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewDidLayoutSubviews()
+    }
+    
+    private func _addViewsToFormStackContainer(){
+        formContainerStackView.stack(
+            UIView().stack(_imageView).padBottom(32.5),
+            UIView().stack(_nameTextField, _nameTextField, _nameLineView),
+            UIView().stack(_emailIndicatorLabel, _emailTextField, _emailLineView),
+            UIView().stack(_passwordIndicatorLabel, _passwordTextField, _passwordLineView),
+            UIView().stack(_confirmPasswordIndicatorLabel, _confirmPasswordTextField, _confirmPasswordLineView),
+            spacing: 16
+        ).withMargins(.init(top: 40, left: 30, bottom: bottomButtonHeight + 30, right: 30))
+    }
+    
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
     }
     
     public override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    @objc fileprivate func _handleTapDismiss() {
+        view.endEditing(true)
     }
 }

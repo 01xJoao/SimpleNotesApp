@@ -10,13 +10,14 @@ import UIKit
 import Foundation
 
 public class FormBaseViewController<TViewModel> : BaseViewController<TViewModel>, UIScrollViewDelegate where TViewModel : ViewModel {
-    var keyboardButtonHeight: CGFloat = 0
+    var bottomButtonHeight: CGFloat = 0
     
     public lazy var scrollView: UIScrollView = {
         let sv = UIScrollView()
         sv.contentInsetAdjustmentBehavior = .never
         sv.contentSize = view.frame.size
         sv.keyboardDismissMode = .interactive
+        sv.showsHorizontalScrollIndicator = false
         return sv
     }()
     
@@ -41,27 +42,31 @@ public class FormBaseViewController<TViewModel> : BaseViewController<TViewModel>
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         if viewAlignment == .top {
             formContainerStackView.anchor(top: scrollView.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor)
         } else {
             formContainerStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
             formContainerStackView.centerInSuperview()
         }
+        
+        scrollView.contentInset.bottom = 0
+        scrollView.verticalScrollIndicatorInsets.bottom = bottomButtonHeight
     }
     
-    override open func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
+    public override func viewDidAppear(_ animated: Bool) {
+        _updateScrollViewSize()
+    }
+    
+    public override func viewDidLayoutSubviews() {
+        _updateScrollViewSize()
+    }
+    
+    private func _updateScrollViewSize() {
         if (formContainerStackView.frame.height > view.frame.height) {
             scrollView.contentSize.height = formContainerStackView.frame.size.height
         } else {
             scrollView.contentSize.height = view.frame.height
-        }
-        
-        if (UIScreen.main.bounds.width > UIScreen.main.bounds.height) {
-            scrollView.contentInset.top = 32
-        } else {
-            scrollView.contentInset.top = 0
         }
     }
     
@@ -71,25 +76,30 @@ public class FormBaseViewController<TViewModel> : BaseViewController<TViewModel>
     }
     
     @objc public func handleKeyboardShow(notification: Notification) {
-        guard let value = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-        let keyboardFrame = value.cgRectValue
+        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        let keyboardScreenEndFrame = keyboardFrame.cgRectValue
+        let keyboardViewEndFrame = self.view.convert(keyboardScreenEndFrame, from: self.view.window)
         
-        scrollView.contentInset.bottom = keyboardButtonHeight
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height + 5, right: 0)
+        scrollView.scrollIndicatorInsets = scrollView.contentInset
         
-        if (UIScreen.main.bounds.width > UIScreen.main.bounds.height) {
-            scrollView.contentInset.bottom += self.view.safeAreaInsets.bottom
+        let keyboardTotalSize = keyboardViewEndFrame.height + bottomButtonHeight
+        
+        if(self.view.frame.height > formContainerStackView.frame.size.height){
+            scrollView.contentSize.height = (self.view.frame.height - formContainerStackView.frame.size.height) + keyboardTotalSize
+        } else {
+            scrollView.contentSize.height = formContainerStackView.frame.size.height
         }
-        
-        self.scrollView.verticalScrollIndicatorInsets.bottom = keyboardFrame.height - keyboardButtonHeight
+    }
+    
+    @objc public func handleKeyboardHide() {
+        scrollView.contentInset = UIEdgeInsets.zero
+        scrollView.contentInset.bottom = 0
+        scrollView.verticalScrollIndicatorInsets.bottom = bottomButtonHeight
     }
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.contentOffset.x = 0.0
-    }
-    
-    @objc public func handleKeyboardHide() {
-        self.scrollView.contentInset.bottom = 0
-        self.scrollView.verticalScrollIndicatorInsets.bottom = 0
     }
     
     public enum FormAlignment {

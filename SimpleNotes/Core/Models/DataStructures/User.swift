@@ -31,11 +31,15 @@ public struct User {
         return _user.photo
     }
     
+    public func getPassword() -> String {
+        return _user.password
+    }
+    
     public func getPushNotificationId() -> String {
         return _user.pushNotificationId
     }
     
-    public mutating func setName(_ name: String){
+    public mutating func setName(_ name: String ) {
         _user.name = name
     }
     
@@ -43,8 +47,12 @@ public struct User {
         _user.email = email
     }
     
-    public mutating func setPhoto(_ photo: Data){
+    public mutating func setPhoto(_ photo: Data) {
         _user.photo = photo
+    }
+    
+    public mutating func setPassword(_ password: String) {
+        _user.password = password
     }
     
     public mutating func setPushNotificationId(_ pushId: String) {
