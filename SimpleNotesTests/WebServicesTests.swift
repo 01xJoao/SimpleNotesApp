@@ -16,8 +16,8 @@ class WebServiceTests: XCTestCase {
     let userWebService: UserWebService = DiContainer.resolve()
     
     override class func setUp() {
-        let userObject = UserObject(id: 0, name: "Ricardo", email: "ricardo@gmail.com", photo: nil, pushNotificationId: "TTT-AAA")
-        let userObject2 = UserObject(id: 1, name: "Joao", email: "ricardo@gmail.com", photo: nil, pushNotificationId: "TTT-AAA")
+        let userObject = UserObject(id: 0, name: "Ricardo", email: "ricardo123@gmail.com", photo: nil, pushNotificationId: "TTT-AAA")
+        let userObject2 = UserObject(id: 1, name: "Joao", email: "ricardo222@gmail.com", photo: nil, pushNotificationId: "TTT-AAA")
         users.append(User(userObject))
         users.append(User(userObject2))
     }

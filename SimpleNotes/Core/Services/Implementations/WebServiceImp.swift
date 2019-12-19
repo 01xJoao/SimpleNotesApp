@@ -67,6 +67,7 @@ class WebServiceImp : WebService {
                     completion(nil)
                 }
             } catch let error {
+                completion(nil)
                 _reportService.sendError(error: error, message: "Json serialization didn't worked for \(T.self) object with data \(response.dictionaryBody["data"]!)")
             }
             

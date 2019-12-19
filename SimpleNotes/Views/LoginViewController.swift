@@ -84,12 +84,14 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
     }
     
     private func _setupButtons() {
-        _signUpButton.addTarget(self, action: #selector(_navigateToCreateAccount), for: UIControl.Event.touchUpInside)
-        
         self.view.addSubview(_signInButton)
+        
         _signInButton.translatesAutoresizingMaskIntoConstraints = false
         _signInButton.anchor(top: nil, leading: self.view.leadingAnchor, bottom: self.view.bottomAnchor, trailing: self.view.trailingAnchor)
         _signInButton.constrainHeight(bottomButtonHeight + (Utils().keyWindow?.safeAreaInsets.bottom)!)
+        _signInButton.addTarget(self, action: #selector(_loginAccount), for: UIControl.Event.touchUpInside)
+    
+        _signUpButton.addTarget(self, action: #selector(_navigateToCreateAccount), for: UIControl.Event.touchUpInside)
     }
     
     private func _addViewsToFormStackContainer(){
@@ -132,8 +134,12 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
         return textField.tag == 0 ? _emailLineView : _passwordLineView
     }
     
-    @objc fileprivate func _navigateToCreateAccount(sender: UIButton){
-        viewModel.createAccountCommand.executeIf()
+    @objc fileprivate func _loginAccount(sender: UIButton) {
+        print(sender)
+    }
+    
+    @objc fileprivate func _navigateToCreateAccount(sender: UIButton) {
+        viewModel.navigateToCreateAccountCommand.executeIf()
     }
     
     @objc fileprivate func _handleTapDismiss() {

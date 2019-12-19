@@ -10,12 +10,12 @@ import Foundation
 
 public class LoginViewModel: ViewModelBaseWithArguments<Bool> {
 
-    private var _createAccountCommand: Command?
-    public var createAccountCommand: Command {
-        get { _createAccountCommand ??= Command(_createAccount, canExecute: _canExecute); return _createAccountCommand!}
+    private var _navigateToCreateAccountCommand: Command?
+    public var navigateToCreateAccountCommand: Command {
+        get { _navigateToCreateAccountCommand ??= Command(_navigateTpCreateAccount, canExecute: _canExecute); return _navigateToCreateAccountCommand!}
     }
     
-    private func _createAccount() {
+    private func _navigateTpCreateAccount() {
         navigationService.navigate(viewModel: CreateAccountViewModel.self, arguments: nil, animated: true)
     }
     

@@ -14,7 +14,7 @@ public class CreateAccountViewController : FormBaseViewController<CreateAccountV
     
     private let _imageView = UIImageView(image: #imageLiteral(resourceName: "logo_blue_3"), contentMode: .scaleAspectFit)
     
-    private let _signInButton = UIButton(title: "Create", titleColor: UIColor.Theme.white,
+    private let _signUpButton = UIButton(title: "Create", titleColor: UIColor.Theme.white,
                                  font: .systemFont(ofSize: 16), backgroundColor: UIColor.Theme.mainBlue)
     
     private let _nameIndicatorLabel = UILabel(text: "Name", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
@@ -63,10 +63,11 @@ public class CreateAccountViewController : FormBaseViewController<CreateAccountV
      }
     
     private func _setupCreateButton() {
-        self.view.addSubview(_signInButton)
-        _signInButton.translatesAutoresizingMaskIntoConstraints = false
-        _signInButton.anchor(top: nil, leading: self.view.leadingAnchor, bottom: self.view.bottomAnchor, trailing: self.view.trailingAnchor)
-        _signInButton.constrainHeight(bottomButtonHeight + (Utils().keyWindow?.safeAreaInsets.bottom)!)
+        self.view.addSubview(_signUpButton)
+        _signUpButton.translatesAutoresizingMaskIntoConstraints = false
+        _signUpButton.anchor(top: nil, leading: self.view.leadingAnchor, bottom: self.view.bottomAnchor, trailing: self.view.trailingAnchor)
+        _signUpButton.constrainHeight(bottomButtonHeight + (Utils().keyWindow?.safeAreaInsets.bottom)!)
+        _signUpButton.addTarget(self, action: #selector(_createAccountClick), for: UIControl.Event.touchUpInside)
     }
     
     private func _setupTextFields() {
@@ -115,7 +116,7 @@ public class CreateAccountViewController : FormBaseViewController<CreateAccountV
     private func _addViewsToFormStackContainer(){
         formContainerStackView.stack(
             UIView().stack(_imageView).padBottom(32.5),
-            UIView().stack(_nameTextField, _nameTextField, _nameLineView),
+            UIView().stack(_nameIndicatorLabel, _nameTextField, _nameLineView),
             UIView().stack(_emailIndicatorLabel, _emailTextField, _emailLineView),
             UIView().stack(_passwordIndicatorLabel, _passwordTextField, _passwordLineView),
             UIView().stack(_confirmPasswordIndicatorLabel, _confirmPasswordTextField, _confirmPasswordLineView),
@@ -179,6 +180,15 @@ public class CreateAccountViewController : FormBaseViewController<CreateAccountV
     
     public override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    @objc fileprivate func _createAccountClick() {
+        self.viewModel.createAccountCommand.executeIf(
+            [ _nameTextField.text!,
+              _emailTextField.text!,
+              _passwordTextField.text!,
+              _confirmPasswordTextField.text! ]
+        )
     }
     
     @objc fileprivate func _handleTapDismiss() {

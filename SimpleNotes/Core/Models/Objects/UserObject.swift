@@ -13,7 +13,7 @@ struct UserObject : Codable {
     var name: String
     var email: String
     var photo: Data?
-    var password: String
+    var password: String?
     var pushNotificationId: String
     
     init(id: Int16 = -1, name: String = "", email: String = "", photo: Data? = nil, password: String = "", pushNotificationId: String = "") {

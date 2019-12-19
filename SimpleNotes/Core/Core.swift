@@ -33,7 +33,11 @@ public class Core {
     private static func _registerViewModels() {
         DiContainer.register(LoadingViewModel.self) { LoadingViewModel() }
         DiContainer.register(LoginViewModel.self) { LoginViewModel() }
-        DiContainer.register(CreateAccountViewModel.self) { CreateAccountViewModel() }
+        DiContainer.register(CreateAccountViewModel.self) { CreateAccountViewModel(
+            userWebService: DiContainer.resolve(),
+            dialogService: DiContainer.resolve(),
+            appSettingsService: DiContainer.resolve())
+        }
     }
     
     private static func _registerViewControllers() {

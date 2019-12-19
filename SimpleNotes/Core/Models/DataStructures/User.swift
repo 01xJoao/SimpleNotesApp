@@ -32,7 +32,7 @@ public struct User {
     }
     
     public func getPassword() -> String {
-        return _user.password
+        return ""
     }
     
     public func getPushNotificationId() -> String {
@@ -52,7 +52,7 @@ public struct User {
     }
     
     public mutating func setPassword(_ password: String) {
-        _user.password = password
+        //_user.password = password
     }
     
     public mutating func setPushNotificationId(_ pushId: String) {

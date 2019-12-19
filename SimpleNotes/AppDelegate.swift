@@ -37,12 +37,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func _instantiateOneSignal(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        OneSignal.initWithLaunchOptions(launchOptions,
-            appId: "328b8558-e708-4934-8a58-c7b651ca5026",
-            handleNotificationAction: nil,
-            settings: onesignalInitSettings)
-        
-        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+        #if targetEnvironment(simulator)
+            return
+        #else
+            OneSignal.initWithLaunchOptions(launchOptions,
+                appId: "328b8558-e708-4934-8a58-c7b651ca5026",
+                handleNotificationAction: nil,
+                settings: onesignalInitSettings)
+            
+            OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+        #endif
     }
 
     // MARK: UISceneSession Lifecycle
