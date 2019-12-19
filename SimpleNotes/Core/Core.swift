@@ -31,7 +31,8 @@ public class Core {
     }
     
     private static func _registerViewModels() {
-        DiContainer.register(LoadingViewModel.self) { LoadingViewModel() }
+        DiContainer.register(LoadingViewModel.self) { LoadingViewModel(appSettingsService: DiContainer.resolve()) }
+        
         DiContainer.register(LoginViewModel.self) { LoginViewModel(
             userWebService: DiContainer.resolve(),
             dialogService: DiContainer.resolve(),

@@ -21,15 +21,8 @@ public class BaseViewController<TViewModel> : UIViewController where TViewModel 
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        _createViewControllerDismissNotification()
         _resolveViewModel()
-    }
-    
-    private func _createViewControllerDismissNotification() {
-        NotificationCenter.default.addObserver(self,
-           selector: #selector(self._handleViewDismiss(_:)),
-           name: NSNotification.Name(rawValue: String(describing: self)),
-           object: nil)
+        _createViewControllerDismissNotification()
     }
     
     private func _resolveViewModel() {
@@ -37,8 +30,15 @@ public class BaseViewController<TViewModel> : UIViewController where TViewModel 
         if(parameterData != nil) {
             viewModel.prepare(dataObject: parameterData!)
         }
-        viewModel.initialize()
         _viewModel = viewModel
+        _viewModel.initialize()
+    }
+    
+    private func _createViewControllerDismissNotification() {
+        NotificationCenter.default.addObserver(self,
+           selector: #selector(self._handleViewDismiss(_:)),
+           name: NSNotification.Name(rawValue: String(describing: self)),
+           object: nil)
     }
     
     public override func viewWillAppear(_ animated: Bool) {

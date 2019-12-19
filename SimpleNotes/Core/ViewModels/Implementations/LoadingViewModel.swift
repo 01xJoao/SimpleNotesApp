@@ -20,7 +20,7 @@ public class LoadingViewModel : ViewModelBase {
     }
     
     private func _checkIfUserIsSignedIn() {
-        if(appSettingsService.isUserLoggedIn) {
+        if(appSettingsService.isUserSignedIn) {
             navigationService.navigateAndSetAsContainer(viewModel: NotesListViewModel.self)
         } else {
             navigationService.navigateAndSetAsContainer(viewModel: LoginViewModel.self)
