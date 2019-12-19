@@ -16,18 +16,6 @@ public class ContainerViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false);
     }
     
-    public func getVisibleViewControllerName() -> String {
-        var currentViewmodelName: String
-        
-        if(currentViewController!.navigationController!.children.count > 1) {
-            currentViewmodelName = String(describing: currentViewController!.navigationController!.topViewController!)
-        } else {
-            currentViewmodelName = String(describing: currentViewController!)
-        }
-        
-        return currentViewmodelName
-    }
-    
     public func changeViewController(_ viewController: UIViewController) {
         if(_checkIfCurrentViewControllerIsEqualsToNew(viewController)){
             return

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class LoginViewModel: ViewModelBaseWithArguments<Bool> {
+public class LoginViewModel: ViewModelBase {
     private let userWebService: UserWebService
     private let dialogService: DialogService
     private let databaseUserService: DatabaseUserService

@@ -22,7 +22,7 @@ public class BaseViewController<TViewModel> : UIViewController where TViewModel 
     public override func viewDidLoad() {
         super.viewDidLoad()
         _resolveViewModel()
-        _createViewControllerDismissNotification()
+        _createViewControllerCloseNotification()
     }
     
     private func _resolveViewModel() {
@@ -34,10 +34,10 @@ public class BaseViewController<TViewModel> : UIViewController where TViewModel 
         _viewModel.initialize()
     }
     
-    private func _createViewControllerDismissNotification() {
+    private func _createViewControllerCloseNotification() {
         NotificationCenter.default.addObserver(self,
            selector: #selector(self._handleViewDismiss(_:)),
-           name: NSNotification.Name(rawValue: String(describing: self)),
+           name: NSNotification.Name(rawValue: String(describing: TViewModel.self)),
            object: nil)
     }
     
