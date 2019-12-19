@@ -69,7 +69,7 @@ public class NavigationServiceImp : NavigationService {
     public func closeModal(arguments: Any?) {
         _viewStack.removeLast()
         containerViewController?.navigationController?.dismiss(animated: true, completion: nil)
-        _notifyView(arguments)s
+        _notifyView(arguments)
     }
     
     private func _notifyView(_ args: Any?) {
