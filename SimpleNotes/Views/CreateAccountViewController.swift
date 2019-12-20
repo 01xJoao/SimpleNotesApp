@@ -66,7 +66,7 @@ public class CreateAccountViewController : FormBaseViewController<CreateAccountV
         self.view.addSubview(_signUpButton)
         _signUpButton.translatesAutoresizingMaskIntoConstraints = false
         _signUpButton.anchor(top: nil, leading: self.view.leadingAnchor, bottom: self.view.bottomAnchor, trailing: self.view.trailingAnchor)
-        _signUpButton.constrainHeight(bottomButtonHeight + (Utils().keyWindow?.safeAreaInsets.bottom)!)
+        _signUpButton.constrainHeight(bottomButtonHeight + (Utils().keyWindow.safeAreaInsets.bottom))
         _signUpButton.addTarget(self, action: #selector(_createAccountClick), for: UIControl.Event.touchUpInside)
     }
     

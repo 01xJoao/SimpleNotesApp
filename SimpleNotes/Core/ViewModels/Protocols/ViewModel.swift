@@ -10,7 +10,6 @@ public protocol ViewModel {
     func prepare(dataObject: Any);
     func initialize()
     func appearing()
-    func appeared()
     func disappearing()
     func dataNotify(dataObject: Any?);
 }

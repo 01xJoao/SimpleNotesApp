@@ -11,4 +11,6 @@ import Foundation
 protocol DialogService {
     func showInfo(_ description: String, informationType: InfoDialogType)
     func showOptionAlert(title: String?, message: String?, positiveOption: String, negativeOption: String, callback: @escaping ((Bool) -> ()?))
+    func startLoading()
+    func stopLoading()
 }

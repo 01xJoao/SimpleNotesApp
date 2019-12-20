@@ -33,12 +33,17 @@ public class LoginViewModel: ViewModelBase {
         self.appSettingsService = appSettingsService
     }
     
+    public override func initialize() {
+        _configureLocalization()
+    }
+    
     private func _navigateTpCreateAccount() {
         navigationService.navigate(viewModel: CreateAccountViewModel.self, arguments: nil, animated: true)
     }
     
     private func _login(_ parameters: [String]) {
         if(_verifyForm(parameters)) {
+            dialogService.startLoading()
             let user = User(UserObject(name: "", email: parameters[0], password: parameters[1]))
             _ = userWebService.login(user: user) { userObj in self._loginCompletion(userObj) }
         }
@@ -46,20 +51,24 @@ public class LoginViewModel: ViewModelBase {
     
     private func _verifyForm(_ userString: [String]) -> Bool {
         if (userString.contains("")) {
-            _sendAlert("Please enter your email and password.", .bad)
+            _sendAlert(enterEmailandPassText, .bad)
             return false
         } else if (!Utils.isValidEmail(userString[0])) {
-            _sendAlert("Invalid email", .bad)
+            _sendAlert(invalidEmailText, .bad)
             return false
         }
         return true
     }
     
     private func _loginCompletion(_ userObject: UserObject?) {
+        dialogService.stopLoading()
+        
         if(userObject != nil) {
             _saveUserInformation(userObject!)
             navigationService.navigateAndSetAsContainer(viewModel: NotesListViewModel.self)
-            dialogService.showInfo("Signed in successfully!", informationType: .good)
+            dialogService.showInfo(signedInText, informationType: .good)
+        } else {
+            _sendAlert(somethigWrongText, .bad)
         }
     }
     
@@ -83,5 +92,27 @@ public class LoginViewModel: ViewModelBase {
     
     private func _canExecute() -> Bool {
         return !isBusy.value
+    }
+    
+    public var signinText: String!
+    public var firstTimeText: String!
+    public var emailText: String!
+    public var passwordText: String!
+    
+    private var invalidEmailText: String!
+    private var somethigWrongText: String!
+    private var signedInText: String!
+    private var enterEmailandPassText: String!
+    
+    private func _configureLocalization() {
+        signinText = l10nService.localize(key: "login_signin")
+        firstTimeText = l10nService.localize(key: "login_firstTime")
+        emailText = l10nService.localize(key: "login_email")
+        passwordText =  l10nService.localize(key: "login_password")
+        
+        signedInText = l10nService.localize(key: "dialog_signed")
+        invalidEmailText = l10nService.localize(key: "dialog_invalidEmail")
+        somethigWrongText = l10nService.localize(key: "dialog_somethingwrong")
+        enterEmailandPassText = l10nService.localize(key: "dialog_enterEmailandPass")
     }
 }

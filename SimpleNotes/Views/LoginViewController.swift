@@ -14,20 +14,19 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
     
     private let _imageView = UIImageView(image: #imageLiteral(resourceName: "logo_blue_2"), contentMode: .scaleAspectFit)
     
-    private let _signInButton = UIButton(title: "Sign In", titleColor: UIColor.Theme.white,
+    private let _signInButton = UIButton(title: "", titleColor: UIColor.Theme.white,
                                  font: .systemFont(ofSize: 16), backgroundColor: UIColor.Theme.mainBlue)
     
-    private let _signInKeyboardButton = UIButton(title: "Sign In", titleColor: UIColor.Theme.white,
+    private let _signInKeyboardButton = UIButton(title: "", titleColor: UIColor.Theme.white,
                                     font: .systemFont(ofSize: 16), backgroundColor: UIColor.Theme.mainBlue)
     
-    private let _signUpButton = UIButton(title: "First time around here? Sign Up!",
-                                 titleColor: UIColor.Theme.darkBlue, font: .systemFont(ofSize: 14))
+    private let _signUpButton = UIButton(title: "", titleColor: UIColor.Theme.darkBlue, font: .systemFont(ofSize: 14))
     
-    private let _emailIndicatorLabel = UILabel(text: "Email address", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
+    private let _emailIndicatorLabel = UILabel(text: "", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
     private let _emailTextField = IndentedTextField(keyboardType: .emailAddress)
     private let _emailLineView = UIView(backgroundColor: UIColor.Theme.darkGrey)
     
-    private let _passwordIndicatorLabel = UILabel(text: "Password", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
+    private let _passwordIndicatorLabel = UILabel(text: "", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
     private let _passwordTextField = IndentedTextField(isSecureTextEntry: true)
     private let _passwordLineView = UIView(backgroundColor: UIColor.Theme.darkGrey)
                                  
@@ -39,6 +38,7 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
     private func _setUpView() {
         bottomButtonHeight = 50
         
+        _setUpL10NTexts()
         _setupViewSizes()
         _setupTextFields()
         _setupButtons()
@@ -47,6 +47,14 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
         scrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(_handleTapDismiss)))
         self.navigationController?.navigationBar.barStyle = .default
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    private func _setUpL10NTexts() {
+        _signInButton.setTitle(viewModel.signinText, for: .normal)
+        _signInKeyboardButton.setTitle(viewModel.signinText, for: .normal)
+        _signUpButton.setTitle(viewModel.firstTimeText, for: .normal)
+        _emailIndicatorLabel.text = viewModel.emailText
+        _passwordIndicatorLabel.text = viewModel.passwordText
     }
     
     private func _setupViewSizes() {
@@ -63,13 +71,13 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
         _passwordTextField.tag = 1
         
         UITextFieldExtensions.setupField(
-            indicatorText: "Email address", indicatorLabel: _emailIndicatorLabel,
+            indicatorText: viewModel.emailText, indicatorLabel: _emailIndicatorLabel,
             textField: _emailTextField, divider: _emailLineView, returnKeyType: .next,
             activeColor: UIColor.Theme.darkBlue, inactiveColor: UIColor.Theme.darkGrey)
         
         
         UITextFieldExtensions.setupField(
-            indicatorText: "Password", indicatorLabel: _passwordIndicatorLabel,
+            indicatorText: viewModel.passwordText, indicatorLabel: _passwordIndicatorLabel,
             textField: _passwordTextField, divider: _passwordLineView, returnKeyType: .done,
             activeColor: UIColor.Theme.darkBlue, inactiveColor: UIColor.Theme.darkGrey)
         
@@ -93,7 +101,7 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
         
         _signInButton.translatesAutoresizingMaskIntoConstraints = false
         _signInButton.anchor(top: nil, leading: self.view.leadingAnchor, bottom: self.view.bottomAnchor, trailing: self.view.trailingAnchor)
-        _signInButton.constrainHeight(bottomButtonHeight + (Utils().keyWindow?.safeAreaInsets.bottom)!)
+        _signInButton.constrainHeight(bottomButtonHeight + Utils().keyWindow.safeAreaInsets.bottom)
         _signInButton.addTarget(self, action: #selector(_loginAccount), for: UIControl.Event.touchUpInside)
         _signInKeyboardButton.addTarget(self, action: #selector(_loginAccount), for: UIControl.Event.touchUpInside)
         _signUpButton.addTarget(self, action: #selector(_navigateToCreateAccount), for: UIControl.Event.touchUpInside)

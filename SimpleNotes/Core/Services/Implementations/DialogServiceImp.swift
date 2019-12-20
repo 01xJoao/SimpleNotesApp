@@ -8,13 +8,16 @@
 
 import UIKit
 import Foundation
+import MaterialComponents.MaterialActivityIndicator
 
 public class DialogServiceImp: DialogService {
     
+    private var _activityIndicator = MDCActivityIndicator()
     private var _navigationService: NavigationService
     
     init(navigationService: NavigationService) {
         self._navigationService = navigationService
+        _configureActivityIndicator()
     }
     
     func showInfo(_ description: String, informationType: InfoDialogType) {
@@ -30,5 +33,25 @@ public class DialogServiceImp: DialogService {
         
         let visibleViewController = _navigationService.visibleViewController()
         visibleViewController.present(alert, animated: true)
+    }
+    
+    func startLoading() {
+        _activityIndicator.startAnimating()
+    }
+    
+    func stopLoading() {
+        _activityIndicator.stopAnimating()
+    }
+    
+    func _configureActivityIndicator() {
+        let mainView = Utils().keyWindow
+        
+        _activityIndicator.sizeToFit()
+        _activityIndicator.center = mainView.center
+        _activityIndicator.radius = 22
+        _activityIndicator.strokeWidth = 3.5
+        _activityIndicator.cycleColors = [UIColor.Theme.mainBlue]
+        
+        mainView.addSubview(_activityIndicator)
     }
 }

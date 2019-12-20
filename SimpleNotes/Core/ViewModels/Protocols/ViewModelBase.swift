@@ -33,8 +33,6 @@ public class ViewModelBase : ViewModel {
     
     public func appearing() {}
     
-    public func appeared() {}
-    
     public func disappearing() {}
     
     public func dataNotify(dataObject: Any?) {}

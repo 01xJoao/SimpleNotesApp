@@ -1,4 +1,19 @@
 {
-    "hello": "HELLO!",
-    "bye": "BYE!"
+    "login_signin": "Sign In",
+    "login_firstTime": "First time around here? Sign Up!",
+    "login_email": "Email address",
+    "login_password": "Password",
+    "create_create": "Create",
+    "create_name": "Name",
+    "create_email": "Email address",
+    "create_password": "Password",
+    "create_cpassword": "Confirm Password",
+    "create_account": "Create Account",
+    "dialog_invalidEmail": "Invalid email.",
+    "dialog_enterEmailandPass": "Please enter your email and password.",
+    "dialog_signed": "Signed in successfully!",
+    "dialog_completeForm": "Please complete the form.",
+    "dialog_matchPasswords": "Passwords don't match.",
+    "dialog_userCreated": "Account created succefully! Please sign in",
+    "dialog_somethingwrong": "Something went wrong. \nPlease check your form."
 }

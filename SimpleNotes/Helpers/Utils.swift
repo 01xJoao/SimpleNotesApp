@@ -17,7 +17,7 @@ public struct Utils {
         return jsonResult ?? ["" : ""]
     }
     
-    public let keyWindow: UIWindow? = UIApplication.shared.windows.first {$0.isKeyWindow}
+    public let keyWindow: UIWindow = UIApplication.shared.windows.first {$0.isKeyWindow}!
     
     public static func isValidEmail(_ emailStr: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"

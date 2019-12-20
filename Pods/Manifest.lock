@@ -5,6 +5,17 @@ PODS:
   - AWSS3 (2.12.3):
     - AWSCore (= 2.12.3)
   - LBTATools (1.0.12)
+  - MaterialComponents/ActivityIndicator (98.0.0):
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Application
+    - MDFInternationalization
+    - MotionAnimator (~> 2.0)
+  - MaterialComponents/Palettes (98.0.0)
+  - MaterialComponents/private/Application (98.0.0)
+  - MDFInternationalization (2.0.0)
+  - MotionAnimator (2.8.1):
+    - MotionInterchange (~> 1.6)
+  - MotionInterchange (1.6.0)
   - Networking (5.0.1)
   - OneSignal (2.12.3)
   - Sentry (4.4.3):
@@ -16,6 +27,7 @@ DEPENDENCIES:
   - AWSCore
   - AWSS3
   - LBTATools
+  - MaterialComponents/ActivityIndicator
   - Networking (~> 5.0)
   - OneSignal (< 3.0, >= 2.11.2)
   - Sentry (~> 4.4)
@@ -26,6 +38,10 @@ SPEC REPOS:
     - AWSCore
     - AWSS3
     - LBTATools
+    - MaterialComponents
+    - MDFInternationalization
+    - MotionAnimator
+    - MotionInterchange
     - Networking
     - OneSignal
     - Sentry
@@ -35,10 +51,14 @@ SPEC CHECKSUMS:
   AWSCore: a4b4aeb414bdfd55a5e8879adb4985c46da157d6
   AWSS3: 511a7b646572686c7e193aa19bd6a5cc43ec2977
   LBTATools: 389a901a01b9a56bea5682c40cd6e23530f40015
+  MaterialComponents: 2a8b6fb1bf6655d3e2254dadae5edbb05559e1d7
+  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
+  MotionAnimator: ee16aa30567c5bae0fb2750c132915829cfaaf8a
+  MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   Networking: 0a77e3315c32133e3aefb8dd2bd027ff536fd25d
   OneSignal: 30b6e03a1f14169c4313e301a7b7bdf467b5a575
   Sentry: 14bdd673870e8cf64932b149fad5bbbf39a9b390
 
-PODFILE CHECKSUM: f9ea78f91eaf9e0fca8527d74ff5331da3bc5271
+PODFILE CHECKSUM: 14c460ff4a4a4bebd72083db025621f855818d07
 
 COCOAPODS: 1.8.4

@@ -31,10 +31,10 @@ public class InfoDialogView: UIView {
     }
     
     private func _show() {
-        let dialogHeight: CGFloat = (Utils().keyWindow?.safeAreaInsets.top)! + LocalConstants().alertDialogHeight
+        let dialogHeight: CGFloat = Utils().keyWindow.safeAreaInsets.top + LocalConstants().alertDialogHeight
         
-        self.frame = CGRect.init(x: 0, y: 0, width: (Utils().keyWindow?.bounds.width)!, height: dialogHeight)
-        Utils().keyWindow?.addSubview(self)
+        self.frame = CGRect.init(x: 0, y: 0, width: Utils().keyWindow.bounds.width, height: dialogHeight)
+        Utils().keyWindow.addSubview(self)
         
         Animations.slideVerticaly(self, showAnimation: true, completion: { success in
             self._hide()

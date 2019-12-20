@@ -1,4 +1,19 @@
 {
-    "hello": "OLÁ!"
-    "bye": "Adeus!"
+    "login_signin": "Entrar",
+    "login_firstTime": "Primeira vez por aqui? Inscreve-te!",
+    "login_email": "Endereço email",
+    "login_password": "Palavra-passe",
+    "create_create": "Criar",
+    "create_name": "Nome",
+    "create_email": "Endereço email",
+    "create_password": "Palavra-passe",
+    "create_cpassword": "Confirmar palavra-passe",
+    "create_account": "Criar Conta",
+    "dialog_invalidEmail": "Email invalido.",
+    "dialog_enterEmailandPass": "Entre com o seu email e palavra-passe.",
+    "dialog_signed": "Conectado com sucesso!",
+    "dialog_completeForm": "Por favor preencha o formulário.",
+    "dialog_matchPasswords": "As palavras-passe não coincidem.",
+    "dialog_userCreated": "Conta criada com sucesso!",
+    "dialog_somethingwrong": "Algo deu errado. \nVerifique o formulário."
 }

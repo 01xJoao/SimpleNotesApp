@@ -17,6 +17,7 @@ target 'SimpleNotes' do
   pod 'AWSCore'
   pod 'AWSS3'
   pod 'OneSignal', '>= 2.11.2', '< 3.0'
+  pod 'MaterialComponents/ActivityIndicator'
 
 end
 
