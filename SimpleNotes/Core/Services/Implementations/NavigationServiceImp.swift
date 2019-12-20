@@ -44,9 +44,14 @@ public class NavigationServiceImp : NavigationService {
     private func _getViewController<TViewModel : ViewModel>(type: TViewModel.Type, args: Any?) -> UIViewController {
         let viewModelName = String(describing: TViewModel.self)
         let viewController: UIViewController = DiContainer.resolveViewController(name: viewModelName)
-       
-        let vc = viewController as! BaseViewController<TViewModel>; do {
-            if(args != nil){
+        
+        if let vc = viewController as? BaseViewController<TViewModel> {
+            if(args != nil) {
+                vc.parameterData = args
+            }
+        } else {
+            let vc = viewController as! BaseCollectionViewController<TViewModel>
+            if(args != nil) {
                 vc.parameterData = args
             }
         }

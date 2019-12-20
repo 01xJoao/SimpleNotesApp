@@ -9,5 +9,14 @@
 import Foundation
 
 public class NotesListViewModel : ViewModelBase {
+    private var _navigateToCreateNoteCommand: Command?
+    public var navigateToCreateNoteCommand: Command {
+        get { _navigateToCreateNoteCommand ??= Command(_navigateToCreateNote); return _navigateToCreateNoteCommand!}
+    }
+    
+    
+    private func _navigateToCreateNote() {
+        navigationService.navigateModal(viewModel: CreateNoteViewModel.self, arguments: nil)
+    }
     
 }

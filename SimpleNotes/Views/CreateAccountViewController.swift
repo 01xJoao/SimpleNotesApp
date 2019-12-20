@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import LBTATools
 
-public class CreateAccountViewController : FormBaseViewController<CreateAccountViewModel>, UITextFieldDelegate {
+class CreateAccountViewController : FormBaseViewController<CreateAccountViewModel>, UITextFieldDelegate {
     
     private let _imageView = UIImageView(image: #imageLiteral(resourceName: "logo_blue_3"), contentMode: .scaleAspectFit)
     
@@ -33,7 +33,7 @@ public class CreateAccountViewController : FormBaseViewController<CreateAccountV
     private let _confirmPasswordTextField = IndentedTextField(isSecureTextEntry: true)
     private let _confirmPasswordLineView = UIView(backgroundColor: UIColor.Theme.darkGrey)
     
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         _setupView()
     }
@@ -116,7 +116,7 @@ public class CreateAccountViewController : FormBaseViewController<CreateAccountV
         }
     }
     
-    public override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewDidLayoutSubviews()
     }
@@ -186,7 +186,7 @@ public class CreateAccountViewController : FormBaseViewController<CreateAccountV
         }
     }
     
-    public override func viewWillDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     

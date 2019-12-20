@@ -46,6 +46,7 @@ public class Core {
         }
         
         DiContainer.register(NotesListViewModel.self) { NotesListViewModel() }
+        DiContainer.register(CreateNoteViewModel.self) { CreateNoteViewModel() }
     }
     
     private static func _registerViewControllers() {
@@ -53,6 +54,7 @@ public class Core {
         DiContainer.registerViewController(LoginViewModel.self) { LoginViewController() }
         DiContainer.registerViewController(CreateAccountViewModel.self) { CreateAccountViewController() }
         DiContainer.registerViewController(NotesListViewModel.self) { NotesListViewController() }
+        DiContainer.registerViewController(CreateNoteViewModel.self) { CreateNoteViewController() }
     }
     
     public static func startApp() {

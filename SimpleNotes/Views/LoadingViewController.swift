@@ -8,6 +8,5 @@
 
 import UIKit
 
-class LoadingViewController: BaseViewController<LoadingViewModel> {
-}
+class LoadingViewController: BaseViewController<LoadingViewModel> {}
 

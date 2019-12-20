@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-public class FormBaseViewController<TViewModel> : BaseViewController<TViewModel>, UIScrollViewDelegate where TViewModel : ViewModel {
+public class FormBaseViewController<TViewModel : ViewModel> : BaseViewController<TViewModel>, UIScrollViewDelegate {
     var bottomButtonHeight: CGFloat = 0
     
     public lazy var scrollView: UIScrollView = {
@@ -30,7 +30,7 @@ public class FormBaseViewController<TViewModel> : BaseViewController<TViewModel>
     
     public var viewAlignment: FormAlignment = .center
     
-    override open func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addSubview(scrollView)

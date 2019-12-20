@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import LBTATools
 
-public class LoginViewController : FormBaseViewController<LoginViewModel>, UITextFieldDelegate {
+class LoginViewController : FormBaseViewController<LoginViewModel>, UITextFieldDelegate {
     
     private let _imageView = UIImageView(image: #imageLiteral(resourceName: "logo_blue_2"), contentMode: .scaleAspectFit)
     
