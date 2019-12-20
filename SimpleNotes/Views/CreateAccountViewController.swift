@@ -14,22 +14,22 @@ public class CreateAccountViewController : FormBaseViewController<CreateAccountV
     
     private let _imageView = UIImageView(image: #imageLiteral(resourceName: "logo_blue_3"), contentMode: .scaleAspectFit)
     
-    private let _signUpButton = UIButton(title: "Create", titleColor: UIColor.Theme.white,
+    private let _signUpButton = UIButton(title: "", titleColor: UIColor.Theme.white,
                                  font: .systemFont(ofSize: 16), backgroundColor: UIColor.Theme.mainBlue)
     
-    private let _nameIndicatorLabel = UILabel(text: "Name", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
+    private let _nameIndicatorLabel = UILabel(text: "", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
     private let _nameTextField = IndentedTextField(keyboardType: .default)
     private let _nameLineView = UIView(backgroundColor: UIColor.Theme.darkGrey)
     
-    private let _emailIndicatorLabel = UILabel(text: "Email address", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
+    private let _emailIndicatorLabel = UILabel(text: "", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
     private let _emailTextField = IndentedTextField(keyboardType: .emailAddress)
     private let _emailLineView = UIView(backgroundColor: UIColor.Theme.darkGrey)
     
-    private let _passwordIndicatorLabel = UILabel(text: "Password", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
+    private let _passwordIndicatorLabel = UILabel(text: "", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
     private let _passwordTextField = IndentedTextField(isSecureTextEntry: true)
     private let _passwordLineView = UIView(backgroundColor: UIColor.Theme.darkGrey)
     
-    private let _confirmPasswordIndicatorLabel = UILabel(text: "Confirm password", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
+    private let _confirmPasswordIndicatorLabel = UILabel(text: "", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
     private let _confirmPasswordTextField = IndentedTextField(isSecureTextEntry: true)
     private let _confirmPasswordLineView = UIView(backgroundColor: UIColor.Theme.darkGrey)
     
@@ -41,16 +41,25 @@ public class CreateAccountViewController : FormBaseViewController<CreateAccountV
     private func _setupView() {
         bottomButtonHeight = 50
         
+        _setUpL10NTexts()
         _setupViewSizes()
         _setupCreateButton()
         _setupTextFields()
         _addViewsToFormStackContainer()
         
         viewAlignment = .top
-        self.title = "Create Account"
+        self.title = viewModel.createText
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.navigationBar.barStyle = .black
         scrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(_handleTapDismiss)))
+    }
+    
+    private func _setUpL10NTexts() {
+        _signUpButton.setTitle(viewModel.createAccountText, for: .normal)
+        _nameIndicatorLabel.text = viewModel.nameText
+        _emailIndicatorLabel.text = viewModel.emailText
+        _passwordIndicatorLabel.text = viewModel.passwordText
+        _confirmPasswordIndicatorLabel.text = viewModel.confirmPasswordText
     }
     
     private func _setupViewSizes() {
@@ -77,22 +86,22 @@ public class CreateAccountViewController : FormBaseViewController<CreateAccountV
         _confirmPasswordTextField.tag = 3
         
         UITextFieldExtensions.setupField(
-            indicatorText: "Name", indicatorLabel: _nameIndicatorLabel,
+            indicatorText: viewModel.nameText, indicatorLabel: _nameIndicatorLabel,
             textField: _nameTextField, divider: _nameLineView, returnKeyType: .next,
             activeColor: UIColor.Theme.darkBlue, inactiveColor: UIColor.Theme.darkGrey)
         
         UITextFieldExtensions.setupField(
-            indicatorText: "Email address", indicatorLabel: _emailIndicatorLabel,
+            indicatorText: viewModel.emailText, indicatorLabel: _emailIndicatorLabel,
             textField: _emailTextField, divider: _emailLineView, returnKeyType: .next,
             activeColor: UIColor.Theme.darkBlue, inactiveColor: UIColor.Theme.darkGrey)
         
         UITextFieldExtensions.setupField(
-            indicatorText: "Password", indicatorLabel: _passwordIndicatorLabel,
+            indicatorText: viewModel.passwordText, indicatorLabel: _passwordIndicatorLabel,
             textField: _passwordTextField, divider: _passwordLineView, returnKeyType: .next,
             activeColor: UIColor.Theme.darkBlue, inactiveColor: UIColor.Theme.darkGrey)
         
         UITextFieldExtensions.setupField(
-            indicatorText: "Confirm Password", indicatorLabel: _confirmPasswordIndicatorLabel,
+            indicatorText: viewModel.confirmPasswordText, indicatorLabel: _confirmPasswordIndicatorLabel,
             textField: _confirmPasswordTextField, divider: _confirmPasswordLineView, returnKeyType: .done,
             activeColor: UIColor.Theme.darkBlue, inactiveColor: UIColor.Theme.darkGrey)
         

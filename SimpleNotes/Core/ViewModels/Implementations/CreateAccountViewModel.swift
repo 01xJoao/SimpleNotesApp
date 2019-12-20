@@ -81,6 +81,7 @@ public class CreateAccountViewModel : ViewModelBase {
     public var passwordText: String!
     public var confirmPasswordText: String!
     public var createAccountText: String!
+    public var createText: String!
     
     private var invalidEmailText: String!
     private var completeFormText: String!
@@ -93,7 +94,8 @@ public class CreateAccountViewModel : ViewModelBase {
         emailText = l10nService.localize(key: "create_email")
         passwordText =  l10nService.localize(key: "create_password")
         confirmPasswordText = l10nService.localize(key: "create_cpassword")
-        createAccountText =  l10nService.localize(key: "create_account")
+        createAccountText = l10nService.localize(key: "create_account")
+        createText = l10nService.localize(key: "create_create")
         
         invalidEmailText = l10nService.localize(key: "dialog_invalidEmail")
         completeFormText =  l10nService.localize(key: "dialog_completeForm")
