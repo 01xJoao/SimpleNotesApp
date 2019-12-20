@@ -61,6 +61,8 @@
 		9DCA888D23A81A6D005E841C /* WebServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA888C23A81A6D005E841C /* WebServicesTests.swift */; };
 		9DCA889023A81B1B005E841C /* UserWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA888F23A81B1B005E841C /* UserWebService.swift */; };
 		9DCA889223A81B26005E841C /* NoteWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA889123A81B26005E841C /* NoteWebService.swift */; };
+		9DCC6BB023AD214400F46266 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC6BAF23AD214400F46266 /* CreateNoteViewController.swift */; };
+		9DCC6BB323AD21B200F46266 /* CreateNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCC6BB223AD21B200F46266 /* CreateNoteViewModel.swift */; };
 		9DCCF75323A435DF0061CB11 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCCF75223A435DF0061CB11 /* LocationService.swift */; };
 		9DCCF75523A4361D0061CB11 /* LocationServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCCF75423A4361D0061CB11 /* LocationServiceImp.swift */; };
 		9DCDB75723A7FB1700B4CBFC /* UserWebServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDB75623A7FB1700B4CBFC /* UserWebServiceImp.swift */; };
@@ -73,6 +75,9 @@
 		9DE0AE89239C8E3F001A32A6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE88239C8E3F001A32A6 /* ViewModel.swift */; };
 		9DE0AE8C239C8F7C001A32A6 /* ViewModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE8B239C8F7C001A32A6 /* ViewModelBase.swift */; };
 		9DE0AE8E239C9160001A32A6 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE0AE8D239C9160001A32A6 /* LoadingViewModel.swift */; };
+		9DE53A1E23AD10AB00062905 /* BaseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE53A1D23AD10AB00062905 /* BaseListViewController.swift */; };
+		9DE53A2223AD155E00062905 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE53A2123AD155E00062905 /* NoteCell.swift */; };
+		9DE53A2423AD171400062905 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE53A2323AD171400062905 /* BaseCollectionViewController.swift */; };
 		9DFA50D123A0544A00EA6E7F /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA50D023A0544A00EA6E7F /* Animations.swift */; };
 		9DFA50D323A17BFC00EA6E7F /* L10NService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA50D223A17BFC00EA6E7F /* L10NService.swift */; };
 		9DFA50D523A17D7F00EA6E7F /* L10NServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA50D423A17D7F00EA6E7F /* L10NServiceImp.swift */; };
@@ -174,6 +179,8 @@
 		9DCA888C23A81A6D005E841C /* WebServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServicesTests.swift; sourceTree = "<group>"; };
 		9DCA888F23A81B1B005E841C /* UserWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWebService.swift; sourceTree = "<group>"; };
 		9DCA889123A81B26005E841C /* NoteWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWebService.swift; sourceTree = "<group>"; };
+		9DCC6BAF23AD214400F46266 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
+		9DCC6BB223AD21B200F46266 /* CreateNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewModel.swift; sourceTree = "<group>"; };
 		9DCCF75223A435DF0061CB11 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		9DCCF75423A4361D0061CB11 /* LocationServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceImp.swift; sourceTree = "<group>"; };
 		9DCDB75623A7FB1700B4CBFC /* UserWebServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWebServiceImp.swift; sourceTree = "<group>"; };
@@ -187,6 +194,9 @@
 		9DE0AE88239C8E3F001A32A6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		9DE0AE8B239C8F7C001A32A6 /* ViewModelBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBase.swift; sourceTree = "<group>"; };
 		9DE0AE8D239C9160001A32A6 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
+		9DE53A1D23AD10AB00062905 /* BaseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListViewController.swift; sourceTree = "<group>"; };
+		9DE53A2123AD155E00062905 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		9DE53A2323AD171400062905 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
 		9DFA50D023A0544A00EA6E7F /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		9DFA50D223A17BFC00EA6E7F /* L10NService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10NService.swift; sourceTree = "<group>"; };
 		9DFA50D423A17D7F00EA6E7F /* L10NServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10NServiceImp.swift; sourceTree = "<group>"; };
@@ -287,11 +297,12 @@
 		9D0890B1239C67E0002F84E6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9DE53A1F23AD152E00062905 /* NotesListViewController */,
 				9DE0AE84239C8CB2001A32A6 /* Bases */,
 				9D089090239C674B002F84E6 /* LoadingViewController.swift */,
 				9DCA6C2F239D2BED00DB4FF3 /* LoginViewController.swift */,
 				9DCA6C34239D5F3900DB4FF3 /* CreateAccountViewController.swift */,
-				9DDF6D4D23ABFC8900DEA8A0 /* NotesListViewController.swift */,
+				9DCC6BAF23AD214400F46266 /* CreateNoteViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -475,8 +486,27 @@
 			children = (
 				9DE0AE86239C8CF8001A32A6 /* BaseViewController.swift */,
 				9D08160823A9421F00EC0A13 /* FormBaseViewController.swift */,
+				9DE53A1D23AD10AB00062905 /* BaseListViewController.swift */,
+				9DE53A2323AD171400062905 /* BaseCollectionViewController.swift */,
 			);
 			path = Bases;
+			sourceTree = "<group>";
+		};
+		9DE53A1F23AD152E00062905 /* NotesListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9DE53A2023AD154500062905 /* Cells */,
+				9DDF6D4D23ABFC8900DEA8A0 /* NotesListViewController.swift */,
+			);
+			path = NotesListViewController;
+			sourceTree = "<group>";
+		};
+		9DE53A2023AD154500062905 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9DE53A2123AD155E00062905 /* NoteCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		9DFA50D923A187B300EA6E7F /* Resources */ = {
@@ -539,6 +569,7 @@
 				9DCA6C2D239D2AD800DB4FF3 /* LoginViewModel.swift */,
 				9DCA6C32239D5F2200DB4FF3 /* CreateAccountViewModel.swift */,
 				9DDF6D4B23ABFC6200DEA8A0 /* NotesListViewModel.swift */,
+				9DCC6BB223AD21B200F46266 /* CreateNoteViewModel.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -823,10 +854,12 @@
 				9D0890BC239C68DC002F84E6 /* AppSetup.swift in Sources */,
 				9D089091239C674B002F84E6 /* LoadingViewController.swift in Sources */,
 				9DFA50D323A17BFC00EA6E7F /* L10NService.swift in Sources */,
+				9DE53A2423AD171400062905 /* BaseCollectionViewController.swift in Sources */,
 				9DE0AE8E239C9160001A32A6 /* LoadingViewModel.swift in Sources */,
 				9DCA6C4B239F094400DB4FF3 /* Constants.swift in Sources */,
 				9D08908D239C674B002F84E6 /* AppDelegate.swift in Sources */,
 				9D9FE2E123A53B14005CDE8C /* DatabaseUserService.swift in Sources */,
+				9DCC6BB023AD214400F46266 /* CreateNoteViewController.swift in Sources */,
 				9D08908F239C674B002F84E6 /* SceneDelegate.swift in Sources */,
 				9D161F9223A86DFE00F0AC0F /* ImageServiceImp.swift in Sources */,
 				9DCA6C3E239DB19E00DB4FF3 /* Extensions.swift in Sources */,
@@ -841,6 +874,7 @@
 				9D9FE2E323A53B2B005CDE8C /* DatabaseNoteService.swift in Sources */,
 				9DCA889023A81B1B005E841C /* UserWebService.swift in Sources */,
 				9DE0AE87239C8CF8001A32A6 /* BaseViewController.swift in Sources */,
+				9DE53A2223AD155E00062905 /* NoteCell.swift in Sources */,
 				9DFA50D823A17DC600EA6E7F /* LiteralObject.swift in Sources */,
 				9D0890B7239C6843002F84E6 /* CustomUIExtensions.swift in Sources */,
 				9DCA6C49239EFCD900DB4FF3 /* InfoDialogView.swift in Sources */,
@@ -851,6 +885,7 @@
 				9DFA50D523A17D7F00EA6E7F /* L10NServiceImp.swift in Sources */,
 				9DDF6D4C23ABFC6200DEA8A0 /* NotesListViewModel.swift in Sources */,
 				9D9FE2E723A54C3A005CDE8C /* NoteObject.swift in Sources */,
+				9DE53A1E23AD10AB00062905 /* BaseListViewController.swift in Sources */,
 				9D0890BE239C68F0002F84E6 /* Core.swift in Sources */,
 				9DCA6C33239D5F2200DB4FF3 /* CreateAccountViewModel.swift in Sources */,
 				9DCA6C2A239D14AE00DB4FF3 /* NavigationServiceImp.swift in Sources */,
@@ -858,6 +893,7 @@
 				9DCA6C26239C996400DB4FF3 /* DiContainer.swift in Sources */,
 				9D9FE2E523A5431E005CDE8C /* UserObject.swift in Sources */,
 				9DCEF74423AB16BE006099FA /* NotificationServiceImp.swift in Sources */,
+				9DCC6BB323AD21B200F46266 /* CreateNoteViewModel.swift in Sources */,
 				9DB8C23523A512DB00CBBCB9 /* Note.swift in Sources */,
 				9D9FE2DE23A5334D005CDE8C /* DatabaseNoteServiceImp.swift in Sources */,
 				9D0890C0239C69CE002F84E6 /* ContainerViewController.swift in Sources */,
