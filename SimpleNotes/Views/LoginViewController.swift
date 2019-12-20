@@ -15,10 +15,10 @@ public class LoginViewController : FormBaseViewController<LoginViewModel>, UITex
     private let _imageView = UIImageView(image: #imageLiteral(resourceName: "logo_blue_2"), contentMode: .scaleAspectFit)
     
     private let _signInButton = UIButton(title: "", titleColor: UIColor.Theme.white,
-                                 font: .systemFont(ofSize: 16), backgroundColor: UIColor.Theme.mainBlue)
+                                         font: .systemFont(ofSize: 16), backgroundColor: UIColor.Theme.darkBlue)
     
     private let _signInKeyboardButton = UIButton(title: "", titleColor: UIColor.Theme.white,
-                                    font: .systemFont(ofSize: 16), backgroundColor: UIColor.Theme.mainBlue)
+                                                 font: .systemFont(ofSize: 16), backgroundColor: UIColor.Theme.darkBlue)
     
     private let _signUpButton = UIButton(title: "", titleColor: UIColor.Theme.darkBlue, font: .systemFont(ofSize: 14))
     

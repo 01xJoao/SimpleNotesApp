@@ -26,10 +26,10 @@ extension UIColor {
 
 extension UIColor {
   struct Theme {
-    static var mainBlue = UIColor().fromRGBA(red: 20, green: 42, blue: 74, alpha: 1.0)
+    static var mainBlue = UIColor().fromRGBA(red: 24, green: 75, blue: 126, alpha: 1.0)
     static var red = UIColor().fromRGBA(red: 222, green: 46, blue: 65, alpha: 1.0)
     static var blue = UIColor().fromRGBA(red: 88, green: 160, blue: 220, alpha: 1.0)
-    static var darkBlue = UIColor().fromRGBA(red: 0, green: 37, blue: 99, alpha: 1.0)
+    static var darkBlue = UIColor().fromRGBA(red: 16, green: 78, blue: 114, alpha: 1.0)
     static var white = UIColor().fromRGBA(red: 255, green: 255, blue: 255, alpha: 1.0)
     static var green = UIColor().fromRGBA(red: 102, green: 191, blue: 147, alpha: 1.0)
     static var black = UIColor().fromRGBA(red: 0, green: 0, blue: 0, alpha: 1.0)

@@ -19,7 +19,7 @@ public class AppSetup {
     private static func _setViewAppearance(){
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
-            appearance.backgroundColor = UIColor.Theme.darkBlue
+            appearance.backgroundColor = UIColor.Theme.mainBlue
             appearance.titleTextAttributes = [.foregroundColor: UIColor.Theme.white]
             appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.Theme.white, .shadow: CustomUIExtensions.textShadow()]
             
@@ -41,5 +41,9 @@ extension UINavigationController {
         let backButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.topViewController?.navigationItem.backBarButtonItem = backButton
         self.topViewController?.navigationItem.backBarButtonItem?.tintColor = UIColor.white
+    }
+    
+    override open var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
 }

@@ -15,7 +15,7 @@ public class CreateAccountViewController : FormBaseViewController<CreateAccountV
     private let _imageView = UIImageView(image: #imageLiteral(resourceName: "logo_blue_3"), contentMode: .scaleAspectFit)
     
     private let _signUpButton = UIButton(title: "", titleColor: UIColor.Theme.white,
-                                 font: .systemFont(ofSize: 16), backgroundColor: UIColor.Theme.mainBlue)
+                                 font: .systemFont(ofSize: 16), backgroundColor: UIColor.Theme.darkBlue)
     
     private let _nameIndicatorLabel = UILabel(text: "", font: .systemFont(ofSize: 11), textColor: UIColor.Theme.white)
     private let _nameTextField = IndentedTextField(keyboardType: .default)
@@ -48,14 +48,13 @@ public class CreateAccountViewController : FormBaseViewController<CreateAccountV
         _addViewsToFormStackContainer()
         
         viewAlignment = .top
-        self.title = viewModel.createText
+        self.title = viewModel.createAccountText
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationController?.navigationBar.barStyle = .black
         scrollView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(_handleTapDismiss)))
     }
     
     private func _setUpL10NTexts() {
-        _signUpButton.setTitle(viewModel.createAccountText, for: .normal)
+        _signUpButton.setTitle(viewModel.createText, for: .normal)
         _nameIndicatorLabel.text = viewModel.nameText
         _emailIndicatorLabel.text = viewModel.emailText
         _passwordIndicatorLabel.text = viewModel.passwordText
