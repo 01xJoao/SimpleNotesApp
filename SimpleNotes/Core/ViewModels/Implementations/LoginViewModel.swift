@@ -44,7 +44,8 @@ public class LoginViewModel: ViewModelBase {
     private func _login(_ parameters: [String]) {
         if(_verifyForm(parameters)) {
             dialogService.startLoading()
-            let user = User(UserObject(name: "", email: parameters[0], password: parameters[1]))
+            isBusy.value = true
+            let user = User(UserObject(email: parameters[0], password: parameters[1]))
             _ = userWebService.login(user: user) { userObj in self._loginCompletion(userObj) }
         }
     }
@@ -62,7 +63,7 @@ public class LoginViewModel: ViewModelBase {
     
     private func _loginCompletion(_ userObject: UserObject?) {
         dialogService.stopLoading()
-        
+        isBusy.value = false
         if(userObject != nil) {
             _saveUserInformation(userObject!)
             navigationService.navigateAndSetAsContainer(viewModel: NotesListViewModel.self)
