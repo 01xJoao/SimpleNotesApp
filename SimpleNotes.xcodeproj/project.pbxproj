@@ -297,8 +297,8 @@
 		9D0890B1239C67E0002F84E6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9DE53A1F23AD152E00062905 /* NotesListViewController */,
 				9DE0AE84239C8CB2001A32A6 /* Bases */,
+				9DE53A1F23AD152E00062905 /* NotesListViewController */,
 				9D089090239C674B002F84E6 /* LoadingViewController.swift */,
 				9DCA6C2F239D2BED00DB4FF3 /* LoginViewController.swift */,
 				9DCA6C34239D5F3900DB4FF3 /* CreateAccountViewController.swift */,

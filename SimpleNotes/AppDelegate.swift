@@ -14,7 +14,6 @@ import OneSignal
 fileprivate let _sentryDNS: String = "https://17fc5da01c414945af356999aca3aecc@sentry.io/1855619"
 fileprivate let _oneSignalId: String = "328b8558-e708-4934-8a58-c7b651ca5026"
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     

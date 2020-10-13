@@ -28,7 +28,7 @@ public class BaseViewController<TViewModel : ViewModel> : UIViewController {
     private func _resolveViewModel() {
         let vm : TViewModel = DiContainer.resolve()
         if(parameterData != nil) {
-            viewModel.prepare(dataObject: parameterData!)
+            vm.prepare(dataObject: parameterData!)
         }
         _viewModel = vm
         _viewModel.initialize()
@@ -39,6 +39,12 @@ public class BaseViewController<TViewModel : ViewModel> : UIViewController {
            selector: #selector(self._handleViewDismiss(_:)),
            name: NSNotification.Name(rawValue: String(describing: TViewModel.self)),
            object: nil)
+    }
+    
+    @objc func _handleViewDismiss(_ notification: NSNotification) {
+        if let params = notification.userInfo as NSDictionary? {
+            _viewModel.dataNotify(dataObject: params["arguments"]!)
+        }
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -54,12 +60,6 @@ public class BaseViewController<TViewModel : ViewModel> : UIViewController {
     public override func viewDidDisappear(_ animated: Bool) {
         if(isMovingFromParent) {
             NotificationCenter.default.removeObserver(self)
-        }
-    }
-    
-    @objc func _handleViewDismiss(_ notification: NSNotification) {
-        if let params = notification.userInfo as NSDictionary? {
-            _viewModel.dataNotify(dataObject: params["arguments"]!)
         }
     }
     

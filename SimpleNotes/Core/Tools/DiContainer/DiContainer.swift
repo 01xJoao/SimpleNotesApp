@@ -83,6 +83,5 @@ class DiContainer {
         lock.lock()
         defer { lock.unlock() }
         return closure()
-        
     }
 }

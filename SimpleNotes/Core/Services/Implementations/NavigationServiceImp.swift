@@ -35,7 +35,7 @@ public class NavigationServiceImp : NavigationService {
     public func navigateAndSetAsContainer<TViewModel : ViewModel>(viewModel: TViewModel.Type) {
         _viewStack.removeAll()
         _viewStack.append(String(describing: viewModel.self))
-        
+
         let viewController: UIViewController = self._getViewController(type: viewModel, args: nil)
         let navigationController = UINavigationController(rootViewController: viewController)
         self._setNewContainerViewController(navigationController)

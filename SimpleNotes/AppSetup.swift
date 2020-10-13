@@ -8,8 +8,7 @@
 
 import UIKit
 
-public class AppSetup {
-    
+public struct AppSetup {
     public static func configure(){
         Core.initialize()
         _setViewAppearance()
@@ -17,21 +16,32 @@ public class AppSetup {
     }
     
     private static func _setViewAppearance(){
-        if #available(iOS 13.0, *) {
-            let appearance = UINavigationBarAppearance()
-            appearance.backgroundColor = UIColor.Theme.mainBlue
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.Theme.white]
-            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.Theme.white, .shadow: CustomUIExtensions.textShadow()]
-            
-            UINavigationBar.appearance().standardAppearance = appearance
-            UINavigationBar.appearance().compactAppearance = appearance
-            UINavigationBar.appearance().scrollEdgeAppearance = appearance
-            UIBarButtonItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.Theme.white], for: .normal)
-        } else {
-            UINavigationBar.appearance().tintColor = UIColor.Theme.darkBlue
-            UINavigationBar.appearance().barTintColor = UIColor.Theme.darkBlue
-            UINavigationBar.appearance().isTranslucent = false
-        }
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor.Theme.mainBlue
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.Theme.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.Theme.white, .shadow: _textShadow()]
+
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+
+        let backButtonAppearance = UIBarButtonItemAppearance()
+        backButtonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.clear]
+
+        UINavigationBar.appearance().standardAppearance.backButtonAppearance = backButtonAppearance
+        UINavigationBar.appearance().compactAppearance?.backButtonAppearance = backButtonAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance?.backButtonAppearance = backButtonAppearance
+
+        UIBarButtonItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.Theme.white], for: .normal)
+        UIBarButtonItem.appearance().tintColor = UIColor.Theme.white
+    }
+    
+    static private func _textShadow() -> NSShadow {
+        let textShadow = NSShadow()
+        textShadow.shadowColor = UIColor.Theme.black
+        textShadow.shadowBlurRadius = 1.2
+        textShadow.shadowOffset = CGSize(width: 0.6, height: 0.6)
+        return textShadow
     }
 }
 

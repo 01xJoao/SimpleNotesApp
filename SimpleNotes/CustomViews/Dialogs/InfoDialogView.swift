@@ -18,7 +18,7 @@ public class InfoDialogView: UIView {
         self.tag = 0
     }
     
-    public func showInfo(text: String, infoType: InfoDialogType){
+    public func showInfo(text: String, infoType: InfoDialogType) {
         _configureView(text, infoType)
         _show()
     }
